@@ -1,0 +1,25 @@
+#!/usr/bin/env pyscript tomlkit click --
+import click
+import tomlkit
+import subprocess
+
+@click.command()
+@click.argument("package")
+@click.argument("version", default=None, required=False)
+def main(package, version):
+    with open('pyproject.toml') as f:
+        toml = tomlkit.loads(f.read())
+
+    # TODO: preserve extras
+    del toml['tool']['poetry']['dependencies'][package]
+
+    with open('pyproject.toml', 'w') as f:
+        f.write(tomlkit.dumps(toml))
+    
+    if version is not None:
+        subprocess.check_call(('poetry', 'add', f'{package}={version}'))
+    else:
+        subprocess.check_call(('poetry', 'add', package))
+
+if __name__ == "__main__":
+    main()

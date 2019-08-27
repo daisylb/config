@@ -1,0 +1,160 @@
+{
+/*
+	 // Place your snippets for Python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+    /*"Python 2 super() call": {
+        "prefix": "super",
+        "body": ["super(${1:ClassName}, self).${2:MethodName}(${3:*args, **kwargs})"]
+    },*/
+    "Logging setup": {
+        "prefix": "logsetup",
+        "body": [
+            "import logging",
+            "logger = logging.getLogger(__name__)"
+        ]
+    },
+    "Django forwards_func": {
+        "prefix": "forwards_func",
+        "body": [
+            "def ${1:forwards_func}(apps, schema_editor):",
+            "    db_alias = schema_editor.connection.alias",
+            "    $2"
+        ]
+    },
+    "Django get_model": {
+        "prefix": "get_model",
+        "body": [
+            "${1:ModelName} = apps.get_model('${2:myapp}', '${1:ModelName}')"
+        ]
+    },
+    "Q": {
+        "prefix": "q",
+        "body": ["import q; q($1)"]
+    },
+    "API test suite": {
+        "prefix": "apitest",
+        "body": [
+            "class Test$3API(TestCase):",
+            "    @auth_parameterize()",
+            "    def test_list_$2s(self, client, outcome):",
+            "        response = client.get('/api/v2/$1/')",
+            "        outcome.check_response(self, response)",
+            "",
+            "    @auth_parameterize()",
+            "    def test_detail_$2s(self, client, outcome):",
+            "        $2 = factories.$3Factory()",
+            "        response = client.get('/api/v2/$1/{}/'.format($2.id))",
+            "        outcome.check_response(self, response)",
+            "",
+            "    @auth_parameterize()",
+            "    def test_create_$2(self, client, outcome):",
+            "        response = client.post('/api/v2/$1/', {",
+            "            # new object here",
+            "        })",
+            "        outcome.check_response(self, response)",
+            "",
+            "    @auth_parameterize()",
+            "    def test_update_$2(self, client, outcome):",
+            "        $2 = factories.$3Factory()",
+            "        response = client.patch('/api/v2/$1/{}/'.format($2.id), {",
+            "            # changed object here",
+            "        })",
+            "        outcome.check_response(self, response)",
+            "",
+            "    @auth_parameterize()",
+            "    def test_delete_$2(self, client, outcome):",
+            "        $2 = factories.$3Factory()",
+            "        response = client.delete('/api/v2/$1/{}/'.format($2.id))",
+            "        outcome.check_response(self, response)"
+        ]
+    },
+    "Django URL conf": {
+        "prefix": "urlspy",
+        "body": [
+            "from django.urls import path",
+            "",
+            "from . import views",
+            "",
+            "urlpatterns = [",
+            "    $1",
+            "]"
+        ]
+    },
+    "Django URL entry": {
+        "prefix": "url",
+        "body": ["path('^$1', views.$2.as_view(), name='$3'),"]
+    },
+    "Django CMS plugin preamble": {
+        "prefix": "cmsplugin-preamble",
+        "body": [
+            "from cms.plugin_base import CMSPluginBase",
+            "from cms.plugin_pool import plugin_pool",
+            "from cms.models.pluginmodel import CMSPlugin",
+            "",
+            "from . import models"
+        ]
+    },
+    "Django CMS plugin": {
+        "prefix": "cmsplugin",
+        "body": [
+            "class ${1:Thing}Plugin(CMSPluginBase):",
+            "    name = '$1'",
+            "    module = '$4'",
+            "    model = ${2:CMSPlugin}",
+            "    render_template = '$3'",
+            "",
+            "",
+            "plugin_pool.register_plugin($1Plugin)"
+        ]
+    },
+    "Django CMS plugin model preamble": {
+        "prefix": "cmsmodel-preamble",
+        "body": [
+            "from cms.models.pluginmodel import CMSPlugin",
+            "from django.db import models"
+        ]
+    },
+    "Django CMS plugin model": {
+        "prefix": "cmsmodel",
+        "body": [
+            "class ${1:Thing}(CMSPlugin):",
+            "    ${2:pass}"
+        ]
+    },
+    "Django REST Framework ModelSerializer": {
+        "prefix": "serializer",
+        "body": [
+            "class $1Serializer(serializers.ModelSerializer):",
+            "    class Meta:",
+            "        model = models.$1",
+            "        fields = ($2)"
+        ]
+    },
+    "Django REST Framework ViewSet": {
+        "prefix": "viewset",
+        "body": [
+            "class $1ViewSet(viewsets.ModelViewSet):",
+            "    queryset = models.$1.objects.all()",
+            "    serializer_class = $1Serializer",
+            "    permission_classes = (model_permissions($2),)"
+        ]
+    },
+    "Class method override": {
+        "prefix": "override",
+        "body": [
+            "def $1(self, ${2:*args, **kwargs}):",
+            "    return super().$1($2)"
+        ]
+    }
+}

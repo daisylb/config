@@ -1,0 +1,171 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "'ISO v0.6', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
+    "editor.fontSize": 15,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "editor.fontLigatures": true,
+    "files.autoSave": "onFocusChange",
+    //"files.autoSaveDelay": 100,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        ".hypothesis": true,
+        ".idea": true,
+        ".vagrant": true,
+        ".vscode": true,
+        ".ctags": true,
+        ".tags": true,
+        ".tern-project": true,
+        ".venv": true,
+        "*.scssc": true,
+        "**/.sass-cache": true,
+        "dist/**": true,
+        "build/**": true,
+        ".cache": true,
+        ".eggs": true,
+        ".tox": true,
+        "*.egg-info": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/migrations/*.py": true,
+        "dist/**": true,
+        "build/**": true,
+        "media/**": true,
+        "cookbooks/**": true
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.workspaceSymbols.tagFilePath": "${workspaceRoot}/.tags",
+    "python.venvPath": "~/.virtualenvs",
+    "editor.rulers": [80],
+    "files.associations": {
+        "Vagrantfile": "ruby"
+    },
+    "[python]": {
+        "editor.rulers": [72, 79, 88]
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "workbench.colorTheme": "GitHub Plus",
+    "editor.minimap.enabled": false,
+    "workbench.editor.showIcons": false,
+    "workbench.iconTheme": null,
+    "python.formatting.provider": "black",
+    "[restructuredtext]": {
+        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "bounded"
+    },
+    "[markdown]": {
+        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "bounded"
+    },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "window.zoomLevel": 0,
+    "prettier.requireConfig": true,
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.autofetch": true,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "extensions.ignoreRecommendations": false,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-apple-darwin"
+    },
+    "rust.mode": "legacy",
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    //"python.jediEnabled": false,
+    "python.venvFolders": [
+        "envs",
+        ".pyenv",
+        ".direnv",
+        "Library/Caches/pypoetry/virtualenvs"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "breadcrumbs.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8CategorySeverity.E": "Warning",
+    "python.formatting.blackPath": "/Users/adam/.local/bin/black",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "gitlens.currentLine.scrollable": false,
+    "cSpell.userWords": [
+        "BACKENDS",
+        "Bridgekeeper",
+        "appbar",
+        "autogenerating",
+        "collectionlist",
+        "csrftoken",
+        "defectreport",
+        "graphene",
+        "inspectable",
+        "netloc",
+        "noqa",
+        "pipenv",
+        "pytest",
+        "rego",
+        "shrubber",
+        "shrubbers",
+        "theme",
+        "toplevel",
+        "virtualenv",
+        "virtualenvs",
+        "xpos",
+        "ypos"
+    ],
+    "cSpell.language": "en,en-GB,en-US",
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "dockerfile",
+        "git-commit",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}

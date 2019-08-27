@@ -1,0 +1,14 @@
+#!/usr/bin/env pyscript click --
+import click
+
+@click.command()
+@click.argument("input_str")
+@click.option('--mode', type=click.Choice(('twitter', 'every')), default='every')
+def main(input_str, mode):
+    if mode == 'twitter':
+        print(input_str.replace('@', '@\u2060').replace('#', '#\u2060').replace('$', '$\u2060'))
+    if mode == 'every':
+        print('\u2060'.join(input_str))
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from datetime import date, time, datetime, timedelta
+from sys import argv
+
+try:
+    from_date = datetime.combine(date.today(), time(int(argv[1]), int(argv[2])))
+except IndexError:
+    from_date = datetime.now()
+
+to_date = from_date + timedelta(hours=3, minutes=48)
+
+print(f'{from_date:%H:%M} - {to_date:%H:%M}')
+
+until_end = to_date - datetime.now()
+
+print(f'{until_end}')

@@ -1,0 +1,3 @@
+[symlinks]
+vscode-config = "~/Library/Application Support/Code/User"
+fish-config = "~/.config/fish"

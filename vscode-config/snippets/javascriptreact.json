@@ -1,0 +1,52 @@
+{
+/*
+	 // Place your snippets for JavaScript React here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Redux reducer": {
+		"prefix": "reducer",
+		"body": [
+			"function $1(state = ${2:{\\}}, action){",
+            "  switch (action.type) {",
+			"    $3",
+            "    default:",
+            "      return state",
+			"  }",
+			"}"
+		]
+	},
+	"Redux component": {
+		"prefix": "reduxcomponent",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import { connect } from 'react-redux'",
+			"",
+			"class $1 extends Component {",
+			"  $2",
+			"}",
+			"",
+			"export default connect(",
+			"  (state, ownProps) => ({",
+			"    $3",
+			"  }),",
+			"  (dispatch, ownProps) => ({",
+			"    $4",
+			"  }),",
+			")($1)",
+		]
+	},
+	"Generate random ID": {
+		"prefix": "genid",
+		"body": "'id' + Math.random().toString(36).slice(2)"
+	}
+}

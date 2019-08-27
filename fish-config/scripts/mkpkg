@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import os, sys, pathlib
+
+if len(sys.argv) != 2:
+    print("Usage: mkpkg dotted.path.to.pkg")
+    sys.exit(1)
+
+the_path = sys.argv[1]
+
+path_so_far = pathlib.Path()
+
+for component in the_path.split('.'):
+    path_so_far /= component
+    path_so_far.mkdir(exist_ok=True)
+    (path_so_far / '__init__.py').touch()

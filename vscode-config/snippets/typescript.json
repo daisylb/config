@@ -1,0 +1,48 @@
+{
+/*
+	 // Place your snippets for TypeScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+    "No, you idiot, it's 'number' not 'int''": {
+        "prefix": "int",
+        "body": "number"
+    },
+    "Redux reducer": {
+		"prefix": "reducer",
+		"body": [
+			"const $1 = (state = ${2:{\\}}, action) => {",
+            "  switch (action.type) {",
+			"    $3",
+            "    default:",
+            "      return state",
+			"  }",
+			"}"
+		]
+	},
+	"Redux action and action creator": {
+		"prefix": "actionCreator",
+		"body": [
+			// "export const ${1/(.*)/${1:/upcase}/} = \"${1/(.*)/${1:/upcase}/}\"",
+			"export const ${1/([A-Z]?)([a-z]+)/${1:+_}$1${2:/upcase}/g} = \"${1/([A-Z]?)([a-z]+)/${1:+_}$1${2:/upcase}/g}\"",
+			"export type ${1/^(.)/${1:/upcase}/} = {",
+			"  type: typeof ${1/([A-Z]?)([a-z]+)/${1:+_}$1${2:/upcase}/g}",
+			"  $0",
+			"}",
+			"export function $1(): ${1/^(.)/${1:/upcase}/} {",
+			"  return {",
+			"    type: ${1/([A-Z]?)([a-z]+)/${1:+_}$1${2:/upcase}/g},",
+			"  }",
+			"}"
+		]
+	},
+}

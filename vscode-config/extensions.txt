@@ -1,0 +1,16 @@
+EditorConfig.EditorConfig
+PeterJausovec.vscode-docker
+bungcip.better-toml
+eg2.tslint
+esbenp.prettier-vscode
+formulahendry.auto-rename-tag
+kalitaalexey.vscode-rust
+kumar-harsh.graphql-for-vscode
+lextudio.restructuredtext
+lunaryorn.fish-ide
+ms-python.python
+onecrayon.theme-quietlight-vsc
+redhat.java
+rust-lang.rust
+skyapps.fish-vscode
+teabyii.ayu

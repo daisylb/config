@@ -1,0 +1,59 @@
+#!/usr/bin/env pyscript click docker tomlkit --
+
+import tomlkit
+import docker
+import click
+from socket import socket
+from os import path
+from hashlib import sha3_224
+
+def free_port():
+    with socket() as s:
+        s.bind(('',0))
+        return s.getsockname()[1]
+
+def get_config():
+    with open('.db.toml') as f:
+        return tomlkit.loads(f.read())
+
+
+def get_dir_id():
+    p = path.abspath(path.curdir)
+    head = path.basename(p)
+    sha = sha3_224(p.encode('utf8')).hexdigest()[:12]
+    return f'db-{head}-{sha}'
+
+
+def get_port():
+    p = path.abspath(path.curdir)
+    head = path.basename(p)
+    sha_int = int.from_bytes(sha3_224(p.encode('utf8')).digest(), 'big')
+    return (sha_int % 55535) + 10000
+
+
+@click.command()
+def main():
+    config = get_config()
+    client = docker.from_env()
+    port = get_port()
+    dir_id = get_dir_id()
+    image = f"{config['main']['type']}:{config['main']['version']}"
+    client.containers.run(
+        image=image,
+        name=dir_id,
+        detach=True,
+        ports={'3306/tcp': port},
+        volumes={f'{dir_id}-data': {'bind': '/var/lib/mysql', 'mode': 'rw'}},
+        environment={
+            'MYSQL_USER': 'user',
+            'MYSQL_PASSWORD': 'password',
+            'MYSQL_DATABASE': 'db',
+            'MYSQL_ROOT_PASSWORD': 'root',
+        },
+        remove=True,
+    )
+    print(f'mysql://user:password@localhost:{port}/db')
+    print(f'mysql://root:root@localhost:{port}/db')
+
+if __name__ == "__main__":
+    main()
