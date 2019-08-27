@@ -7,11 +7,11 @@ It replaces a previous version that used a Chef cookbook. The reason for replaci
 ## How to use
 
 - Clone this repository somewhere.
-- Run `./run.sh list`.
+- Run `./run.sh add`.
 - Look at the diff of `config.toml`, and remove unwanted packages.
 - Run `./run.sh uninstall`.
 
-`run.sh` invokes a Python project in the `configsync` subdirectory, whose behaviour is described in detail in the following section. It installs everything that is listed in `config.toml`; additionally, things that are not listed in `config.toml` are either added to that file (if `list` is passed) or uninstalled (if `uninstall` is passed).
+`run.sh` invokes a Python project in the `configsync` subdirectory, whose behaviour is described in detail in the following section. It installs everything that is listed in `config.toml`; additionally, things that are not listed in `config.toml` are either added to that file (if `add` is passed) or uninstalled (if `uninstall` is passed).
 
 ## What this repo configures, and how
 
@@ -29,11 +29,15 @@ A handful of tools have configuration files or directories in this repo. Symlink
 - `fish-config`: Fish shell
 - `git-{config,ignore,template,message}`: Git
 
-### Homebrew packages, Homebrew Casks and Mac App Store packages
+### Homebrew packages and casks
+
+These are stored in the `[homebrew]` table of `config.toml`. They are installed using generated `Brewfile`s, by running `brew bundle dump` and `brew bundle install` when in `add` mode, and `brew bundle install` and `brew bundle cleanup` when in `uninstall` mode.
+
+### Mac App Store packages
 
 **Not implemented yet**
 
-These are stored in the `Brewfile`. This file is updated by running `brew bundle dump` to a temporary file, then merging that file into the existing file. It is applied by running `brew bundle install` to install the listed packages, then `brew bundle cleanup` to remove non-listed ones.
+These are stored in the `[mac-app-store]` table of `config.toml`, as a mapping of app names to IDs. They are installed by `mas` and removed using `sudo rm`.
 
 ### Python tools
 
