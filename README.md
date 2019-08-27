@@ -41,9 +41,7 @@ These are stored in the `[mac-app-store]` table of `config.toml`, as a mapping o
 
 ### Python tools
 
-**Not implemented yet**
-
-These are stored in the `[python-tools]` table of `config.toml`, and installed with `pipx`. `pipx` is itself installed with `pip install --user -U`.
+These are stored in the `[python]` table of `config.toml`, and installed with `pipx`. `pipx` is itself installed with `pip install --user -U`.
 
 ### Visual Studio Code extensions
 

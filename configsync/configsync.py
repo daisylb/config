@@ -72,6 +72,21 @@ def do_homebrew(homebrew_doc, mode):
             subprocess.check_call(('brew', 'bundle', 'cleanup', '--force', f'--file={infile}'))
 
 def do_python(python_doc, mode):
+    global_python_root = HOME / '.pyenv' / 'versions' / python_doc['global-version']
+    if global_python_root.exists():
+        print(f'Already installed Python {python_doc["global-version"]}')
+    else:
+        print(f'Installing Python {python_doc["global-version"]}')
+        subprocess.check_call(('pyenv', 'install', python_doc['global-version']))
+
+    pipx_bin = HOME / '.local' / 'bin' / 'pipx'
+
+    if pipx_bin.exists():
+        print('Already installed pipx')
+    else:
+        print('Installing pipx')
+        subprocess.check_call((global_python_root / 'bin' / 'pip', 'install', '--user', 'pipx'))
+
     pipx_dir = HOME / '.local' / 'pipx' / 'venvs'
     installed = {x.name for x in pipx_dir.iterdir()}
     for tool in python_doc['tools']:
