@@ -1,3 +1,3 @@
 #!/bin/sh
 cd configsync
-poetry run configsync
+poetry run configsync $*

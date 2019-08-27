@@ -5,3 +5,38 @@ git-config = "~/.gitconfig"
 git-ignore = "~/.git-ignore-global"
 git-template = "~/.git-template"
 git-message = "~/.git-message"
+
+[vscode]
+
+extensions = [
+    "onecrayon.theme-quietlight-vsc",
+    "ms-vscode-remote.remote-wsl",
+    "thenikso.github-plus-theme",
+    "akamud.vscode-theme-onelight",
+    "ms-python.python",
+    "lextudio.restructuredtext",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "bungcip.better-toml",
+    "TabNine.tabnine-vscode",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "lunaryorn.fish-ide",
+    "eamodio.gitlens",
+    "kalitaalexey.vscode-rust",
+    "eg2.tslint",
+    "teabyii.ayu",
+    "kumar-harsh.graphql-for-vscode",
+    "Heron.firefox-devtools-theme",
+    "ms-vscode-remote.remote-ssh-edit",
+    "streetsidesoftware.code-spell-checker",
+    "rust-lang.rust",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-ssh-explorer",
+    "redhat.java",
+    "skyapps.fish-vscode",
+    "tonsky.theme-alabaster",
+    "ms-azuretools.vscode-docker",
+    "AndrsDC.base16-themes",
+]

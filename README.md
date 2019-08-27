@@ -1,5 +1,16 @@
 # Local machine configuration
 
+This repository is essentially my dotfiles for my local machine, with a bit of extra configuration magic.
+
+## How to use
+
+- Clone this repository somewhere.
+- Run `./run.sh list`.
+- Look at the diff of `config.toml`, and remove unwanted packages.
+- Run `./run.sh uninstall`.
+
+`run.sh` invokes a Python project in the `configsync` subdirectory, whose behaviour is described in detail in the following section. It installs everything that is listed in `config.toml`; additionally, things that are not listed in `config.toml` are either added to that file (if `list` is passed) or uninstalled (if `uninstall` is passed).
+
 ## What this repo configures, and how
 
 ### Homebrew itself, Git, Pyenv, and Poetry
@@ -30,9 +41,7 @@ These are stored in the `[python-tools]` table of `config.toml`, and installed w
 
 ### Visual Studio Code extensions
 
-**Not implemented yet**
-
-These are stored in the `[vscode-extensions]` table of `config.toml`.
+These are stored in the `[vscode]` table of `config.toml`.
 
 ## What this project does not install
 
