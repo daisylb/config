@@ -87,6 +87,20 @@ casks = [
     "wkhtmltopdf",
 ]
 
+[python]
+tools = [
+    'black',
+    'boom',
+    'cookiecutter',
+    'httpie',
+    'mycli',
+    'nox',
+    # 'pgcli',
+    'pre-commit',
+    'tox',
+    'twine',
+, "cowsay"]
+
 [vscode]
 extensions = [
     "onecrayon.theme-quietlight-vsc",

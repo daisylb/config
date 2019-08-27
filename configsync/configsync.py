@@ -71,7 +71,23 @@ def do_homebrew(homebrew_doc, mode):
         if mode == 'uninstall':
             subprocess.check_call(('brew', 'bundle', 'cleanup', '--force', f'--file={infile}'))
 
-
+def do_python(python_doc, mode):
+    pipx_dir = HOME / '.local' / 'pipx' / 'venvs'
+    installed = {x.name for x in pipx_dir.iterdir()}
+    for tool in python_doc['tools']:
+        if tool in installed:
+            print(f'Already installed {tool}')
+        else:
+            print(f'Installing {tool}')
+            subprocess.check_call(('pipx', 'install', tool))
+    for tool in installed.difference(python_doc['tools']):
+        if mode == 'add':
+            python_doc['tools'].append(tool)
+        else:
+            print(f'Uninstalling {tool}')
+            subprocess.check_call(('pipx', 'uninstall', tool))
+    print('Upgrading installed Python tools')
+    subprocess.check_call(('pipx', 'upgrade-all'))
 
 def do_vscode_extensions(vscode_doc, mode):
     installed_exts = command_set('code', '--list-extensions')
@@ -98,7 +114,8 @@ def run():
         doc = parse(f.read())
 
     do_symlinks(doc['symlinks'])
-    do_homebrew(doc['homebrew'], mode)
+    #do_homebrew(doc['homebrew'], mode)
+    do_python(doc['python'], mode)
     do_vscode_extensions(doc['vscode'], mode)
 
     with open('../config.toml', 'w') as f:
