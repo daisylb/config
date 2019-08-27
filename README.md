@@ -2,6 +2,8 @@
 
 This repository is essentially my dotfiles for my local machine, with a bit of extra configuration magic.
 
+It replaces a previous version that used a Chef cookbook. The reason for replacing it with a custom script is that every time I used it, I spent a fair chunk of time updating my configuration to match what had changed in the Chef universe since I touched it last. As an added bonus, this way is simpler and faster.
+
 ## How to use
 
 - Clone this repository somewhere.
