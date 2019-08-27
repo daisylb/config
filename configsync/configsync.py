@@ -19,7 +19,7 @@ def do_symlinks(symlink_doc):
             else:
                 dest.unlink()
         elif dest.exists():
-            raise Error(f'{dest} exists and is not a symlink!')
+            raise Exception(f'{dest} exists and is not a symlink!')
         print(f'Linking {src} <- {dest}')
         dest.symlink_to(src)
 

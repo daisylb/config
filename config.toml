@@ -1,3 +1,7 @@
 [symlinks]
 vscode-config = "~/Library/Application Support/Code/User"
 fish-config = "~/.config/fish"
+git-config = "~/.gitconfig"
+git-ignore = "~/.git-ignore-global"
+git-template = "~/.git-template"
+git-message = "~/.git-message"

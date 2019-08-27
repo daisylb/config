@@ -1,0 +1,51 @@
+[user]
+	name = Leigh Brenecki
+    email = leigh@brenecki.id.au
+[core]
+	excludesfile = ~/.git-ignore-global
+	autocrlf = input
+[push]
+	default = simple
+[log]
+	date = iso
+[color]
+	ui = true
+[alias]
+    # this has to shell out, b/c otherwise Git doesn't expand $HOME
+    lconfig = !git config --file $HOME/.gitconfig_local
+    gconfig = !git config --file $HOME/config/git/config
+	iclean = clean -id
+	ref = "!git rev-parse HEAD | GREP_COLORS='ms=34;1' grep $(git rev-parse --short=0 HEAD)"
+	v = describe --dirty --tags
+	trim = !git branch --merged master | cut -c 3- | grep -v \"^master$\" | xargs git branch -d
+	ignore = !echo >> .gitignore
+	ignore-local = !mkdir -p .git/info && echo >> .git/info/exclude
+    stashall = stash save --include-untracked
+    fix-author = commit --amend --reset-author --no-verify --no-edit
+[merge]
+	conflictstyle = diff3
+	tool = charm
+[difftool "charm"]
+	cmd = charm diff \"$LOCAL\" \"$REMOTE\" 2>/dev/null
+[mergetool "charm"]
+	cmd = charm merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" 2>/dev/null
+[diff]
+	tool = charm
+#[transfer]
+#    fsckobjects = true
+#[fetch]
+#    fsckobjects = true
+#[receive]
+#    fsckobjects = true
+[init]
+	templatedir = ~/.git-template
+[commit]
+	template = ~/.git-message
+[credential]
+    helper = osxkeychain
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true

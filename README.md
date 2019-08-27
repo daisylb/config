@@ -14,6 +14,7 @@ A handful of tools have configuration files or directories in this repo. Symlink
 
 - `vscode-config`: Visual Studio Code
 - `fish-config`: Fish shell
+- `git-{config,ignore,template,message}`: Git
 
 ### Homebrew packages, Homebrew Casks and Mac App Store packages
 

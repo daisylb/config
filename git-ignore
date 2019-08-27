@@ -1,0 +1,54 @@
+# Mac OS
+*~
+._*
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Python
+*.pyc
+*.pyo
+*.egg
+*.egg-info/*
+dist/*
+build/*
+.hypothesis/*
+__pycache__/*
+.cache/*
+.eggs/*
+.python-version
+.mypy_cache
+
+# Node.js
+node_modules/*
+
+# Sublime Text 2
+*.sublime-project
+*.sublime-workspace
+.codeintel/*
+.ropeproject/*
+
+# TextMate
+.tm_properties
+.vfenv
+
+# IntelliJ IDEA
+.idea/*
+*.iml
+.project
+.settings
+
+# Vim
+.tags
+*.swp
+*.swo
+
+# Visual Studio Code
+.vscode
+
+# VirtualFish
+.venv
+
+# Tern
+.tern-project
+.tern-port
