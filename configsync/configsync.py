@@ -69,7 +69,7 @@ def do_homebrew(homebrew_doc, mode):
                 f.write(f'cask "{cask}"\n')
         subprocess.check_call(('brew', 'bundle', 'install', f'--file={infile}'))
         if mode == 'uninstall':
-            subprocess.check_call(('brew', 'bundle', 'cleanup', f'--file={infile}'))
+            subprocess.check_call(('brew', 'bundle', 'cleanup', '--force', f'--file={infile}'))
 
 
 
