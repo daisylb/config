@@ -88,7 +88,10 @@ def do_python(python_doc, mode):
         subprocess.check_call((global_python_root / 'bin' / 'pip', 'install', '--user', 'pipx'))
 
     pipx_dir = HOME / '.local' / 'pipx' / 'venvs'
-    installed = {x.name for x in pipx_dir.iterdir()}
+    if pipx_dir.exists():
+        installed = {x.name for x in pipx_dir.iterdir()}
+    else:
+        installed = set()
     for tool in python_doc['tools']:
         if tool in installed:
             print(f'Already installed {tool}')
@@ -111,7 +114,7 @@ def do_vscode_extensions(vscode_doc, mode):
             print(f'Already installed {ext}')
         else:
             print(f'Installing {ext}')
-            subprocess.check_call('code', '--install-extension', ext)
+            subprocess.check_call(('code', '--install-extension', ext))
     for ext in installed_exts.difference(vscode_doc['extensions']):
         if mode == 'add':
             print(f'Adding {ext} to config')
@@ -129,7 +132,7 @@ def run():
         doc = parse(f.read())
 
     do_symlinks(doc['symlinks'])
-    #do_homebrew(doc['homebrew'], mode)
+    do_homebrew(doc['homebrew'], mode)
     do_python(doc['python'], mode)
     do_vscode_extensions(doc['vscode'], mode)
 

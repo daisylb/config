@@ -19,14 +19,16 @@ set -gx EDITOR "vim"
 set -x GLOBAL_GOPATH $HOME/.go-global/
 set -x GOPATH $GLOBAL_GOPATH
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-function __it2_pyenv_integration --on-variable PWD --on-variable PYENV_VERSION
-	iterm2_set_user_var pyenvVersion (command pyenv version-name | tr ":" " ")
-end
-__it2_pyenv_integration
-function pyenv
-    command pyenv $argv
+if test $TERM_PROGRAM = "iTerm.app" -a -e {$HOME}/.iterm2_shell_integration.fish
+    source {$HOME}/.iterm2_shell_integration.fish
+    function __it2_pyenv_integration --on-variable PWD --on-variable PYENV_VERSION
+        iterm2_set_user_var pyenvVersion (command pyenv version-name | tr ":" " ")
+    end
     __it2_pyenv_integration
+    function pyenv
+        command pyenv $argv
+        __it2_pyenv_integration
+    end
 end
 
 if test -d $HOME/Library/Android/sdk
