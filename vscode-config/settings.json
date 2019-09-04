@@ -116,6 +116,7 @@
         "defectreport",
         "graphene",
         "inspectable",
+        "inspectionitemresponse",
         "netloc",
         "noqa",
         "pipenv",

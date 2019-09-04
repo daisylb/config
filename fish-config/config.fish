@@ -1,11 +1,12 @@
 set -gx PATH /usr/local/bin $PATH
 status --is-interactive; and source (pyenv init -|psub)
-set -gx PATH ~/config/fish/scripts ~/.local/bin ~/.cargo/bin ~/.npm-global/bin ~/.go-global/bin  ~/.gem/ruby/*/bin $PATH
+set -gx PATH ~/config/fish/scripts ~/.local/bin ~/.cargo/bin ~/.n/bin ~/.go-global/bin  ~/.gem/ruby/*/bin $PATH
 source ~/.poetry/env
 
 if test -d /usr/local/opt/android-sdk
     set -gx ANDROID_HOME /usr/local/opt/android-sdk
 end
+
 
 if which rbenv
     rbenv rehash >/dev/null ^&1
@@ -18,6 +19,8 @@ set -gx EDITOR "vim"
 
 set -x GLOBAL_GOPATH $HOME/.go-global/
 set -x GOPATH $GLOBAL_GOPATH
+
+set -x N_PREFIX $HOME/.n
 
 if test $TERM_PROGRAM = "iTerm.app" -a -e {$HOME}/.iterm2_shell_integration.fish
     source {$HOME}/.iterm2_shell_integration.fish

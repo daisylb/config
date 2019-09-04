@@ -26,7 +26,8 @@ brews = [
     "libpq", # needed for pgcli
     "mas",
     "mosh",
-    "node",
+    "n",
+    #"node", installed via "n"
     "p7zip",
     "pandoc",
     "pv",
@@ -93,19 +94,26 @@ casks = [
 ]
 
 [python]
-global-version = '3.7.1'
+global-version = "3.7.1"
+extra-path = ["/usr/local/opt/libpq/bin"]
+library-path = ["/usr/local/opt/openssl/lib"]
 tools = [
-    'black',
-    'boom',
-    'cookiecutter',
-    'httpie',
-    'mycli',
-    'nox',
-    'pgcli',
-    'pre-commit',
-    'tox',
-    'twine',
+    "black",
+    "boom",
+    "cookiecutter",
+    "httpie",
+    "litecli",
+    "mycli",
+    "nox",
+    "pgcli",
+    "pre-commit",
+    "tox",
+    "twine",
 ]
+
+[python.pyenv-plugins]
+pyenv-virtualenv = "https://github.com/pyenv/pyenv-virtualenv.git"
+pyenv-install-latest = "https://github.com/momo-lab/pyenv-install-latest.git"
 
 [vscode]
 extensions = [

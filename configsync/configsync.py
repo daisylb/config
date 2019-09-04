@@ -107,6 +107,23 @@ def do_python(python_doc, mode):
     print('Upgrading installed Python tools')
     subprocess.check_call(('pipx', 'upgrade-all'))
 
+    pyenv_root = Path(subprocess.check_output(('pyenv', 'root')).decode('utf8').strip())
+    pyenv_installed = {x.name for x in (pyenv_root / 'plugins').iterdir()}
+    for plugin, git_path in python_doc['pyenv-plugins'].items():
+        if plugin in pyenv_installed:
+            print(f'{plugin} is already installed')
+        else:
+            print(f'Installing {plugin}')
+            subprocess.check_call(('git', 'clone', git_path, pyenv_root / 'plugins' / plugin))
+    for plugin in pyenv_installed.difference(python_doc['pyenv-plugins'].keys()):
+        if mode == 'add':
+            origin = subprocess.check_output(('git', '-C', pyenv_root / 'plugins' / plugin, 'config', '--get', 'remote.origin.url')).decode('utf8').strip()
+            python_doc['pyenv-plugins'][plugin] = origin
+        else:
+            print(f'Uninstalling {plugin}')
+            rmtree(pyenv_root / 'plugins' / plugin)
+
+
 def do_vscode_extensions(vscode_doc, mode):
     installed_exts = command_set('code', '--list-extensions')
     for ext in vscode_doc['extensions']:
