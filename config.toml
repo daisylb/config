@@ -9,8 +9,9 @@ git-message = "~/.git-message"
 [homebrew]
 taps = [
     "homebrew/bundle",
-    "homebrew/cask",
+    "homebrew/cask-drivers",
     "homebrew/cask-fonts",
+    "homebrew/cask",
     "homebrew/core",
     "homebrew/services",
 ]
@@ -21,13 +22,12 @@ brews = [
     "fish",
     "git",
     "gitlab-runner",
-    #"heroku",
     "jq",
+    "libgit2",
     "libpq", # needed for pgcli
     "mas",
     "mosh",
     "n",
-    #"node", installed via "n"
     "p7zip",
     "pandoc",
     "pv",
@@ -38,6 +38,8 @@ brews = [
     "tree",
     "watchman",
     "wget",
+    #"heroku",
+    #"node", installed via "n"
 ]
 casks = [
     "1password-cli",
@@ -113,7 +115,7 @@ tools = [
 
 [python.pyenv-plugins]
 pyenv-virtualenv = "https://github.com/pyenv/pyenv-virtualenv.git"
-pyenv-install-latest = "https://github.com/momo-lab/pyenv-install-latest.git"
+xxenv-latest = "https://github.com/momo-lab/xxenv-latest.git"
 
 [vscode]
 extensions = [
