@@ -1,0 +1,37 @@
+/Users/*/Library/Caches
+/Users/*/Containers/com.docker.docker
+/Users/*/Library/Application Support/TabNine/models
+/Users/*/Library/Application Support/**/Cache
+/Users/*/Library/Application Support/Caches
+/Users/*/Library/Android/sdk
+/Users/*/Parallels
+/Users/*/VirtualBox VMs
+/Users/*/Downloads
+/Users/*/.android
+/Users/*/.cache
+/Users/*/.cargo
+/Users/*/.local/pipx
+/Users/*/.n
+/Users/*/.npm
+/Users/*/.poetry
+/Users/*/.pyenv
+/Users/*/.rustup
+/Users/*/.vscode/extensions
+.tox
+.nox
+.gradle
+__pycache__
+node_modules
+android/app/build
+.mypy_cache
+/Users/leighbrenecki/CMV/fleet/fleet/global-static/build
+
+# The below are all disallowed by macOS:
+/Users/*/Library/Application Support/AddressBook
+/Users/*/Library/Application Support/CallHistoryDB
+/Users/*/Library/Application Support/CallHistoryTransactions
+/Users/*/Library/Application Support/MobileSync
+/Users/*/Library/Application Support/com.apple.TCC
+/Users/*/Library/Calendars
+/Users/*/Library/Containers/com.apple.Safari
+/Users/*/Library/Containers/com.apple.mail

@@ -24,26 +24,21 @@ def get_dir_id():
     return f'db-{head}-{sha}'
 
 
-def get_port():
+def get_port(name):
     p = path.abspath(path.curdir)
-    head = path.basename(p)
-    sha_int = int.from_bytes(sha3_224(p.encode('utf8')).digest(), 'big')
+    to_sha = f'{p}:{name}'
+    print(to_sha)
+    sha_int = int.from_bytes(sha3_224(to_sha.encode('utf8')).digest(), 'big')
     return (sha_int % 55535) + 10000
 
-
-@click.command()
-def main():
-    config = get_config()
-    client = docker.from_env()
-    port = get_port()
-    dir_id = get_dir_id()
-    image = f"{config['main']['type']}:{config['main']['version']}"
+def run_mysql(client, config, name, port):
+    image = f"mysql:{config['version']}"
     client.containers.run(
         image=image,
-        name=dir_id,
+        name=name,
         detach=True,
         ports={'3306/tcp': port},
-        volumes={f'{dir_id}-data': {'bind': '/var/lib/mysql', 'mode': 'rw'}},
+        volumes={f'{name}-data': {'bind': '/var/lib/mysql', 'mode': 'rw'}},
         environment={
             'MYSQL_USER': 'user',
             'MYSQL_PASSWORD': 'password',
@@ -54,6 +49,35 @@ def main():
     )
     print(f'mysql://user:password@localhost:{port}/db')
     print(f'mysql://root:root@localhost:{port}/db')
+
+def run_redis(client, config, name, port):
+    image = f"redis:{config['version']}"
+    client.containers.run(
+        image=image,
+        name=name,
+        detach=True,
+        ports={'6379/tcp': port},
+        remove=True,
+    )
+    print(f'redis://localhost:{port}/')
+
+
+runners = {
+    'mysql': run_mysql,
+    'redis': run_redis,
+}
+
+@click.command()
+def main():
+    config = get_config()
+    client = docker.from_env()
+    dir_id = get_dir_id()
+    for i, (k, v) in enumerate(config.items()):
+        print(k, v)
+        print()
+        print(f'[{k}]')
+        port = get_port(k)
+        runners[v['type']](client, v, f'{dir_id}-{k}', port)
 
 if __name__ == "__main__":
     main()

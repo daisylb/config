@@ -10,7 +10,7 @@
 *.pyo
 *.egg
 *.egg-info/*
-dist/*
+# dist/*
 build/*
 .hypothesis/*
 __pycache__/*
