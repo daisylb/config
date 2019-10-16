@@ -6,100 +6,113 @@ git-ignore = "~/.git-ignore-global"
 git-template = "~/.git-template"
 git-message = "~/.git-message"
 
-[homebrew]
-taps = [
-    "homebrew/bundle",
-    "homebrew/cask-drivers",
-    "homebrew/cask-fonts",
-    "homebrew/cask",
-    "homebrew/core",
-    "homebrew/services",
-]
-brews = [
-    "docker",
-    "duti",
-    "ffmpeg",
-    "fish",
-    "git",
-    "gitlab-runner",
-    "jq",
-    "libgit2",
-    "libpq", # needed for pgcli
-    "mas",
-    "mosh",
-    "n",
-    "p7zip",
-    "pandoc",
-    "pv",
-    "pyenv",
-    "ripgrep",
-    "rtmpdump",
-    "rustup-init",
-    "tree",
-    "watchman",
-    "wget",
-    #"heroku",
-    #"node", installed via "n"
-]
-casks = [
-    "1password-cli",
-    "1password",
-    "adobe-creative-cloud",
-    "android-studio",
-    "appcleaner",
-    "balenaetcher",
-    "bettertouchtool",
-    "chatmate-for-whatsapp",
-    "daisydisk",
-    "dash",
-    "docker",
-    "firefox",
-    "fliqlo",
-    "font-fira-code",
-    "font-fira-mono",
-    "font-fira-sans",
-    "font-lato",
-    "font-roboto-mono",
-    "font-source-code-pro",
-    "font-source-sans-pro",
-    "font-source-serif-pro",
-    "font-work-sans",
-    "fontstand",
-    "gitup",
-    "google-cloud-sdk",
-    "handbrake",
-    "hex-fiend",
-    "iina",
-    "imageoptim",
-    "iterm2",
-    "java",
-    "moom",
-    "ngrok",
-    "notion",
-    "openemu",
-    "opera",
-    "paw",
-    "phoenix",
-    "postman",
-    "rocket",
-    "setapp",
-    "sketch",
-    "slack",
-    "spotify",
-    "teamviewer",
-    "transmission",
-    "visual-studio-code",
-    "vlc",
-    "volt",
-    "wkhtmltopdf",
-    #"font-aleo",
-]
+[homebrew.taps]
+"homebrew/bundle" = true
+"homebrew/cask" = true
+"homebrew/cask-drivers" = true
+"homebrew/cask-fonts" = true
+"homebrew/core" = true
+"homebrew/services" = true
+
+[homebrew.brews]
+cpulimit = true
+duti = true
+rtmpdump = true
+# ffmpeg = true # fails to install for some reason
+fish = true
+gdb = true
+git = true
+gitlab-runner = true
+# heroku = true
+jq = true
+libgit2 = true
+libpq = {link = "true"} # needed for pgcli
+mas = true
+modd = true
+mosh = true
+mysql-client = true
+n = true
+# node = true - installed via 'n'
+p7zip = true
+pandoc = true
+pv = true
+pyenv = true
+restic = true
+ripgrep = true
+rsync = true
+rustup-init = true
+socat = true
+tree = true
+watchman = true
+wget = true
+
+[homebrew.casks]
+1password = true
+1password-cli = true
+adobe-creative-cloud = true
+android-studio = true
+appcleaner = true
+balenaetcher = true
+bettertouchtool = true
+chatmate-for-whatsapp = true
+daisydisk = true
+dash = true
+docker = true
+firefox = true
+fliqlo = true
+font-fira-code = true
+font-fira-mono = true
+font-fira-sans = true
+font-lato = true
+font-roboto-mono = true
+font-source-code-pro = true
+font-source-sans-pro = true
+font-source-serif-pro = true
+font-work-sans = true
+fontstand = true
+gitup = true
+google-chrome = true
+google-cloud-sdk = true
+handbrake = true
+hex-fiend = true
+iina = true
+imageoptim = true
+iterm2 = true
+java = true
+lastpass = true
+moom = true
+mountain-duck = true
+ngrok = true
+notion = true
+openemu = true
+opera = true
+parallels = true
+paw = true
+phoenix = true
+plex-media-player = true
+postman = true
+rocket = true
+setapp = true
+sketch = true
+slack = true
+spotify = true
+teamviewer = true
+textmate = true
+transmission = true
+videostream = true
+virtualbox = true
+visual-studio-code = true
+vlc = true
+volt = true
+wkhtmltopdf = true
+zerotier-one = true
 
 [python]
 global-version = "3.7.1"
 extra-path = ["/usr/local/opt/libpq/bin"]
 library-path = ["/usr/local/opt/openssl/lib"]
 tools = [
+    "awscli",
     "black",
     "boom",
     "cookiecutter",
@@ -119,28 +132,29 @@ xxenv-latest = "https://github.com/momo-lab/xxenv-latest.git"
 
 [vscode]
 extensions = [
-    "onecrayon.theme-quietlight-vsc",
-    "ms-vscode-remote.remote-wsl",
-    "thenikso.github-plus-theme",
     "akamud.vscode-theme-onelight",
-    "ms-python.python",
-    "lextudio.restructuredtext",
-    "ms-vscode-remote.remote-containers",
-    "ms-vscode-remote.vscode-remote-extensionpack",
     "bungcip.better-toml",
-    "TabNine.tabnine-vscode",
+    "champgm.cloudformation-yaml-validator",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "lunaryorn.fish-ide",
+    "formulahendry.auto-rename-tag",
     "kalitaalexey.vscode-rust",
     "kumar-harsh.graphql-for-vscode",
-    "ms-vscode-remote.remote-ssh-edit",
-    "streetsidesoftware.code-spell-checker",
-    "rust-lang.rust",
-    "formulahendry.auto-rename-tag",
-    "ms-vscode-remote.remote-ssh",
-    "ms-vscode-remote.remote-ssh-explorer",
-    "redhat.java",
-    "skyapps.fish-vscode",
+    "lextudio.restructuredtext",
+    "lunaryorn.fish-ide",
     "ms-azuretools.vscode-docker",
+    "ms-python.python",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh-explorer",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "onecrayon.theme-quietlight-vsc",
+    "redhat.java",
+    "rust-lang.rust",
+    "skyapps.fish-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "TabNine.tabnine-vscode",
+    "thenikso.github-plus-theme",
 ]
