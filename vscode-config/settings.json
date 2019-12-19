@@ -39,9 +39,7 @@
         "cookbooks/**": true
     },
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": false,
     "python.workspaceSymbols.tagFilePath": "${workspaceRoot}/.tags",
-    "python.venvPath": "~/.virtualenvs",
     "editor.rulers": [80],
     "files.associations": {
         "Vagrantfile": "ruby"
@@ -54,7 +52,6 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "GitHub Plus",
     "editor.minimap.enabled": false,
     "workbench.editor.showIcons": false,
     "workbench.iconTheme": null,
@@ -90,7 +87,8 @@
     },
     "rust.mode": "legacy",
     "[rust]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "rust-lang.rust"
     },
     //"python.jediEnabled": false,
     "python.venvFolders": [
@@ -103,7 +101,7 @@
     "breadcrumbs.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8CategorySeverity.E": "Warning",
-    "python.formatting.blackPath": "/Users/adam/.local/bin/black",
+    "python.formatting.blackPath": "~/.local/pipx/venvs/black/bin/black",
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "gitlens.currentLine.scrollable": false,
@@ -112,14 +110,21 @@
         "Bridgekeeper",
         "appbar",
         "autogenerating",
+        "barcode",
+        "bigint",
         "collectionlist",
         "csrftoken",
         "defectreport",
+        "deserialize",
         "droppable",
+        "errored",
         "formik",
+        "glyphmaps",
         "graphene",
+        "graphql",
         "inspectable",
         "inspectionitemresponse",
+        "itertools",
         "netloc",
         "noqa",
         "pipenv",
@@ -129,7 +134,9 @@
         "shrubbers",
         "theme",
         "toplevel",
+        "ulid",
         "unitset",
+        "urlunsplit",
         "virtualenv",
         "virtualenvs",
         "xpos",
@@ -173,4 +180,23 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "python.linting.flake8Path": "~/.local/pipx/venvs/flake8/bin/flake8",
+    "python.linting.banditEnabled": true,
+    "python.linting.banditPath": "~/.local/pipx/venvs/bandit/bin/bandit",
+    "python.linting.pylintArgs": [
+        "--disable=no-member"
+    ],
+    "diffEditor.renderSideBySide": true,
+    "workbench.editor.showTabs": false,
+    "workbench.colorTheme": "Monochrome",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "[git-commit]": {
+        "editor.rulers": [
+            50, 72
+        ],
+        "wordWrap": "off"
+    }
 }

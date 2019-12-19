@@ -1,4 +1,4 @@
-#!/usr/bin/env pyscript click docker tomlkit --
+#!/usr/bin/env espadrille click docker tomlkit --
 
 import tomlkit
 import docker

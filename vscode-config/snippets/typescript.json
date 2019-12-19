@@ -16,7 +16,14 @@
     "No, you idiot, it's 'number' not 'int''": {
         "prefix": "int",
         "body": "number"
-    },
+	},
+	"Symbol": {
+		"prefix": "symbol",
+		"body": [
+			"${2:export }const $1 = Symbol(\"$1\")",
+			"${2:export }type $1 = typeof $1",
+		]
+	},
     "Redux reducer": {
 		"prefix": "reducer",
 		"body": [

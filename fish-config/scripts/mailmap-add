@@ -1,0 +1,47 @@
+#!/usr/bin/env espadrille passlib argon2_cffi --
+
+import sys
+from pathlib import Path
+from subprocess import check_output, DEVNULL
+from passlib.hash import argon2
+import re
+
+DEAD_EMAILS = {
+    '$argon2id$v=19$m=102400,t=2,p=8$bm1tTQkhhPBe6/1f653zPg$QB1HY0urFGJg8wgsinIDZg',
+    '$argon2id$v=19$m=102400,t=2,p=8$cu59L4XQGgPgnNPaW0tpzQ$bw2CsnzZW4jQRD1vD4V+Tg',
+    '$argon2id$v=19$m=102400,t=2,p=8$pNSaU6rVOodwDgGAMObc2w$bKCLMK6Xd8fmiaZE93p28A',
+}
+
+EMAIL_RE = re.compile(r'\<(.*)\>')
+
+# print(argon2.hash('deademail@example.com'))
+
+for d in sys.argv[1:]:
+    dir = Path(d)
+    matching_emails = set()
+    if not (dir / '.git').exists():
+        continue
+
+    authors = check_output(('git', 'shortlog', '-se', '--all'), cwd=str(dir), stdin=DEVNULL)
+    for author in authors.decode('utf8').split('\n'):
+        match = EMAIL_RE.search(author)
+        if not match:
+            continue
+        email = match.group(1)
+
+        # my email has always had my last name in it
+        if 'brenecki' not in email:
+            continue
+
+        for hash in DEAD_EMAILS:
+            if argon2.verify(email, hash):
+                matching_emails.add(email)
+    
+    if not matching_emails:
+        continue
+
+    print(f"{dir}: {len(matching_emails)} dead emails")
+    with (dir/'.mailmap').open('at') as f:
+        for email in matching_emails:
+            new_email = 'leigh.brenecki@cmv.com.au' if email.endswith('@cmv.com.au') else 'leigh@brenecki.id.au'
+            f.write(f'Leigh Brenecki <leigh@brenecki.id.au> <{email}>\n')

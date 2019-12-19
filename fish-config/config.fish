@@ -32,6 +32,14 @@ if test $TERM_PROGRAM = "iTerm.app" -a -e {$HOME}/.iterm2_shell_integration.fish
         command pyenv $argv
         __it2_pyenv_integration
     end
+    function __it2_java_integration --on-variable JAVA_HOME
+        if set -q JAVA_HOME
+            iterm2_set_user_var javaVersion (basename (dirname (dirname $JAVA_HOME)))
+        else
+            iterm2_set_user_var javaVersion
+        end
+    end
+    __it2_java_integration
 end
 
 if test -d $HOME/Library/Android/sdk

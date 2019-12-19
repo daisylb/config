@@ -1,8 +1,17 @@
 /Users/*/Library/Caches
-/Users/*/Containers/com.docker.docker
+/Users/*/Library/Logs
+/Users/*/Library/Containers/*/Data/Library/Caches
+/Users/*/Library/Containers/*/Data/Library/CloudKit
+/Users/*/Library/Group Containers/*/Library/Application Support/duck/Cache
+/Users/*/Library/Containers/com.docker.docker
 /Users/*/Library/Application Support/TabNine/models
 /Users/*/Library/Application Support/**/Cache
 /Users/*/Library/Application Support/Caches
+/Users/*/Library/Application Support/Slack
+/Users/*/Library/Application Support/Spotify
+/Users/*/Library/Application Support/discord
+/Users/*/Library/Application Support/Setapp
+/Users/leighbrenecki/Library/Application Support/com.apple.ProtectedCloudStorage
 /Users/*/Library/Android/sdk
 /Users/*/Parallels
 /Users/*/VirtualBox VMs
@@ -17,6 +26,12 @@
 /Users/*/.pyenv
 /Users/*/.rustup
 /Users/*/.vscode/extensions
+/Users/*/.Trash
+/Users/*/.pnpm-store
+/Users/*/.pylint.d
+/Users/*/.hotel/daemon.log
+/Users/*/.videostream
+/Users/*/.gradle/caches
 .tox
 .nox
 .gradle
@@ -25,6 +40,13 @@ node_modules
 android/app/build
 .mypy_cache
 /Users/leighbrenecki/CMV/fleet/fleet/global-static/build
+co.gitup.mac/cache.db
+docs/_build
+*.pyc
+*.pyo
+.hypothesis
+*.rlib
+*.rmeta
 
 # The below are all disallowed by macOS:
 /Users/*/Library/Application Support/AddressBook
@@ -35,3 +57,16 @@ android/app/build
 /Users/*/Library/Calendars
 /Users/*/Library/Containers/com.apple.Safari
 /Users/*/Library/Containers/com.apple.mail
+/Users/*/Library/Cookies
+/Users/*/Library/HomeKit
+/Users/*/Library/IdentityServices
+/Users/*/Library/Mail
+/Users/*/Library/Messages
+/Users/*/Library/Metadata/CoreSpotlight
+/Users/*/Library/Metadata/com.apple.IntelligentSuggestions
+/Users/*/Library/PersonalizationPortrait
+/Users/*/Library/Preferences/com.apple.homed.notbackedup.plist
+/Users/*/Library/Preferences/com.apple.homed.plist
+/Users/*/Library/Preferences/com.apple.mail-shared.plist
+/Users/*/Library/Safari
+/Users/*/Library/Suggestions

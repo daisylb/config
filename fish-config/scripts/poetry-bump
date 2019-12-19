@@ -1,4 +1,4 @@
-#!/usr/bin/env pyscript tomlkit click --
+#!/usr/bin/env espadrille tomlkit click --
 import click
 import tomlkit
 import subprocess

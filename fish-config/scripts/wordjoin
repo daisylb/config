@@ -1,4 +1,4 @@
-#!/usr/bin/env pyscript click --
+#!/usr/bin/env espadrille click --
 import click
 
 @click.command()

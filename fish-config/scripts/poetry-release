@@ -1,4 +1,4 @@
-#!/usr/bin/env pyscript tomlkit --
+#!/usr/bin/env espadrille tomlkit --
 import tomlkit
 import subprocess
 import sys
