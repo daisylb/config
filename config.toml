@@ -8,31 +8,42 @@ git-message = "~/.git-message"
 
 [homebrew.taps]
 "homebrew/bundle" = true
-"homebrew/cask" = true
 "homebrew/cask-drivers" = true
 "homebrew/cask-fonts" = true
+"homebrew/cask" = true
 "homebrew/core" = true
 "homebrew/services" = true
+"teamookla/speedtest" = true
 
 [homebrew.brews]
-cpulimit = true
-duti = true
-rtmpdump = true
+"mysql@5.6" = true
+"mysql@5.7" = true
+"openjdk@11" = true
+"postgresql@9.6" = true
+"teamookla/speedtest/speedtest" = true
 # ffmpeg = true # fails to install for some reason
+# heroku = true
+# node = true - installed via 'n'
+cocoapods = true
+cpulimit = true
+devd = true
+duti = true
 fish = true
 gdb = true
 git = true
 gitlab-runner = true
-# heroku = true
+gradle = true
+htop = true
 jq = true
+ktlint = true
 libgit2 = true
 libpq = {link = "true"} # needed for pgcli
 mas = true
+micropython = true
 modd = true
 mosh = true
 mysql-client = true
 n = true
-# node = true - installed via 'n'
 p7zip = true
 pandoc = true
 pv = true
@@ -40,6 +51,7 @@ pyenv = true
 restic = true
 ripgrep = true
 rsync = true
+rtmpdump = true
 rustup-init = true
 socat = true
 tree = true
@@ -50,6 +62,7 @@ wget = true
 1password = true
 1password-cli = true
 adobe-creative-cloud = true
+alfred = true
 android-studio = true
 appcleaner = true
 balenaetcher = true
@@ -57,13 +70,18 @@ bettertouchtool = true
 chatmate-for-whatsapp = true
 daisydisk = true
 dash = true
+discord = true
 docker = true
+figma = true
 firefox = true
 fliqlo = true
 font-fira-code = true
 font-fira-mono = true
 font-fira-sans = true
+font-inter = true
 font-lato = true
+font-overpass = true
+font-pt-sans = true
 font-roboto-mono = true
 font-source-code-pro = true
 font-source-sans-pro = true
@@ -105,6 +123,8 @@ visual-studio-code = true
 vlc = true
 volt = true
 wkhtmltopdf = true
+workflowy = true
+yubico-authenticator = true
 zerotier-one = true
 
 [python]
@@ -113,15 +133,18 @@ extra-path = ["/usr/local/opt/libpq/bin"]
 library-path = ["/usr/local/opt/openssl/lib"]
 tools = [
     "awscli",
+    "bandit",
     "black",
     "boom",
     "cookiecutter",
+    "flake8",
     "httpie",
     "litecli",
     "mycli",
     "nox",
     "pgcli",
     "pre-commit",
+    "rshell",
     "tox",
     "twine",
 ]
@@ -133,11 +156,14 @@ xxenv-latest = "https://github.com/momo-lab/xxenv-latest.git"
 [vscode]
 extensions = [
     "akamud.vscode-theme-onelight",
+    "apollographql.vscode-apollo",
     "bungcip.better-toml",
     "champgm.cloudformation-yaml-validator",
+    "eamodio.gitlens",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
+    "fwcd.kotlin",
     "kalitaalexey.vscode-rust",
     "kumar-harsh.graphql-for-vscode",
     "lextudio.restructuredtext",
@@ -157,4 +183,12 @@ extensions = [
     "streetsidesoftware.code-spell-checker",
     "TabNine.tabnine-vscode",
     "thenikso.github-plus-theme",
+    "tomoki1207.pdf",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "vscjava.vscode-java-debug",
+    "vscjava.vscode-java-dependency",
+    "vscjava.vscode-java-pack",
+    "vscjava.vscode-java-test",
+    "vscjava.vscode-maven",
+    "wix.vscode-import-cost",
 ]
