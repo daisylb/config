@@ -6,18 +6,20 @@ It replaces a previous version that used a Chef cookbook. The reason for replaci
 
 ## How to use
 
-- Clone this repository somewhere.
-- Run `./run.sh add`.
-- Look at the diff of `config.toml`, and remove unwanted packages.
-- Run `./run.sh uninstall`.
+```sh
+xcode-select --install
+git clone https://github.com/excitedleigh/config.git
+cd config
+./run.sh add
+# look at the diff of config.toml, and remove unwanted packages
+./run.sh uninstall
+```
 
 `run.sh` invokes a Python project in the `configsync` subdirectory, whose behaviour is described in detail in the following section. It installs everything that is listed in `config.toml`; additionally, things that are not listed in `config.toml` are either added to that file (if `add` is passed) or uninstalled (if `uninstall` is passed).
 
 ## What this repo configures, and how
 
 ### Homebrew itself, Git, Pyenv, and Poetry
-
-**Not implemented yet**
 
 These are configured by the bootstrap script, because they are needed for configsync to run.
 
