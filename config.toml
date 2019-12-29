@@ -32,7 +32,7 @@ fish = true
 gdb = true
 git = true
 gitlab-runner = true
-gradle = true
+# gradle = true
 htop = true
 jq = true
 ktlint = true
@@ -118,7 +118,7 @@ teamviewer = true
 textmate = true
 transmission = true
 videostream = true
-virtualbox = true
+# virtualbox = true
 visual-studio-code = true
 vlc = true
 volt = true
@@ -128,7 +128,7 @@ yubico-authenticator = true
 zerotier-one = true
 
 [python]
-global-version = "3.7.1"
+global-version = "3.8.0"
 extra-path = ["/usr/local/opt/libpq/bin"]
 library-path = ["/usr/local/opt/openssl/lib"]
 tools = [
@@ -191,4 +191,5 @@ extensions = [
     "vscjava.vscode-java-test",
     "vscjava.vscode-maven",
     "wix.vscode-import-cost",
+    "iansan5653.format-python-docstrings",
 ]

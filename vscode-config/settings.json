@@ -45,7 +45,12 @@
         "Vagrantfile": "ruby"
     },
     "[python]": {
-        "editor.rulers": [72, 79, 88]
+        "editor.rulers": [
+            72,
+            79,
+            88
+        ],
+        "editor.defaultFormatter": "ms-python.python"
     },
     "[javascript]": {
         "editor.tabSize": 2,
