@@ -1,0 +1,2 @@
+#!/bin/zsh
+for script in ~/config/git/hook-scripts/post-checkout/*; do $script $*; done

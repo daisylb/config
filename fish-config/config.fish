@@ -25,7 +25,12 @@ set -x N_PREFIX $HOME/.n
 if test $TERM_PROGRAM = "iTerm.app" -a -e {$HOME}/.iterm2_shell_integration.fish
     source {$HOME}/.iterm2_shell_integration.fish
     function __it2_pyenv_integration --on-variable PWD --on-variable PYENV_VERSION
-        iterm2_set_user_var pyenvVersion (command pyenv version-name | tr ":" " ")
+        set pyver (command pyenv version-name | tr ":" " ")
+        if test -n $pyver
+            iterm2_set_user_var pyenvVersion "pyenv: $pyver"
+        else
+            iterm2_set_user_var pyenvVersion
+        end
     end
     __it2_pyenv_integration
     function pyenv
@@ -34,12 +39,20 @@ if test $TERM_PROGRAM = "iTerm.app" -a -e {$HOME}/.iterm2_shell_integration.fish
     end
     function __it2_java_integration --on-variable JAVA_HOME
         if set -q JAVA_HOME
-            iterm2_set_user_var javaVersion (basename (dirname (dirname $JAVA_HOME)))
+            iterm2_set_user_var javaVersion "java: "(basename (dirname (dirname $JAVA_HOME)))
         else
             iterm2_set_user_var javaVersion
         end
     end
     __it2_java_integration
+    function __it2_android_serial --on-variable ANDROID_SERIAL
+        if set -q ANDROID_SERIAL
+            iterm2_set_user_var androidSerial "android: $ANDROID_SERIAL"
+        else
+            iterm2_set_user_var androidSerial
+        end
+    end
+    __it2_android_serial
 end
 
 if test -d $HOME/Library/Android/sdk

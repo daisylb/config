@@ -1,0 +1,4 @@
+#!/bin/zsh
+docker system prune
+brew cleanup -s
+rm -rf $(brew --cache)

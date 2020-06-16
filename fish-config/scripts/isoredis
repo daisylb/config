@@ -1,0 +1,51 @@
+#!/usr/bin/env espadrille click appdirs --
+
+import click
+import subprocess
+from pathlib import Path
+import appdirs
+from hashlib import sha1
+from time import sleep
+from os import execl
+
+REDIS_CONF = """
+bind 127.0.0.1 ::1
+port {port}
+logfile ""
+
+save 900 1
+save 300 10
+save 60 10000
+dbfilename dump.rdb
+dir "{dir}"
+"""
+
+REDISDIR = Path(appdirs.user_data_dir('isoredis', 'Leigh Brenecki'))
+
+@click.command()
+@click.argument('version')
+@click.argument('name')
+def main(version: str, name: str):
+    prefix = Path(subprocess.check_output(('brew', '--prefix', f'redis@{version}')).decode('utf8').strip())
+    port = (int(sha1(f'redis\0{version}\0{name}'.encode('utf8')).hexdigest(), 16) % 55536) + 10000
+
+    if not prefix.exists():
+        print("That version of Redis is not installed.")
+        print(f"To install it, run: brew install redis@{version}")
+        exit(1)
+
+    data_dir = REDISDIR / version / name
+    redis_conf_path = data_dir / 'redis.conf'
+    is_new = not data_dir.exists()
+    if is_new:
+        data_dir.mkdir(parents=True)
+        with redis_conf_path.open('w') as f:
+            f.write(REDIS_CONF.format(port=port, dir=str(data_dir)))
+    
+    print(f"redis://localhost:{port}/0")
+
+    execl(prefix / 'bin' / 'redis-server', 'redis-server', redis_conf_path)
+
+
+if __name__ == '__main__':
+    main()

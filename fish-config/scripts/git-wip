@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+import subprocess
+import re
+import time
+import sys
+import string
+import itertools
+
+initial_consonants = (set(string.ascii_lowercase) - set('aeiou')
+                      # remove those easily confused with others
+                      - set('qxc')
+                      # add some crunchy clusters
+                      | set(['bl', 'br', 'cl', 'cr', 'dr', 'fl',
+                             'fr', 'gl', 'gr', 'pl', 'pr', 'sk',
+                             'sl', 'sm', 'sn', 'sp', 'st', 'str',
+                             'sw', 'tr'])
+                      )
+
+final_consonants = (set(string.ascii_lowercase) - set('aeiou')
+                    # confusable
+                    - set('qxcsj')
+                    # crunchy clusters
+                    | set(['ct', 'ft', 'mp', 'nd', 'ng', 'nk', 'nt',
+                           'pt', 'sk', 'sp', 'ss', 'st'])
+                    )
+
+vowels = 'aeiou' # we'll keep this simple
+
+# each syllable is consonant-vowel-consonant "pronounceable"
+syllables = tuple(''.join(x) for x in itertools.product(initial_consonants, 
+                                           vowels, 
+                                           final_consonants))
+
+def number_to_string(num: int, alphabet: str) -> str:
+    base = len(alphabet)
+    digits = []
+    while num:
+        digits.append(alphabet[num % base])
+        num //= base
+    return ''.join(digits[::-1])
+
+olc_alphabet = '23456789CFGHJMPQRVWX'
+
+branch = subprocess.check_output(('git', 'branch', '--show-current')).decode('utf8').strip()
+branch_match = re.match(r'(.*)\.wip-[A-Za-z0-9]+$', branch)
+if not branch_match:
+    time_str = number_to_string(int(time.time() % 315_360_000), syllables)
+    subprocess.check_call(('git', 'switch', '-c', f'{branch}.wip-{time_str}'))
+
+if sys.argv[1:] == ['done']:
+    orig_branch = branch_match.group(1)
+    subprocess.check_call(('git', 'add', '-A'))
+    subprocess.check_call(('git', 'commit', '--no-verify', '--allow-empty', '-m', 'final wip'))
+    subprocess.check_call(('git', 'symbolic-ref', 'HEAD', f'refs/heads/{orig_branch}'))
+    
+else:
+    if not subprocess.run(('git', 'diff-index', '--cached', '--quiet', 'HEAD')).returncode:
+        print("No staged changes, staging everything...")
+        subprocess.check_call(('git', 'add', '-A'))
+    subprocess.check_call(('git', 'commit', '--no-verify', *sys.argv[1:], '-m', 'wip'))

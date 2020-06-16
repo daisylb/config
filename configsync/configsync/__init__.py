@@ -7,6 +7,7 @@ import subprocess
 from sys import argv
 
 from .homebrew import do_homebrew
+from .rust import do_rust
 
 PROJ = Path.cwd().parent
 HOME = Path.home()
@@ -120,6 +121,7 @@ def run():
     do_symlinks(doc['symlinks'])
     do_homebrew(doc['homebrew'], mode)
     do_python(doc['python'], mode)
+    do_rust(doc['rust'], mode)
     do_vscode_extensions(doc['vscode'], mode)
 
     with open('../config.toml', 'w') as f:

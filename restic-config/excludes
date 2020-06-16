@@ -11,7 +11,9 @@
 /Users/*/Library/Application Support/Spotify
 /Users/*/Library/Application Support/discord
 /Users/*/Library/Application Support/Setapp
-/Users/leighbrenecki/Library/Application Support/com.apple.ProtectedCloudStorage
+/Users/*/Library/Application Support/com.apple.ProtectedCloudStorage
+/Users/*/Library/Application Support/Google/Chrome
+/Users/*/Library/Application Support/Steam
 /Users/*/Library/Android/sdk
 /Users/*/Parallels
 /Users/*/VirtualBox VMs
@@ -25,6 +27,8 @@
 /Users/*/.poetry
 /Users/*/.pyenv
 /Users/*/.rustup
+/Users/*/.asdf
+/Users/*/Library/asdf
 /Users/*/.vscode/extensions
 /Users/*/.Trash
 /Users/*/.pnpm-store
@@ -32,6 +36,10 @@
 /Users/*/.hotel/daemon.log
 /Users/*/.videostream
 /Users/*/.gradle/caches
+/Users/*/.local/share/fish/generated_completions
+/Users/*/Pictures/Photos Library.photoslibrary
+/Users/*/.vagrant.d
+/Users/*/Projects/pi-gen/deploy
 .tox
 .nox
 .gradle
@@ -39,7 +47,10 @@ __pycache__
 node_modules
 android/app/build
 .mypy_cache
-/Users/leighbrenecki/CMV/fleet/fleet/global-static/build
+/Users/*/CMV/fleet/fleet/global-static/build
+/Users/*/CMV/*/media
+/Users/*/CMV/*/*/media
+/Users/*/CMV/*/collected-static
 co.gitup.mac/cache.db
 docs/_build
 *.pyc
@@ -47,6 +58,7 @@ docs/_build
 .hypothesis
 *.rlib
 *.rmeta
+Pods
 
 # The below are all disallowed by macOS:
 /Users/*/Library/Application Support/AddressBook
@@ -70,3 +82,8 @@ docs/_build
 /Users/*/Library/Preferences/com.apple.mail-shared.plist
 /Users/*/Library/Safari
 /Users/*/Library/Suggestions
+/Users/*/Library/Application Support/FileProvider
+/Users/*/Library/Application Support/com.apple.sharedfilelist
+/Users/*/Library/Autosave Information
+/Users/*/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider
+/Users/*/Library/Sharing

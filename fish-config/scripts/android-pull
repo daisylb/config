@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+PACKAGE=$1
+TARGET=$2
+INTERMEDIATE=$(mktemp -d)
+BUPFILE=$INTERMEDIATE/backup.ab
+
+adb backup -f $BUPFILE $PACKAGE
+mkdir -p $TARGET
+dd if=$BUPFILE bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.buffer.write(zlib.decompress(sys.stdin.buffer.read()))" | tar -x --cd $TARGET
+
+rm -rf $INTERMEDIATE

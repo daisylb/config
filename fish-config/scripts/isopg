@@ -1,0 +1,42 @@
+#!/usr/bin/env espadrille click appdirs --
+
+import click
+import subprocess
+from pathlib import Path
+import appdirs
+from hashlib import sha1
+from time import sleep
+from os import execl
+
+PGDIR = Path(appdirs.user_data_dir('isopg', 'Leigh Brenecki'))
+
+@click.command()
+@click.argument('version')
+@click.argument('name')
+@click.option('--port')
+def main(version: str, name: str, port: int):
+    #prefix = Path(subprocess.check_output(('brew', '--prefix', f'postgresql@{version}')).decode('utf8').strip())
+    prefix = Path.home() / 'Library' / 'asdf' / 'installs' / 'postgres' / version
+    port = port or (int(sha1(f'{version}\0{name}'.encode('utf8')).hexdigest(), 16) % 55536) + 10000
+
+    if not prefix.exists():
+        print("That version of PostgreSQL is not installed.")
+        # print(f"To install it, run: brew install postgresql@{version}")
+        print(f"To install it, run: asdf install postgresql {version}")
+        exit(1)
+
+    data_dir = PGDIR / version / name
+    if not data_dir.exists():
+        data_dir.mkdir(parents=True)
+        subprocess.check_call((prefix / 'bin' / 'initdb', data_dir))
+    
+    if data_dir.stat().st_ctime < 1590456978:
+        print(f"postgres://localhost:{port}/db")
+    else:
+        print(f"postgres://localhost:{port}/postgres")
+
+    execl(prefix / 'bin' / 'postgres', 'postgres', '-D', data_dir, '-p', str(port))
+
+
+if __name__ == '__main__':
+    main()

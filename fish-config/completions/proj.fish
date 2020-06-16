@@ -1,0 +1,1 @@
+complete -xc proj -a "(for x in ~/Projects/*/; if test -d \$x; echo (basename \$x); end; end)"

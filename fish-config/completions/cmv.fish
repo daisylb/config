@@ -1,0 +1,1 @@
+complete -xc cmv -a "(for x in ~/CMV/*/; if test -d \$x; echo (basename \$x); end; end)"

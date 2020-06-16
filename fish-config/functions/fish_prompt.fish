@@ -10,7 +10,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
 	if test $TERM_PROGRAM = "iTerm.app"
-		echo -n -s (set_color -o green) "→" (set_color normal) ' '
+		echo -n -s (set_color -o green) "❯" (set_color normal) ' '
 		return
 	end
 
@@ -83,5 +83,5 @@ function fish_prompt --description 'Write out the prompt'
 	echo -n -s (set_color -o cyan) (prompt_pwd)
 
 	# Prompt
-	echo -n -s (set_color -o green) "→" (set_color normal) ' '
+	echo -n -s (set_color -o green) "❯" (set_color normal) ' '
 end

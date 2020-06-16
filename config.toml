@@ -14,11 +14,11 @@ git-message = "~/.git-message"
 "homebrew/core" = true
 "homebrew/services" = true
 "teamookla/speedtest" = true
+"adoptopenjdk/openjdk" = true
 
 [homebrew.brews]
 "mysql@5.6" = true
 "mysql@5.7" = true
-"openjdk@11" = true
 "postgresql@9.6" = true
 "teamookla/speedtest/speedtest" = true
 # ffmpeg = true # fails to install for some reason
@@ -96,7 +96,6 @@ hex-fiend = true
 iina = true
 imageoptim = true
 iterm2 = true
-java = true
 lastpass = true
 moom = true
 mountain-duck = true
@@ -126,6 +125,7 @@ wkhtmltopdf = true
 workflowy = true
 yubico-authenticator = true
 zerotier-one = true
+adoptopenjdk8 = true
 
 [python]
 global-version = "3.8.0"
@@ -193,3 +193,5 @@ extensions = [
     "wix.vscode-import-cost",
     "iansan5653.format-python-docstrings",
 ]
+
+[rust]

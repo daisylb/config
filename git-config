@@ -1,6 +1,6 @@
 [user]
 	name = Leigh Brenecki
-    email = leigh@brenecki.id.au
+	email = l@leigh.net.au
 [core]
 	excludesfile = ~/.git-ignore-global
 	autocrlf = input
@@ -9,7 +9,11 @@
 [log]
 	date = iso
 [color]
-	ui = true
+	ui = auto
+	branch = auto
+	status = auto
+	advice = auto
+	decorate = auto
 [alias]
     # this has to shell out, b/c otherwise Git doesn't expand $HOME
     lconfig = !git config --file $HOME/.gitconfig_local
@@ -49,3 +53,5 @@
 [mergetool "sourcetree"]
     cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
+[pull]
+	rebase = false

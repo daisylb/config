@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import subprocess
+from pathlib import Path
+from os.path import expanduser
+
+START_LINE = "# START LIBGIT2 WORKAROUND ENTRIES\n"
+END_LINE = "# END LIBGIT2 WORKAROUND ENTRIES\n"
+
+toplevel = Path(subprocess.check_output(('git', 'rev-parse', '--show-toplevel')).decode('utf8').strip())
+exclude_file = toplevel / '.git' / 'info' / 'exclude'
+exclude_file.parent.mkdir(parents=True, exist_ok=True)
+
+entries = []
+try:
+    with exclude_file.open('r') as f:
+        in_hack_entries = False
+        for line in f:
+            if line == START_LINE:
+                in_hack_entries = True
+            elif line == END_LINE:
+                in_hack_entries = False
+            elif not in_hack_entries:
+                entries.append(line)
+except FileNotFoundError:
+    pass
+
+global_ignore_path = expanduser(subprocess.check_output(('git', 'config', 'core.excludesfile')).strip())
+
+with exclude_file.open('w') as f:
+    for e in entries: f.write(e)
+    if entries and entries[-1][-1] != '\n':
+        f.write('\n')
+    f.write(START_LINE)
+    with open(global_ignore_path, 'r') as ifile:
+        f.write(ifile.read())
+    f.write('\n')
+    f.write(END_LINE)
+
+subprocess.check_call(('open', '-a', 'GitUp', str(toplevel)))

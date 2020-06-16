@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    ln -s ~/config/launch-agents/party.leigh.personal.backup.plist ~/Library/LaunchAgents/party.leigh.personal.backup.plist
+    launchctl bootstrap gui/501 ~/Library/LaunchAgents/party.leigh.personal.backup.plist
+    launchctl kickstart -k gui/501/party.leigh.personal.backup
+    launchctl print gui/501/party.leigh.personal.backup | grep state
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>party.leigh.personal.autonoodle</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/leigh/config/fish-config/scripts/autonoodle</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/leigh/.poetry/bin:/Users/leigh/config/fish-config/scripts:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/Users/leigh/.n/bin:/Users/leigh/.go-global/bin:/Users/leigh/.pyenv/shims:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools</string>
+    </dict>
+    <key>StartInterval</key>
+    <integer>3600</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
+</dict>
+</plist>

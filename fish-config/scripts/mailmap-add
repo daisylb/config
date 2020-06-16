@@ -11,6 +11,9 @@ DEAD_EMAILS = {
     '$argon2id$v=19$m=102400,t=2,p=8$cu59L4XQGgPgnNPaW0tpzQ$bw2CsnzZW4jQRD1vD4V+Tg',
     '$argon2id$v=19$m=102400,t=2,p=8$pNSaU6rVOodwDgGAMObc2w$bKCLMK6Xd8fmiaZE93p28A',
 }
+OLD_EMAILS = {
+    "leigh@brenecki.id.au",
+}
 
 EMAIL_RE = re.compile(r'\<(.*)\>')
 
@@ -29,6 +32,10 @@ for d in sys.argv[1:]:
             continue
         email = match.group(1)
 
+        if email in OLD_EMAILS:
+            matching_emails.add(email)
+            continue
+
         # my email has always had my last name in it
         if 'brenecki' not in email:
             continue
@@ -43,5 +50,5 @@ for d in sys.argv[1:]:
     print(f"{dir}: {len(matching_emails)} dead emails")
     with (dir/'.mailmap').open('at') as f:
         for email in matching_emails:
-            new_email = 'leigh.brenecki@cmv.com.au' if email.endswith('@cmv.com.au') else 'leigh@brenecki.id.au'
-            f.write(f'Leigh Brenecki <leigh@brenecki.id.au> <{email}>\n')
+            new_email = 'leigh.brenecki@cmv.com.au' if email.endswith('@cmv.com.au') else 'l@leigh.net.au'
+            f.write(f'Leigh Brenecki <{new_email}> <{email}>\n')

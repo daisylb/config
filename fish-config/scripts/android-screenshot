@@ -1,0 +1,8 @@
+#!/bin/zsh
+set -euo pipefail
+SSPATH=/sdcard/screencap-$(date -u +"%Y-%m-%dT%H:%M:%SZ").png
+LOCALPATH=${1:-screenshot.png}
+adb shell screencap -p $SSPATH
+adb pull $SSPATH $LOCALPATH
+adb shell rm $SSPATH
+echo "Screenshot saved to $LOCALPATH"

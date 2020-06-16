@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    sudo launchctl bootout system/party.leigh.personal.hotelrdr
+    sudo cp config/launch-daemons/party.leigh.personal.hotelrdr.plist /Library/LaunchDaemons/
+    sudo launchctl bootstrap system /Library/LaunchDaemons/party.leigh.personal.hotelrdr.plist
+    sudo launchctl kickstart -k system/party.leigh.personal.hotelrdr
+    launchctl print system/party.leigh.personal.hotelrdr | grep "last exit code"
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>party.leigh.personal.hotelrdr</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>echo -e "rdr pass proto tcp from any to 172.30.168.134 port 443 -> 127.0.0.1 port 2001" | pfctl -a "com.apple/250.Hotel" -Ef -</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

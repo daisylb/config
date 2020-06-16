@@ -1,0 +1,8 @@
+#!/bin/zsh
+sqlite3 -cmd "
+insert into preferences
+select 1 as key, data.rowid as data_id, pictures.rowid as picture_id
+from data cross join pictures
+where data.rowid = (select rowid from data order by rowid desc limit 1);
+" ~/Library/Application\ Support/Dock/desktoppicture.db </dev/null
+killall Dock

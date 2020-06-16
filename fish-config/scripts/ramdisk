@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+from pathlib import Path
+from subprocess import check_output, check_call
+from time import sleep
+from sys import argv
+
+rd = Path('/Volumes/Ramdisk')
+cfd = Path(Path.home() / 'Library' / 'Application Support' / 'Ramdisk' / 'directories.txt')
+
+if not rd.exists():
+    device = Path(check_output(('hdiutil', 'attach', '-nomount', 'ram://4096000')).decode('utf8').strip())
+    while not device.exists():
+        sleep(0.1)
+    check_call(('diskutil', 'apfs', 'create', device, 'Ramdisk'))
+
+if cfd.exists():
+    with cfd.open() as f:
+        directories = {x.strip() for x in f}
+else:
+    cfd.parent.mkdir(parents=True, exist_ok=True)
+    directories = set()
+
+if len(argv) > 1:
+    directories.update(argv[1:])
+    print(directories)
+    with cfd.open('w') as f:
+        for dirp in directories:
+            f.write(dirp)
+            f.write('\n')
+
+for dirp in directories:
+    dird = rd / dirp
+    if not dird.exists():
+        print(f'Creating {dirp}')
+        dird.mkdir()
+
+"""
+if test ! -d /Volumes/Ramdisk; then
+    DEVICE=$(hdiutil attach -nomount ram://4096000)
+    while test ! -e $DEVICE; do sleep 1; done
+    diskutil partitionDisk $DEVICE 1 GPTFormat APFS 'Ramdisk' '100%'
+fi
+mkdir /Volumes/Ramdisk/$1
+"""

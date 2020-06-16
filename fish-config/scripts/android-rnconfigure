@@ -1,0 +1,8 @@
+#!/bin/zsh
+adb shell input keyevent 82 
+sleep 0.5
+adb shell input keyevent 20 20 20 20 20 20 20 20 20 66
+sleep 0.5
+adb shell input keyevent 20 20 20 20 20 66
+sleep 0.5
+adb shell input text "sylveon.t.leigh.party:$1"

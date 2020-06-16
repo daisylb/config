@@ -1,10 +1,11 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'ISO v0.6', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
-    "editor.fontSize": 15,
+    "editor.fontFamily": "'Inter', 'ISO v0.6', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
+    "editor.fontLigatures": "'ss02",
+    "editor.letterSpacing": 0.3,
+    "editor.fontSize": 17,
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "indent",
-    "editor.fontLigatures": true,
     "files.autoSave": "onFocusChange",
     //"files.autoSaveDelay": 100,
     "files.exclude": {
@@ -32,11 +33,12 @@
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
-        "**/migrations/*.py": true,
         "dist/**": true,
         "build/**": true,
         "media/**": true,
-        "cookbooks/**": true
+        "cookbooks/**": true,
+        ".pytest_cache/**": true,
+        ".hypothesis/**": true
     },
     "python.linting.enabled": true,
     "python.workspaceSymbols.tagFilePath": "${workspaceRoot}/.tags",
@@ -61,14 +63,6 @@
     "workbench.editor.showIcons": false,
     "workbench.iconTheme": null,
     "python.formatting.provider": "black",
-    "[restructuredtext]": {
-        "editor.wordWrapColumn": 80,
-        "editor.wordWrap": "bounded"
-    },
-    "[markdown]": {
-        "editor.wordWrapColumn": 80,
-        "editor.wordWrap": "bounded"
-    },
     "[ruby]": {
         "editor.tabSize": 2
     },
@@ -193,7 +187,7 @@
     ],
     "diffEditor.renderSideBySide": true,
     "workbench.editor.showTabs": false,
-    "workbench.colorTheme": "Monochrome",
+    "workbench.colorTheme": "Quiet Light",
     "java.configuration.checkProjectSettingsExclusions": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -203,5 +197,42 @@
             50, 72
         ],
         "wordWrap": "off"
-    }
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "yaml.validate": false,
+    "sql-formatter.uppercase": true
 }

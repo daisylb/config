@@ -1,0 +1,66 @@
+#!/usr/bin/env espadrille pybase62 --
+
+import base62
+import sys
+import secrets
+
+bit_count = int(sys.argv[1])
+secret_num = secrets.randbits(bit_count)
+
+print(base62.encode(secret_num))
+
+
+import subprocess
+import re
+import time
+import sys
+import string
+import itertools
+
+initial_consonants = (set(string.ascii_lowercase) - set('aeiou')
+                      # remove those easily confused with others
+                      - set('qxc')
+                      # add some crunchy clusters
+                      | set(['bl', 'br', 'cl', 'cr', 'dr', 'fl',
+                             'fr', 'gl', 'gr', 'pl', 'pr', 'sk',
+                             'sl', 'sm', 'sn', 'sp', 'st', 'str',
+                             'sw', 'tr'])
+                      )
+
+final_consonants = (set(string.ascii_lowercase) - set('aeiou')
+                    # confusable
+                    - set('qxcsj')
+                    # crunchy clusters
+                    | set(['ct', 'ft', 'mp', 'nd', 'ng', 'nk', 'nt',
+                           'pt', 'sk', 'sp', 'ss', 'st'])
+                    )
+
+vowels = 'aeiou' # we'll keep this simple
+
+# each syllable is consonant-vowel-consonant "pronounceable"
+syllables = tuple(''.join(x) for x in itertools.product(initial_consonants, 
+                                           vowels, 
+                                           final_consonants))
+
+def number_to_string(num: int, alphabet: str, sep: str = '') -> str:
+    base = len(alphabet)
+    digits = []
+    while num:
+        digits.append(alphabet[num % base])
+        num //= base
+    return sep.join(digits[::-1])
+
+olc_alphabet = '23456789CFGHJMPQRVWX'
+
+words = []
+
+with open('/usr/share/dict/words') as wf:
+    for line in wf:
+        ls = line.strip()
+        if ls:
+            words.append(ls)
+
+print(number_to_string(secret_num, olc_alphabet))
+print(number_to_string(secret_num, syllables, sep=' '))
+print(number_to_string(secret_num, words, sep=' '))
+

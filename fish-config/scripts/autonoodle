@@ -1,0 +1,26 @@
+#!/usr/bin/env espadrille lifxlan pyobjc-framework-Quartz --
+
+from lifxlan import LifxLAN
+from subprocess import check_output
+from sys import exit
+from time import sleep
+import Quartz
+
+
+while True:
+    sleep(5)
+    # determine if we are at home
+    wifi_info = check_output(('/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport', '-I'))
+    if b'the interblag' not in wifi_info:
+        continue
+
+    usb_devs = check_output(("system_profiler", "SPUSBDataType"))
+    plugged_in = b"DLC813702AUG2KQAT" in usb_devs
+
+    d = Quartz.CGSessionCopyCurrentDictionary()
+    session_active = 'CGSSessionScreenIsLocked' not in d.keys()
+
+    lan = LifxLAN()
+
+    noodle = lan.get_device_by_name("Desk noodle")
+    noodle.set_power(65535 if plugged_in and session_active else 0)
