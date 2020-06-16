@@ -35,20 +35,13 @@ def do_symlinks(symlink_doc):
 
 
 def do_python(python_doc, mode):
-    global_python_root = HOME / '.pyenv' / 'versions' / python_doc['global-version']
-    if global_python_root.exists():
-        print(f'Already installed Python {python_doc["global-version"]}')
-    else:
-        print(f'Installing Python {python_doc["global-version"]}')
-        subprocess.check_call(('pyenv', 'install', python_doc['global-version']))
-
     pipx_bin = HOME / '.local' / 'bin' / 'pipx'
 
     if pipx_bin.exists():
         print('Already installed pipx')
     else:
         print('Installing pipx')
-        subprocess.check_call((global_python_root / 'bin' / 'pip', 'install', '--user', 'pipx'))
+        subprocess.check_call(('pip', 'install', '--user', 'pipx'))
 
     pipx_dir = HOME / '.local' / 'pipx' / 'venvs'
     if pipx_dir.exists():
@@ -74,24 +67,6 @@ def do_python(python_doc, mode):
             subprocess.check_call(('pipx', 'uninstall', tool))
     print('Upgrading installed Python tools')
     subprocess.check_call(('pipx', 'upgrade-all'))
-
-    pyenv_root = Path(subprocess.check_output(('pyenv', 'root')).decode('utf8').strip())
-    pyenv_plugins = pyenv_root / 'plugins'
-    pyenv_plugins.mkdir(parents=True, exist_ok=True)
-    pyenv_installed = {x.name for x in pyenv_plugins.iterdir()}
-    for plugin, git_path in python_doc['pyenv-plugins'].items():
-        if plugin in pyenv_installed:
-            print(f'{plugin} is already installed')
-        else:
-            print(f'Installing {plugin}')
-            subprocess.check_call(('git', 'clone', git_path, pyenv_root / 'plugins' / plugin))
-    for plugin in pyenv_installed.difference(python_doc['pyenv-plugins'].keys()):
-        if mode == 'add':
-            origin = subprocess.check_output(('git', '-C', pyenv_root / 'plugins' / plugin, 'config', '--get', 'remote.origin.url')).decode('utf8').strip()
-            python_doc['pyenv-plugins'][plugin] = origin
-        else:
-            print(f'Uninstalling {plugin}')
-            rmtree(pyenv_root / 'plugins' / plugin)
 
 
 def do_vscode_extensions(vscode_doc, mode):

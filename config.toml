@@ -18,9 +18,6 @@ git-message = "~/.git-message"
 "adoptopenjdk/openjdk" = true
 
 [homebrew.brews]
-"mysql@5.6" = true
-"mysql@5.7" = true
-"postgresql@9.6" = true
 "teamookla/speedtest/speedtest" = true
 # ffmpeg = true # fails to install for some reason
 # heroku = true
@@ -44,11 +41,9 @@ micropython = true
 modd = true
 mosh = true
 mysql-client = true
-n = true
 p7zip = true
 pandoc = true
 pv = true
-pyenv = true
 restic = true
 ripgrep = true
 rsync = true
@@ -62,7 +57,6 @@ wget = true
 [homebrew.casks]
 1password = true
 1password-cli = true
-adobe-creative-cloud = true
 alfred = true
 android-studio = true
 appcleaner = true
@@ -149,10 +143,6 @@ tools = [
     "tox",
     "twine",
 ]
-
-[python.pyenv-plugins]
-pyenv-virtualenv = "https://github.com/pyenv/pyenv-virtualenv.git"
-xxenv-latest = "https://github.com/momo-lab/xxenv-latest.git"
 
 [vscode]
 extensions = [
