@@ -8,22 +8,16 @@ $EDITOR = 'code --wait'
 
 xontrib load direnv abbrevs
 
-path_extras = (
-    '~/.poetry/bin',
-    '~/config/scripts',
-    '~/.local/bin',
-    '~/.cargo/bin',
-    '~/.go-global/bin',
-    '/usr/local/bin',
-    '~/Library/Android/sdk/tools',
-    '~/Library/Android/sdk/platform-tools',
-)
+$PATH.add(p'~/.poetry/bin')
+$PATH.add(p'~/config/scripts')
+$PATH.add(p'~/.local/bin')
+$PATH.add(p'~/.cargo/bin')
+$PATH.add(p'/usr/local/bin')
 
-$ANDROID_HOME = expanduser('~/Library/Android/sdk')
+$PATH.add(p'~/Library/Android/sdk/tools')
+$PATH.add(p'~/Library/Android/sdk/tools')
+$ANDROID_HOME = p'~/Library/Android/sdk'
 
-$PATH = [
-    expanduser(x) for x in path_extras if x not in $PATH
- ] + $PATH
 
 $AUTO_CD = True
 $AUTO_SUGGEST_IN_COMPLETIONS = True
@@ -141,9 +135,9 @@ _ASDF_EXPORT_RE = re.compile(r'export ([A-Z\_]+)="([^"]+)"|unset ([A-Z\_]+)')
 
 
 # asdf
-$ASDF_DIR = $(brew --prefix asdf).strip()
-$ASDF_DATA_DIR = $HOME + '/Library/asdf'
-$PATH.insert(0, $ASDF_DATA_DIR + '/shims')
+$ASDF_DIR = p'/usr/local/opt/asdf'
+$ASDF_DATA_DIR = p'~/Library/asdf'
+$PATH.add($ASDF_DATA_DIR / 'shims', front=True)
 def _wrap_asdf(args):
     # if args[0] == 'install':
     #     return ![env -i PATH=$PATH ASDF_DIR=$ASDF_DIR ASDF_DATA_DIR=$ASDF_DATA_DIR asdf @(args)]
