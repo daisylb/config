@@ -5,28 +5,22 @@ import subprocess
 from tomlkit import inline_table
 
 
-BREW_LINE_RE = re.compile(r'^(tap|brew|cask) \"([^\"]+)\"\w*((?:,[^\:]+:\w*[^,]+)*)?$')
+BREW_LINE_RE = re.compile(r'^(tap|brew|cask) \"([^\"]+)\"(\w*,\w*([^\n]*)$)?')
 
 def line_to_kv(line):
     match = BREW_LINE_RE.match(line)
     if match is None:
         raise ValueError(f"Don't understand line {line!r}")
     kind, name, arglist = (x.strip() for x in match.groups())
-    if arglist:
-        args = inline_table()
-        for item in arglist.split(','):
-            if not item: continue
-            k, v = item.split(':')
-            args[k.strip()] = v.strip()
-        return kind, name, args
-    else:
-        return kind, name, True
+    return kind, name, arglist or True
 
 def kv_to_line(kind, name, args):
     if args is True:
         arg_str = ''
     elif isinstance(args, dict):
         arg_str = ', ' + ', '.join(f'{k}: {v}' for k, v in args.items())
+    elif isinstance(args, str):
+        arg_str = f', {args}'
     else:
         raise ValueError(f'Homebrew package must be true or a table, got {args!r}')
     return f'{kind} "{name}"{arg_str}\n'
