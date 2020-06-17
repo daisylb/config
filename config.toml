@@ -1,11 +1,9 @@
 [symlinks]
-vscode-config = "~/Library/Application Support/Code/User"
-fish-config = "~/.config/fish"
-git-config = "~/.gitconfig"
-git-ignore = "~/.git-ignore-global"
-git-template = "~/.git-template"
-git-message = "~/.git-message"
+vscode = "~/Library/Application Support/Code/User"
+fish = "~/.config/fish"
+"git/config" = "~/.gitconfig"
 "xonsh/rc.xsh" = "~/.xonshrc"
+"asdf/global-versions" = "~/.tool-versions"
 
 [homebrew.taps]
 "homebrew/bundle" = true

@@ -2,7 +2,7 @@
 	name = Leigh Brenecki
 	email = l@leigh.net.au
 [core]
-	excludesfile = ~/.git-ignore-global
+	excludesfile = ~/config/git/ignore
 	autocrlf = input
 [push]
 	default = simple
@@ -42,9 +42,9 @@
 #[receive]
 #    fsckobjects = true
 [init]
-	templatedir = ~/.git-template
+	templatedir = ~/config/git/template
 [commit]
-	template = ~/.git-message
+	template = ~/config/git/message
 [credential]
     helper = osxkeychain
 [difftool "sourcetree"]
