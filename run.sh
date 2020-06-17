@@ -2,8 +2,8 @@
 export ASDF_DIR=/usr/local/opt/asdf 
 export ASDF_DATA_DIR=$HOME/Library/asdf
 
-PYTHON_ROOT=$ASDF_DATA_DIR/installs/python/$PY_VERSION
-PYTHON_BIN=$PYTHON_ROOT/bin
+PYTHON_ROOT=$ASDF_DATA_DIR/installs/python/$(cat .python-version)
+PYTHON_BIN=$PYTHON_ROOT/bin/python
 POETRY_BIN=$HOME/.poetry/bin/poetry
 export PATH=$ASDF_DATA_DIR/shims:$HOME/.local/bin:$PATH
 
