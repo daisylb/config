@@ -1,6 +1,6 @@
 set -gx PATH /usr/local/bin $PATH
 status --is-interactive; and source (pyenv init -|psub)
-set -gx PATH ~/config/fish-config/scripts ~/.local/bin ~/.cargo/bin ~/.n/bin ~/.go-global/bin  ~/.gem/ruby/*/bin $PATH
+set -gx PATH ~/config/scripts ~/.local/bin ~/.cargo/bin ~/.n/bin ~/.go-global/bin  ~/.gem/ruby/*/bin $PATH
 source ~/.poetry/env
 
 if test -d /usr/local/opt/android-sdk

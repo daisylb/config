@@ -10,7 +10,7 @@ xontrib load direnv abbrevs
 
 path_extras = (
     '~/.poetry/bin',
-    '~/config/fish-config/scripts',
+    '~/config/scripts',
     '~/.local/bin',
     '~/.cargo/bin',
     '~/.go-global/bin',

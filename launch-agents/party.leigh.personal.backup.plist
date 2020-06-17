@@ -12,13 +12,13 @@
     <string>party.leigh.personal.backup</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/leigh/config/fish-config/scripts/backup</string>
+        <string>/Users/leigh/config/scripts/backup</string>
         <string>scatterbug</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/Users/leigh/.poetry/bin:/Users/leigh/config/fish-config/scripts:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/Users/leigh/.n/bin:/Users/leigh/.go-global/bin:/Users/leigh/.pyenv/shims:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools</string>
+        <string>/Users/leigh/.poetry/bin:/Users/leigh/config/scripts:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/Users/leigh/.n/bin:/Users/leigh/.go-global/bin:/Users/leigh/.pyenv/shims:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools</string>
     </dict>
     <key>StartInterval</key>
     <integer>3600</integer>
