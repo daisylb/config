@@ -4,6 +4,13 @@
 [core]
 	excludesfile = ~/config/git/ignore
 	autocrlf = input
+    attributesfile = ~/config/git/attributes
+[merge "json"]
+    name = custom merge driver for json files
+    driver = git-json-merge %A %O %B
+[merge "npm"]
+	name = Automatically merge npm lockfiles
+	driver = npm-merge-driver merge %A %O %B %P
 [push]
 	default = simple
 [log]
