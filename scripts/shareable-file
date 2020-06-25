@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+import tempfile
+import sys
+import subprocess
+
+with tempfile.NamedTemporaryFile(delete=False, suffix='.txt') as f:
+    f.write(sys.stdin.buffer.read())
+
+subprocess.check_call(('open', '-R', f.name))

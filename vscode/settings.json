@@ -234,5 +234,9 @@
         "!Split sequence"
     ],
     "yaml.validate": false,
-    "sql-formatter.uppercase": true
+    "sql-formatter.uppercase": true,
+    "python.languageServer": "Microsoft",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

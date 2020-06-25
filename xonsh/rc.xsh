@@ -2,14 +2,11 @@ from collections import Counter
 from os.path import expanduser
 import tempfile
 
-del $__PYVENV_LAUNCHER__
-
 $EDITOR = 'code --wait'
 
 xontrib load direnv abbrevs
 
 $PATH.add(p'~/.poetry/bin')
-$PATH.add(p'~/config/scripts')
 $PATH.add(p'~/.local/bin')
 $PATH.add(p'~/.cargo/bin')
 $PATH.add(p'/usr/local/bin')
@@ -162,3 +159,5 @@ abbrevs['pa'] = 'poetry add'
 
 $COLOR_INPUT = True
 $COLOR_RESULTS = True
+
+$PATH.add(p'~/config/scripts', front=True, replace=True)
