@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>party.leigh.personal.cleanlinks</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/find</string>
+        <string>/Users/leigh/Library/Caches/Links/</string>
+        <string>-mindepth</string>
+        <string>2</string>
+        <string>-atime</string>
+        <string>+3d</string>
+        <string>-mtime</string>
+        <string>+3d</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>36000</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/leigh/Library/Logs/cleanlinks.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/leigh/Library/Logs/cleanlinks.log</string>
+</dict>
+</plist>

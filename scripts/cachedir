@@ -11,15 +11,15 @@ from os.path import abspath
 import sys
 
 
-tmpdir = Path('/tmp')
+tmpdir = Path('~/Library/Caches/Links').expanduser()
 source = Path(sys.argv[1])
 
 hash = sha224(abspath(source).encode('utf8'))
 digest = urlsafe_b64encode(hash.digest()).decode('utf8').rstrip('=')
-filename = f'{source.name}.{digest}.link-target'
+filename = f'{source.name}.{digest}'
 
 target = tmpdir / filename
-target.mkdir(exist_ok=True)
+target.mkdir(exist_ok=True, parents=True)
 if source.is_symlink():
     source.unlink()
 source.symlink_to(target)
