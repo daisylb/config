@@ -14,9 +14,10 @@
         <string>+3d</string>
         <string>-mtime</string>
         <string>+3d</string>
+        <string>-delete</string>
     </array>
     <key>StartInterval</key>
-    <integer>36000</integer>
+    <integer>86400</integer>
     <key>StandardOutPath</key>
     <string>/Users/leigh/Library/Logs/cleanlinks.log</string>
     <key>StandardErrorPath</key>

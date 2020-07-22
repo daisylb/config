@@ -7,8 +7,8 @@ from os.path import expanduser
 START_LINE = "# START LIBGIT2 WORKAROUND ENTRIES\n"
 END_LINE = "# END LIBGIT2 WORKAROUND ENTRIES\n"
 
-toplevel = Path(subprocess.check_output(('git', 'rev-parse', '--show-toplevel')).decode('utf8').strip())
-exclude_file = toplevel / '.git' / 'info' / 'exclude'
+toplevel = Path(subprocess.check_output(('git', 'rev-parse', '--git-dir')).decode('utf8').strip())
+exclude_file = toplevel / 'info' / 'exclude'
 exclude_file.parent.mkdir(parents=True, exist_ok=True)
 
 entries = []

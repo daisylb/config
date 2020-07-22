@@ -1,14 +1,25 @@
-#!/usr/bin/env espadrille tomlkit --
+#!/usr/bin/env espadrille tomlkit colored --
 import tomlkit
 import subprocess
 import sys
+import shlex
+import colored
 
-subprocess.check_call(("poetry", "version", *sys.argv[1:]))
+def run(*cmd, check=True, **kwargs):
+    print(colored.fore.CYAN, '>>> ', shlex.join(cmd), colored.style.RESET, sep='')
+    res = subprocess.run(cmd, **kwargs)
+    print()
+    if check:
+        res.check_returncode()
+    return res
+
+
+run("poetry", "version", *sys.argv[1:])
 with open('pyproject.toml') as f:
     new_version = tomlkit.parse(f.read())['tool']['poetry']['version']
 
-subprocess.check_call(("git", "add", "pyproject.toml"))
-subprocess.check_call(("git", "commit", "-m", f"Release {new_version}"))
-subprocess.check_call(("git", "tag", new_version))
+run("git", "add", "pyproject.toml")
+run("git", "commit", "-m", f"Release {new_version}")
+run("git", "tag", new_version)
 if input("OK to push? y/n ") == "y":
-    subprocess.check_call(("git", "push", "origin", "master", new_version))
+    run("git", "push", "origin", "master", new_version)

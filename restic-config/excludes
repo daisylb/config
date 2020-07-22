@@ -7,6 +7,11 @@
 /Users/*/Library/Application Support/TabNine/models
 /Users/*/Library/Application Support/**/Cache
 /Users/*/Library/Application Support/Caches
+/Users/*/Library/Application Support/Code/CachedData
+/Users/*/Library/Application Support/Code/CachedExtensionVCIXs
+/Users/*/Library/Application Support/Dash/DocSets
+/Users/*/Library/Application Support/Dash/Data/*.dsidx
+/Users/*/Library/Application Support/Mailspring
 /Users/*/Library/Application Support/Slack
 /Users/*/Library/Application Support/Spotify
 /Users/*/Library/Application Support/discord
@@ -22,6 +27,10 @@
 /Users/*/.cache
 /Users/*/.cargo
 /Users/*/.local/pipx
+/Users/*/.local/share/xonsh/xonsh_script_cache
+/Users/*/.local/share/NuGet
+/Users/*/.local/share/fish/generated_completions
+/Users/*/.local/share/virtualenvs
 /Users/*/.n
 /Users/*/.npm
 /Users/*/.poetry
@@ -44,6 +53,7 @@
 .nox
 .gradle
 __pycache__
+.pytest_cache
 node_modules
 android/app/build
 .mypy_cache
@@ -69,6 +79,13 @@ Pods
 /Users/*/Library/Calendars
 /Users/*/Library/Containers/com.apple.Safari
 /Users/*/Library/Containers/com.apple.mail
+/Users/*/Library/Containers/com.apple.Home
+/Users/*/Library/Containers/com.apple.SafariTechnologyPreview
+/Users/*/Library/Containers/com.apple.VoiceMemos
+/Users/*/Library/Containers/com.apple.archiveutility
+/Users/*/Library/Containers/com.apple.iChat
+/Users/*/Library/Containers/com.apple.news
+/Users/*/Library/Containers/com.apple.stocks
 /Users/*/Library/Cookies
 /Users/*/Library/HomeKit
 /Users/*/Library/IdentityServices

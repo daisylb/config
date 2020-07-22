@@ -129,6 +129,7 @@
         "pipenv",
         "pytest",
         "rego",
+        "rsplit",
         "shrubber",
         "shrubbers",
         "theme",
@@ -235,8 +236,10 @@
     ],
     "yaml.validate": false,
     "sql-formatter.uppercase": true,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "java.semanticHighlighting.enabled": true,
+    "java.requirements.JDK11Warning": false
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    launchctl bootstrap system /Library/LaunchDaemons/au.net.leigh.personal.backup-server.plist
+    launchctl print system/au.net.leigh.personal.backup-server | grep state
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>au.net.leigh.personal.backup-server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/rclone</string>
+        <string>serve</string>
+        <string>restic</string>
+        <string>/Volumes/PHD3\ Backups/restic</string>
+        <string>--addr</string>
+        <string>scatterbug.h.leigh.party:8080</string>
+        <string>--htpasswd</string>
+        <string>/Volumes/PHD3\ Backups/restic/.htpasswd</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>UserName</key>
+    <string>leigh</string>
+</dict>
+</plist>

@@ -11,9 +11,9 @@ $PATH.add(p'~/.local/bin')
 $PATH.add(p'~/.cargo/bin')
 $PATH.add(p'/usr/local/bin')
 
-$PATH.add(p'~/Library/Android/sdk/tools')
-$PATH.add(p'~/Library/Android/sdk/tools')
 $ANDROID_HOME = p'~/Library/Android/sdk'
+$PATH.add($ANDROID_HOME / 'tools')
+$PATH.add($ANDROID_HOME / 'platform-tools')
 
 
 $AUTO_CD = True
@@ -94,7 +94,13 @@ def _cdtmp():
     dir = $(mktemp -d).strip()
     cd @(dir)
 
+def _cdtmp_py():
+    _cdtmp()
+    poetry init -n >/dev/null
+    poetry config --local virtualenvs.path @($(mktemp -d).strip())
+
 aliases['cdtmp'] = _cdtmp
+aliases['cdtmp-py'] = _cdtmp_py
 
 def _android_device(args):
     (device,) = args
@@ -156,6 +162,7 @@ aliases['asdf'] = _wrap_asdf
 
 abbrevs['pr'] = 'poetry run'
 abbrevs['pa'] = 'poetry add'
+abbrevs['appsup'] = '"' + str(p'~/Library/Application Support')
 
 $COLOR_INPUT = True
 $COLOR_RESULTS = True

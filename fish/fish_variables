@@ -5,6 +5,7 @@ SETUVAR ANDROID_SERIAL_USB_swoobat_t_leigh_party:19134522504726
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:2398
 SETUVAR _fish_abbr_gc:git\x20commit
 SETUVAR _fish_abbr_gs:git\x20switch
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

@@ -5,6 +5,7 @@
 	excludesfile = ~/config/git/ignore
 	autocrlf = input
     attributesfile = ~/config/git/attributes
+	pager = delta
 [merge "json"]
     name = custom merge driver for json files
     driver = git-json-merge %A %O %B
@@ -30,9 +31,11 @@
 	v = describe --dirty --tags
 	trim = !git branch --merged master | cut -c 3- | grep -v \"^master$\" | xargs git branch -d
 	ignore = !echo >> .gitignore
-	ignore-local = !mkdir -p .git/info && echo >> .git/info/exclude
+	ignore-local = "!mkdir -p $(git rev-parse --git-dir)/info && { for I in \"$@\"; do echo $I >> .git/info/exclude; done } #"
     stashall = stash save --include-untracked
     fix-author = commit --amend --reset-author --no-verify --no-edit
+	yolo = ![[ -n $1 ]] && git tag $1 && git push origin $(git rev-parse --abbrev-ref) $1 || echo \"usage: git yolo <tag>\"
+	yeet = "!git commit \"$@\" && git push #"
 [merge]
 	conflictstyle = diff3
 	tool = charm
@@ -52,8 +55,6 @@
 	templatedir = ~/config/git/template
 [commit]
 	template = ~/config/git/message
-[credential]
-    helper = osxkeychain
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path =
@@ -62,3 +63,15 @@
     trustExitCode = true
 [pull]
 	rebase = false
+[delta]
+	light = true
+	line-numbers = true
+[interactive]
+	diffFilter = delta
+[credential]
+	helper = osxkeychain
+[credential "https://github.com"]
+	helper = manager-core
+[credential "https://dev.azure.com"]
+	helper = manager-core
+	useHttpPath = true

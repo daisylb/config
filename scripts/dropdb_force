@@ -1,5 +1,6 @@
 #!/bin/zsh
-psql -c "
+set -euo pipefail
+psql postgres -c "
     UPDATE pg_database
     SET datallowconn = false
     WHERE datname = '$1';

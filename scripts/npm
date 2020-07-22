@@ -10,6 +10,9 @@ cmd_name = os.path.basename(sys.argv[0])
 
 args = sys.argv
 
+if 'REALLY_USE_{}'.format(cmd_name.upper()) in os.environ:
+    os.execvp(cmd_name, args)
+
 try:
     args.remove('--yes-really')
 except ValueError:
