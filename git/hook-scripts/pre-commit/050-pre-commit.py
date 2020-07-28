@@ -1,4 +1,4 @@
-#!/Users/leigh/Library/asdf/installs/python/3.8.3/bin/python
+#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.8.4/bin/python
 from os import path, execlpe, environ
 from subprocess import run
 

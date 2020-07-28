@@ -5,13 +5,13 @@ import subprocess
 from tomlkit import inline_table
 
 
-BREW_LINE_RE = re.compile(r'^(tap|brew|cask) \"([^\"]+)\"(\w*,\w*([^\n]*)$)?')
+BREW_LINE_RE = re.compile(r'^(tap|brew|cask) \"([^\"]+)\"(?:\w*,\w*([^\n]*)$)?')
 
 def line_to_kv(line):
     match = BREW_LINE_RE.match(line)
     if match is None:
         raise ValueError(f"Don't understand line {line!r}")
-    kind, name, arglist = (x.strip() for x in match.groups())
+    kind, name, arglist = ((x.strip() if x is not None else x) for x in match.groups())
     return kind, name, arglist or True
 
 def kv_to_line(kind, name, args):

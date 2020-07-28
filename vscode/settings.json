@@ -241,5 +241,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "java.semanticHighlighting.enabled": true,
-    "java.requirements.JDK11Warning": false
+    "java.requirements.JDK11Warning": false,
+    "tabnine.experimentalAutoImports": true
 }

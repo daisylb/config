@@ -15,6 +15,8 @@ $ANDROID_HOME = p'~/Library/Android/sdk'
 $PATH.add($ANDROID_HOME / 'tools')
 $PATH.add($ANDROID_HOME / 'platform-tools')
 
+$LIBRARY_PATH = '/usr/local/opt/openssl/lib/'
+
 
 $AUTO_CD = True
 $AUTO_SUGGEST_IN_COMPLETIONS = True
@@ -142,8 +144,8 @@ $ASDF_DIR = p'/usr/local/opt/asdf'
 $ASDF_DATA_DIR = p'~/Library/asdf'
 $PATH.add($ASDF_DATA_DIR / 'shims', front=True)
 def _wrap_asdf(args):
-    # if args[0] == 'install':
-    #     return ![env -i PATH=$PATH ASDF_DIR=$ASDF_DIR ASDF_DATA_DIR=$ASDF_DATA_DIR asdf @(args)]
+    if args[0] == 'install':
+        return ![env -i PATH=$PATH ASDF_DIR=$ASDF_DIR ASDF_DATA_DIR=$ASDF_DATA_DIR asdf @(args)]
     if args and args[0] == 'shell':
         for line in !(command asdf export-shell-version sh @(args[1:])):
             match_obj = _ASDF_EXPORT_RE.match(line.strip())

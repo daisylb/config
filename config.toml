@@ -79,7 +79,7 @@ tree = true
 watchman = true
 wget = true
 ykman = true
-yubikey-agent = {restart_service = "true"}
+yubikey-agent = "restart_service: true"
 
 [homebrew.casks]
 # virtualbox = true
@@ -112,7 +112,6 @@ font-inter = true
 font-lato = true
 font-overpass = true
 font-pt-sans = true
-font-roboto-mono = true
 font-source-code-pro = true
 font-source-sans-pro = true
 font-source-serif-pro = true
@@ -139,7 +138,6 @@ ngrok = true
 notion = true
 obs = true
 openemu = true
-opera = true
 osxfuse = true
 parallels = true
 patchwork = true
@@ -150,7 +148,6 @@ plex-media-player = true
 postman = true
 quitter = true
 retroarch = true
-riot = true
 rocket = true
 setapp = true
 signal = true
@@ -166,9 +163,8 @@ textmate = true
 transmission = true
 vagrant = true
 videostream = true
-virtualbox = true
 visual-studio-code = true
-vlc = true
+# vlc = true
 volt = true
 webex-teams = true
 wireshark = true
@@ -213,7 +209,6 @@ extensions = [
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
     "fwcd.kotlin",
-    "kalitaalexey.vscode-rust",
     "kumar-harsh.graphql-for-vscode",
     "lextudio.restructuredtext",
     "lunaryorn.fish-ide",
