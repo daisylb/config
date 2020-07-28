@@ -1,3 +1,2 @@
 package-lock.json merge=npm
 npm-shrinkwrap.json merge=npm
-*.json merge=json

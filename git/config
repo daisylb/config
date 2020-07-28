@@ -11,7 +11,7 @@
     driver = git-json-merge %A %O %B
 [merge "npm"]
 	name = Automatically merge npm lockfiles
-	driver = npm-merge-driver merge %A %O %B %P
+	driver = ~/.config/yarn/global/node_modules/.bin/npm-merge-driver merge %A %O %B %P
 [push]
 	default = simple
 [log]

@@ -13,11 +13,11 @@
         <string>/usr/local/bin/rclone</string>
         <string>serve</string>
         <string>restic</string>
-        <string>/Volumes/PHD3\ Backups/restic</string>
+        <string>/Volumes/PHD3 Backups/restic</string>
         <string>--addr</string>
         <string>scatterbug.h.leigh.party:8080</string>
         <string>--htpasswd</string>
-        <string>/Volumes/PHD3\ Backups/restic/.htpasswd</string>
+        <string>/Volumes/PHD3 Backups/restic/.htpasswd</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -25,5 +25,9 @@
     <true/>
     <key>UserName</key>
     <string>leigh</string>
+    <key>StandardOutPath</key>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
 </dict>
 </plist>

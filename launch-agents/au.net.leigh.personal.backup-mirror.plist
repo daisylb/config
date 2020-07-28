@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    launchctl bootstrap system /Library/LaunchDaemons/au.net.leigh.personal.backup-server.plist
+    launchctl print system/au.net.leigh.personal.backup-server | grep state
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>au.net.leigh.personal.backup-mirror</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/zsh</string>
+        <string>-c</string>
+        <string>
+            . ~/.backup-mirror-config.sh
+            restic forget \
+                --keep-within 7d \
+                --keep-hourly 336 \
+                --keep-daily 90 \
+                --keep-weekly 52 \
+                --keep-monthly 1200 \
+                --prune
+            rclone copy -P \
+                --bwlimit=5M --immutable \
+                --exclude locks \
+                --exclude $RESTIC_REPOSITORY/locks \
+                $RESTIC_REPOSITORY $TARGET
+        </string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>UserName</key>
+    <string>leigh</string>
+    <key>StandardOutPath</key>
+    <string>/Users/leigh/Library/Logs/backup-mirror.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/leigh/Library/Logs/backup-mirror.log</string>
+</dict>
+</plist>
