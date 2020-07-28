@@ -19,6 +19,7 @@ fish = "~/.config/fish"
 "filippo.io/yubikey-agent" = "\"https://filippo.io/yubikey-agent\""
 "getsentry/tools" = true
 "github/gh" = true
+"microsoft/git" = true
 
 [homebrew.brews]
 "cuelang/tap/cue" = true
@@ -80,6 +81,21 @@ watchman = true
 wget = true
 ykman = true
 yubikey-agent = "restart_service: true"
+"openssl@1.1" = true
+readline = true
+caddy = true
+xz = true
+cairo = true
+cmake = true
+fcct = true
+gdk-pixbuf = true
+git-delta = true
+harfbuzz = true
+libzt = true
+mp3gain = true
+pango = true
+sox = true
+tldr = true
 
 [homebrew.casks]
 # virtualbox = true
@@ -175,6 +191,11 @@ yubico-authenticator = true
 yubico-yubikey-manager = true
 zerotier-one = true
 zoomus = true
+git-credential-manager-core = true
+mailspring = true
+parsec = true
+sekey = true
+yt-music = true
 
 [python]
 global-version = "3.8.0"
@@ -236,6 +257,6 @@ extensions = [
     "vscjava.vscode-maven",
     "wix.vscode-import-cost",
     "iansan5653.format-python-docstrings",
-]
+, "kalitaalexey.vscode-rust", "adpyke.vscode-sql-formatter", "kddejong.vscode-cfn-lint", "samuelcolvin.jinjahtml", "zhouronghui.propertylist", "hangxingliu.vscode-systemd-support", "tkw01536.git-commit-format", "keyboardDrummer.vscode-cloudformation", "svelte.svelte-vscode", "liviuschera.noctis", "redhat.vscode-yaml", "ms-kubernetes-tools.vscode-kubernetes-tools", "zamerick.vscode-caddyfile-syntax", "ms-python.vscode-pylance", "alefragnani.Bookmarks"]
 
 [rust]
