@@ -69,9 +69,11 @@
 [interactive]
 	diffFilter = delta
 [credential]
-	helper = osxkeychain
+	helper = ""
 [credential "https://github.com"]
 	helper = manager-core
 [credential "https://dev.azure.com"]
 	helper = manager-core
 	useHttpPath = true
+[credential]
+	helper = manager-core

@@ -1,4 +1,4 @@
-#!/Users/leigh/Library/asdf/installs/python/3.8.2/bin/python
+#!/usr/bin/env python3
 
 from sys import argv, exit, stdout
 from os import isatty
