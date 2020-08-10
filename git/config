@@ -36,6 +36,7 @@
     fix-author = commit --amend --reset-author --no-verify --no-edit
 	yolo = ![[ -n $1 ]] && git tag $1 && git push origin $(git rev-parse --abbrev-ref) $1 || echo \"usage: git yolo <tag>\"
 	yeet = "!git commit \"$@\" && git push #"
+	push-new = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 [merge]
 	conflictstyle = diff3
 	tool = charm

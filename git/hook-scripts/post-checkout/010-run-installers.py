@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.8.4/bin/python
 
 from sys import argv, exit, stdout
 from os import isatty
@@ -19,6 +19,9 @@ def changed(file_name) -> bool:
     return exists(file_name)
 
 commands = []
+
+if changed('.tool-versions') or changed('.python-version'):
+    commands.append(('asdf', 'install'))
 
 if changed('poetry.lock'):
     commands.append(('poetry', 'install'))

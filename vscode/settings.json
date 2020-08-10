@@ -52,7 +52,8 @@
             79,
             88
         ],
-        "editor.defaultFormatter": "ms-python.python"
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnSave": true
     },
     "[javascript]": {
         "editor.tabSize": 2,
@@ -112,6 +113,7 @@
         "barcode",
         "bigint",
         "collectionlist",
+        "comms",
         "csrftoken",
         "defectreport",
         "deserialize",
@@ -126,6 +128,7 @@
         "itertools",
         "netloc",
         "noqa",
+        "octoenergy",
         "pipenv",
         "pytest",
         "rego",
@@ -194,10 +197,12 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,
     "[git-commit]": {
+    "editor.fontFamily": "'ISO v0.7', monospace",
         "editor.rulers": [
             50, 72
         ],
-        "wordWrap": "off"
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -236,11 +241,25 @@
     ],
     "yaml.validate": false,
     "sql-formatter.uppercase": true,
-    "python.languageServer": "Pylance",
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "java.semanticHighlighting.enabled": true,
     "java.requirements.JDK11Warning": false,
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "terminal.integrated.fontFamily": "'ISO v0.7', 'ISO v0.6', monospace",
+    "terminal.integrated.fontSize": 14,
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py",
+        "**/node_modules/**"
+    ],
+    "python.linting.mypyPath": "~/.local/bin/mypy",
+    "python.linting.mypyEnabled": true,
+    "python.workspaceSymbols.exclusionPatterns": [
+        "**/site-packages/**",
+        "**/node_modules/**"
+    ],
+    "python.linting.pylintPath": "~/.local/bin/pylint",
+    "python.languageServer": "Microsoft"
 }
