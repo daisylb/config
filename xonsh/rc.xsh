@@ -21,7 +21,7 @@ $LIBRARY_PATH = '/usr/local/opt/openssl/lib/'
 $AUTO_CD = True
 $AUTO_SUGGEST_IN_COMPLETIONS = True
 $CASE_SENSITIVE_COMPLETIONS = False
-$CDPATH = ('~', '~/CMV', '~/Projects')
+$CDPATH = ('~', '~/Octopus Energy', '~/Projects')
 # in iTerm, set profile -> Terminal -> Report scroll wheel events to off
 $MOUSE_SUPPORT = True
 $PROMPT_REFRESH_INTERVAL = 10.0
@@ -30,7 +30,7 @@ $XONSH_AUTOPAIR = True
 $XONSH_HISTORY_MATCH_ANYWHERE = True
 $PROMPT = "{BOLD_INTENSE_CYAN}❯{NO_COLOR} "
 $PTK_STYLE_OVERRIDES['bottom-toolbar'] = 'noreverse'
-$UPDATE_PROMPT_ON_KEYPRESS = True
+$UPDATE_PROMPT_ON_KEYPRESS = False
 $PROMPT_TOOLKIT_COLOR_DEPTH = 'DEPTH_24_BIT'
 $BASH_COMPLETIONS = ('/usr/local/etc/bash_completion',)
 $XONSH_HISTORY_BACKEND = 'sqlite'
