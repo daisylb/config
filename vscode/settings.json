@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'Inter', 'ISO v0.6', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
+    "editor.fontFamily": "'ISO v0.7', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
     "editor.fontLigatures": "'ss02",
     "editor.letterSpacing": 0.3,
     "editor.fontSize": 17,

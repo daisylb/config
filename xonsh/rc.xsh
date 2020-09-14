@@ -170,3 +170,5 @@ $COLOR_INPUT = True
 $COLOR_RESULTS = True
 
 $PATH.add(p'~/config/scripts', front=True, replace=True)
+
+aliases['invl'] = "inv -c tasks_local"

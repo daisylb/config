@@ -4,7 +4,8 @@ import tempfile
 import sys
 import subprocess
 
-with tempfile.NamedTemporaryFile(delete=False, suffix='.txt') as f:
+with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as f:
     f.write(sys.stdin.buffer.read())
 
-subprocess.check_call(('open', '-R', f.name))
+subprocess.check_call(("open", "-R", f.name))
+

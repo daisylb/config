@@ -1,3 +1,4 @@
+/Users/*/Applications
 /Users/*/Library/Caches
 /Users/*/Library/Logs
 /Users/*/Library/Containers/*/Data/Library/Caches
@@ -11,17 +12,35 @@
 /Users/*/Library/Application Support/Code/CachedExtensionVCIXs
 /Users/*/Library/Application Support/Code/CachedExtensionVSIXs
 /Users/*/Library/Application Support/Code/CachedExtensions
+/Users/*/Library/Application Support/CrossOver
 /Users/*/Library/Application Support/Dash/DocSets
 /Users/*/Library/Application Support/Dash/Data/*.dsidx
 /Users/*/Library/Application Support/Mailspring
+/Users/*/Library/Application Support/Knowledge
+/Users/*/Library/Application Support/icdd/deviceInfoCache.plist
+/Users/*/Library/Application Support/zoom.us/
 /Users/*/Library/Application Support/Slack
 /Users/*/Library/Application Support/Spotify
 /Users/*/Library/Application Support/discord
 /Users/*/Library/Application Support/Setapp
+/Users/*/Library/Containers/com.agilebits.onepassword7/
+/Users/*/Library/Containers/com.apple.Maps/
+/Users/*/Library/Containers/com.apple.iCal/
+/Users/*/Library/Containers/com.apple.CalendarAgent/
+/Users/*/Library/Containers/com.apple.corerecents.recentsd/
+/Users/*/Library/Containers/com.docker.helper/
+/Users/*/Library/Containers/*/Data/Library/Saved Application State
+/Users/*/Library/Containers/*/Data/Library/Caches
+/Users/*/Library/Containers/com.facebook.archon/
+/Users/*/Library/LanguageModeling/
+/Users/*/Library/Saved Application State
+/Users/*/Library/Containers/*.com.agilebits.onepassword7-helper/
+/Users/*/Library/Application Support/iStat Menus/databases/
 /Users/*/Library/Application Support/com.apple.ProtectedCloudStorage
 /Users/*/Library/Application Support/Google/Chrome
 /Users/*/Library/Application Support/Steam
 /Users/*/Library/Android/sdk
+/Users/*/Library/asdf
 /Users/*/Parallels
 /Users/*/VirtualBox VMs
 /Users/*/Downloads
@@ -39,6 +58,7 @@
 /Users/*/.pyenv
 /Users/*/.rustup
 /Users/*/.asdf
+/Users/*/PyCon AU/PyconDownloadVideos
 /Users/*/Library/asdf
 /Users/*/.vscode/extensions
 /Users/*/.Trash
@@ -72,8 +92,10 @@ docs/_build
 *.rmeta
 Pods
 
-# The below are all disallowed by macOS:
+/Users/l/Library/Containers/com.agilebits.onepasswordnativemessaginghost/
+/Users/*/Library/Application Support/com.apple.touristd/
 /Users/*/Library/Application Support/AddressBook
+/Users/*/Library/Application Support/virtualenv
 /Users/*/Library/Application Support/CallHistoryDB
 /Users/*/Library/Application Support/CallHistoryTransactions
 /Users/*/Library/Application Support/MobileSync
@@ -100,9 +122,16 @@ Pods
 /Users/*/Library/Preferences/com.apple.homed.plist
 /Users/*/Library/Preferences/com.apple.mail-shared.plist
 /Users/*/Library/Safari
+/Users/*/Library/SafariTechnologyPreview
 /Users/*/Library/Suggestions
 /Users/*/Library/Application Support/FileProvider
 /Users/*/Library/Application Support/com.apple.sharedfilelist
 /Users/*/Library/Autosave Information
 /Users/*/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider
 /Users/*/Library/Sharing
+/Users/*/Library/Accounts
+
+/Users/*/Config/vscode/workspaceStorage/
+/Users/*/Config/vscode/globalStorage/
+*.iso
+/Users/*/Octopus Energy/kraken-db-dumps/

@@ -4,31 +4,35 @@ import sys
 import os
 
 this_script_path = os.path.normpath(os.path.dirname(__file__))
-os.environ['PATH'] = ':'.join(x for x in os.environ['PATH'].split(':') if os.path.normpath(x) != this_script_path)
+os.environ["PATH"] = ":".join(
+    x for x in os.environ["PATH"].split(":") if os.path.normpath(x) != this_script_path
+)
 
 cmd_name = os.path.basename(sys.argv[0])
 
 args = sys.argv
 
-if 'REALLY_USE_{}'.format(cmd_name.upper()) in os.environ:
+if "REALLY_USE_{}".format(cmd_name.upper()) in os.environ:
     os.execvp(cmd_name, args)
 
 try:
-    args.remove('--yes-really')
+    args.remove("--yes-really")
 except ValueError:
     pass
 else:
     os.execvp(cmd_name, args)
 
 checks = (
-    ('npm', 'package-lock.json'),
-    ('yarn', 'yarn.lock'),
-    ('pnpm', 'pnpm-lock.yaml'),
+    ("npm", "package-lock.json"),
+    ("yarn", "yarn.lock"),
+    ("pnpm", "pnpm-lock.yaml"),
 )
 
 for intended_cmd, lock_file in checks:
     if cmd_name != intended_cmd and os.path.exists(lock_file):
-        print(f"There is a {lock_file} here, are you sure you meant {cmd_name} and not {intended_cmd}?")
+        print(
+            f"There is a {lock_file} here, are you sure you meant {cmd_name} and not {intended_cmd}?"
+        )
         print(f"Run with --yes-really to use {cmd_name}.")
         exit(1)
 

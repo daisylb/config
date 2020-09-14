@@ -13,7 +13,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/Users/leigh/config/scripts/backup</string>
-        <string>scatterbug</string>
+        <string>Ferroseed</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>

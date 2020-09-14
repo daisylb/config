@@ -1,4 +1,4 @@
-#!/usr/bin/env espadrille tomlkit appdirs click requests --
+#!/usr/bin/env -S ${HOME}/.cargo/bin/espadrille tomlkit appdirs click requests --
 import tomlkit
 import click
 import appdirs
@@ -23,7 +23,7 @@ def backup(target: str):
     except requests.exceptions.RequestException:
         pass
     
-    security_key = shlex.quote('restic:' + config[target]['destination'])
+    security_key = shlex.quote('restic:' + target)
     cmd = (
         '/usr/local/bin/cpulimit',
         '-il',

@@ -1,0 +1,13 @@
+#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.8.4/bin/python
+
+import sys
+import os
+
+this_script_path = os.path.normpath(os.path.dirname(__file__))
+os.environ["PATH"] = ":".join(
+    x for x in os.environ["PATH"].split(":") if os.path.normpath(x) != this_script_path
+)
+
+print(os.environ['PATH'])
+
+os.execvp("pre-commit", sys.argv)

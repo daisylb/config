@@ -11,8 +11,8 @@ TZL = (
     'America/Denver',
     'Europe/London',
     'Europe/Berlin',
+    'Asia/Jerusalem',
     'Australia/Perth',
-    'Australia/Adelaide',
     'Australia/Melbourne',
     'Pacific/Auckland',
 )
@@ -28,13 +28,15 @@ def to_beats(time):
 @click.argument('time', type=arrow.get)
 def main(time):
     day = None
+    adel = time.to('Australia/Adelaide')
+    print(adel.format('ddd D MMM, HH:mm ZZZ'), end='')
+    print(' (', end='')
     for tz in TZL:
         local = time.to(tz)
         same_day = local.isoweekday() == day
         print(local.format(FMT_SAME_DAY if same_day else FMT), end=' / ')
         day = local.isoweekday()
-    to_beats(time)
-
+    print(')')
 
 if __name__ == "__main__":
     main()
