@@ -2,7 +2,7 @@ from collections import Counter
 from os.path import expanduser
 import tempfile
 
-$EDITOR = 'code --wait'
+$EDITOR = 'code --wait --new-window'
 
 xontrib load direnv abbrevs
 
@@ -30,15 +30,31 @@ $XONSH_AUTOPAIR = True
 $XONSH_HISTORY_MATCH_ANYWHERE = True
 $PROMPT = "{BOLD_INTENSE_CYAN}❯{NO_COLOR} "
 $PTK_STYLE_OVERRIDES['bottom-toolbar'] = 'noreverse'
-$UPDATE_PROMPT_ON_KEYPRESS = False
+$UPDATE_PROMPT_ON_KEYPRESS = True
 $PROMPT_TOOLKIT_COLOR_DEPTH = 'DEPTH_24_BIT'
 $BASH_COMPLETIONS = ('/usr/local/etc/bash_completion',)
 $XONSH_HISTORY_BACKEND = 'sqlite'
 $COMPLETIONS_CONFIRM=True
 
+import leigh.npm
+
+from time import time
+def _cache(func):
+    last_call = 0
+    result = None
+    def wrapper():
+        nonlocal last_call, result
+        this_call = time()
+        if this_call - last_call > 10:
+            result = func()
+        last_call = this_call
+        return result
+    return wrapper
+
 def _join(parts, joiner=' '):
     return joiner.join(x for x in parts if x)
 
+@_cache
 def _git_statuses():
     gsp = !(git status --porcelain --branch 2>/dev/null)
     if not gsp:
@@ -66,6 +82,32 @@ def _git_statuses():
     if unstaged:
         output.append("{RED}unstaged: " + ' '.join(f'{k}{c}' for k, c in unstaged.items()))
     return _join(output)
+    
+    
+def _tb_len(stri):
+    from wcwidth import wcswidth
+    import re
+    return wcswidth(re.sub(r'\{[^\}]\}', '', stri))
+    
+
+def _tb_join(*parts, width=None, joiner='{FAINT_BLACK} • '):
+    from wcwidth import wcswidth
+    from uniseg.graphemecluster import grapheme_clusters
+    parts = tuple(x for x in parts if x)
+    if width is None:
+        import os
+        width = os.get_terminal_size().columns
+        
+    joiner_len = _tb_len(joiner) * (len(parts) - 1)
+    part_widths = (_tb_len(x) for x in parts)
+    sum_width = sum(part_widths) + joiner_len
+    
+    if sum_width > width:
+        max_width = width // len(parts)
+        parts = tuple(x[:max_width] for x in parts)
+    
+    return joiner.join(parts)
+    
 
 
 def _bottom_toolbar():

@@ -12,19 +12,19 @@
     <string>party.leigh.personal.backup</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/leigh/config/scripts/backup</string>
+        <string>/Users/l/config/scripts/backup</string>
         <string>Ferroseed</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/Users/leigh/.poetry/bin:/Users/leigh/config/scripts:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/Users/leigh/.n/bin:/Users/leigh/.go-global/bin:/Users/leigh/.pyenv/shims:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools</string>
+        <string>/Users/l/config/scripts:/Users/l/Library/asdf/shims:/Users/l/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/l/.dotnet/tools:/Applications/Wireshark.app/Contents/MacOS:/Users/l/config/scripts:/Users/l/Library/asdf/shims:/Users/l/.poetry/bin:/Users/l/.local/bin:/Users/l/.cargo/bin:/Users/l/Library/Android/sdk/tools:/Users/l/Library/Android/sdk/platform-tools:/Users/l/.poetry/bin:/Users/l/.local/bin:/Users/l/.cargo/bin:/usr/local/bin:/Users/l/Library/Android/sdk/tools:/Users/l/Library/Android/sdk/platform-tools</string>
     </dict>
     <key>StartInterval</key>
     <integer>3600</integer>
     <key>StandardOutPath</key>
-    <string>/Users/leigh/Library/Logs/backup.log</string>
+    <string>/Users/l/Library/Logs/backup.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/leigh/Library/Logs/backup.log</string>
+    <string>/Users/l/Library/Logs/backup.log</string>
 </dict>
 </plist>
