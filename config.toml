@@ -20,6 +20,7 @@ fish = "~/.config/fish"
 "getsentry/tools" = true
 "github/gh" = true
 "microsoft/git" = true
+"heroku/brew" = true
 
 [homebrew.brews]
 "cuelang/tap/cue" = true
@@ -80,7 +81,7 @@ tree = true
 watchman = true
 wget = true
 ykman = true
-yubikey-agent = "restart_service: true"
+yubikey-agent = true
 "openssl@1.1" = true
 readline = true
 caddy = true
@@ -96,6 +97,25 @@ mp3gain = true
 pango = true
 sox = true
 tldr = true
+automake = true
+azcopy = true
+glib = true
+pkg-config = true
+gnutls = true
+gobject-introspection = true
+freetds = true
+gh = true
+libfido2 = true
+libmemcached = true
+libsixel = true
+memcached = true
+minicom = true
+namebench = true
+putty = true
+rabbitmq = "restart_service: true"
+sloccount = true
+yubico-piv-tool = true
+"heroku/brew/heroku" = true
 
 [homebrew.casks]
 # virtualbox = true
@@ -196,6 +216,28 @@ mailspring = true
 parsec = true
 sekey = true
 yt-music = true
+aegisub = true
+arduino = true
+audio-hijack = true
+choosy = true
+focused = true
+ftdi-vcp-driver = true
+geektool = true
+inkscape = true
+istat-menus = true
+kaleidoscope = true
+kitty = true
+mattermost = true
+multi = true
+nheko = true
+postbox = true
+pycharm = true
+seaglass = true
+silicon-labs-vcp-driver = true
+sublime-text = true
+typora = true
+ubar = true
+vivaldi = true
 
 [python]
 global-version = "3.8.0"
@@ -257,6 +299,6 @@ extensions = [
     "vscjava.vscode-maven",
     "wix.vscode-import-cost",
     "iansan5653.format-python-docstrings",
-, "kalitaalexey.vscode-rust", "adpyke.vscode-sql-formatter", "kddejong.vscode-cfn-lint", "samuelcolvin.jinjahtml", "zhouronghui.propertylist", "hangxingliu.vscode-systemd-support", "tkw01536.git-commit-format", "keyboardDrummer.vscode-cloudformation", "svelte.svelte-vscode", "liviuschera.noctis", "redhat.vscode-yaml", "ms-kubernetes-tools.vscode-kubernetes-tools", "zamerick.vscode-caddyfile-syntax", "ms-python.vscode-pylance", "alefragnani.Bookmarks"]
+"adpyke.vscode-sql-formatter", "kddejong.vscode-cfn-lint", "samuelcolvin.jinjahtml", "zhouronghui.propertylist", "hangxingliu.vscode-systemd-support", "tkw01536.git-commit-format", "keyboardDrummer.vscode-cloudformation", "svelte.svelte-vscode", "liviuschera.noctis", "redhat.vscode-yaml", "ms-kubernetes-tools.vscode-kubernetes-tools", "zamerick.vscode-caddyfile-syntax", "ms-python.vscode-pylance", "alefragnani.Bookmarks", "ms-pyright.pyright"]
 
 [rust]
