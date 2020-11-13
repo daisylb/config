@@ -39,13 +39,13 @@
 	push-new = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 [merge]
 	conflictstyle = diff3
-	tool = charm
+	tool = Kaleidoscope
 [difftool "charm"]
 	cmd = charm diff \"$LOCAL\" \"$REMOTE\" 2>/dev/null
 [mergetool "charm"]
 	cmd = charm merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" 2>/dev/null
 [diff]
-	tool = charm
+	tool = Kaleidoscope
 #[transfer]
 #    fsckobjects = true
 #[fetch]
@@ -78,3 +78,17 @@
 	useHttpPath = true
 [credential]
 	helper = manager-core
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

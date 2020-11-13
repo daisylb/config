@@ -44,7 +44,8 @@
     "python.workspaceSymbols.tagFilePath": "${workspaceRoot}/.tags",
     "editor.rulers": [80],
     "files.associations": {
-        "Vagrantfile": "ruby"
+        "Vagrantfile": "ruby",
+        "COMMIT_MSG": "git-commit"
     },
     "[python]": {
         "editor.rulers": [

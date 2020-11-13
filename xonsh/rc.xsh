@@ -24,7 +24,7 @@ $CASE_SENSITIVE_COMPLETIONS = False
 $CDPATH = ('~', '~/Octopus Energy', '~/Projects')
 # in iTerm, set profile -> Terminal -> Report scroll wheel events to off
 $MOUSE_SUPPORT = True
-$PROMPT_REFRESH_INTERVAL = 10.0
+$PROMPT_REFRESH_INTERVAL = 1.0
 $SHELL_TYPE = 'prompt_toolkit'
 $XONSH_AUTOPAIR = True
 $XONSH_HISTORY_MATCH_ANYWHERE = True
@@ -38,50 +38,12 @@ $COMPLETIONS_CONFIRM=True
 
 import leigh.npm
 
-from time import time
-def _cache(func):
-    last_call = 0
-    result = None
-    def wrapper():
-        nonlocal last_call, result
-        this_call = time()
-        if this_call - last_call > 10:
-            result = func()
-        last_call = this_call
-        return result
-    return wrapper
-
 def _join(parts, joiner=' '):
     return joiner.join(x for x in parts if x)
 
-@_cache
 def _git_statuses():
-    gsp = !(git status --porcelain --branch 2>/dev/null)
-    if not gsp:
-        return None
-
-    staged = Counter()
-    unstaged = Counter()
-    branch = None
-    for line in gsp:
-        if line.startswith('##'):
-            branch = line[3:-1]
-            continue
-    
-        staged_v = line[0]
-        unstaged_v = line[1]
-        if staged_v not in (' ', '?'):
-            staged[staged_v] += 1
-        if unstaged_v != ' ':
-            unstaged[unstaged_v] += 1
-    
-    output = []
-    output.append("{{BLUE}}🗂️  {}".format(branch))
-    if staged:
-        output.append("{YELLOW}staged: " + ' '.join(f'{k}{c}' for k, c in staged.items()))
-    if unstaged:
-        output.append("{RED}unstaged: " + ' '.join(f'{k}{c}' for k, c in unstaged.items()))
-    return _join(output)
+    from leigh.prompt import get_status
+    return get_status()
     
     
 def _tb_len(stri):
@@ -119,7 +81,7 @@ def _bottom_toolbar():
     
     parts.append(_git_statuses())
 
-    if 'ANDROID_SERIAL' in ${...}:
+    if 'ANDROID_SERIAL' in ${...}: 
         parts.append("{{GREEN}}🤖  {}".format($ANDROID_SERIAL))
 
     return _join(parts, joiner='{FAINT_BLACK} • ')

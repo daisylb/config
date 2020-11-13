@@ -1,0 +1,13 @@
+#!/Users/l/Library/asdf/installs/python/3.8.5/bin/python
+
+from os.path import exists
+from os import environ, execlp
+from time import sleep
+
+POSSIBLE_QS = ('/tmp/q', environ['TMPDIR'] + '/q')
+
+while True:
+    for q in POSSIBLE_QS:
+        if exists(q):
+            execlp('tail', '-f', q)
+        sleep(1)
