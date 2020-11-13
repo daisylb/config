@@ -14,18 +14,15 @@ fish = "~/.config/fish"
 "homebrew/services" = true
 "teamookla/speedtest" = true
 "adoptopenjdk/openjdk" = true
-"cuelang/tap" = true
 "filippo.io/age" = "\"https://filippo.io/age\""
 "filippo.io/yubikey-agent" = "\"https://filippo.io/yubikey-agent\""
 "getsentry/tools" = true
-"github/gh" = true
 "microsoft/git" = true
 "heroku/brew" = true
 
 [homebrew.brews]
-"cuelang/tap/cue" = true
 "getsentry/tools/sentry-cli" = true
-"github/gh/gh" = true
+gh = true
 "teamookla/speedtest/speedtest" = true
 # ffmpeg = true # fails to install for some reason
 # gradle = true
@@ -222,22 +219,10 @@ audio-hijack = true
 choosy = true
 focused = true
 ftdi-vcp-driver = true
-geektool = true
-inkscape = true
-istat-menus = true
 kaleidoscope = true
-kitty = true
 mattermost = true
-multi = true
-nheko = true
-postbox = true
 pycharm = true
-seaglass = true
 silicon-labs-vcp-driver = true
-sublime-text = true
-typora = true
-ubar = true
-vivaldi = true
 
 [python]
 global-version = "3.8.0"
