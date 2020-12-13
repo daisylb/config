@@ -1,0 +1,116 @@
+{
+  "layouts" : [
+    {
+      "leftSidebarSections" : [
+        {
+          "selectedSidebar" : "files",
+          "sidebars" : [
+            "files",
+            "find",
+            "scm",
+            "clips",
+            "gallery"
+          ],
+          "thickness" : 1
+        }
+      ],
+      "leftSidebarThickness" : 279,
+      "rightSidebarSections" : [
+        {
+          "selectedSidebar" : "symbols",
+          "sidebars" : [
+            "symbols"
+          ],
+          "thickness" : 0.53337874659400542
+        },
+        {
+          "selectedSidebar" : "issues",
+          "sidebars" : [
+            "issues",
+            "reports"
+          ],
+          "thickness" : 0.46525885558583108
+        }
+      ],
+      "name" : "Double",
+      "rightSidebarThickness" : 186
+    },
+    {
+      "leftSidebarSections" : [
+        {
+          "selectedSidebar" : "scm",
+          "sidebars" : [
+            "files",
+            "find",
+            "clips",
+            "scm",
+            "gallery"
+          ],
+          "thickness" : 0.90000000000000002
+        }
+      ],
+      "leftSidebarThickness" : 250,
+      "rightSidebarSections" : [
+        {
+          "selectedSidebar" : "symbols",
+          "sidebars" : [
+            "symbols"
+          ],
+          "thickness" : 0.50575916230366491
+        },
+        {
+          "selectedSidebar" : "issues",
+          "sidebars" : [
+            "issues",
+            "reports",
+            "apexskier.typescript:apexskier.typescript.sidebar"
+          ],
+          "thickness" : 0.4931937172774869
+        }
+      ],
+      "name" : "Left Sidebar",
+      "rightSidebarThickness" : 243
+    },
+    {
+      "name" : "Right Sidebar",
+      "rightSidebarSections" : [
+        {
+          "sidebars" : [
+            "files",
+            "remote",
+            "find",
+            "symbols",
+            "clips",
+            "scm",
+            "publish",
+            "gallery"
+          ],
+          "thickness" : 0.10000000000000001
+        }
+      ],
+      "rightSidebarThickness" : 250
+    },
+    {
+      "name" : "File outside project",
+      "rightSidebarSections" : [
+        {
+          "selectedSidebar" : "symbols",
+          "sidebars" : [
+            "symbols"
+          ],
+          "thickness" : 0.50535714285714284
+        },
+        {
+          "selectedSidebar" : "issues",
+          "sidebars" : [
+            "issues",
+            "clips",
+            "gallery"
+          ],
+          "thickness" : 0.49345238095238098
+        }
+      ],
+      "rightSidebarThickness" : 255
+    }
+  ]
+}

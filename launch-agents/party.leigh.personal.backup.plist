@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
+    sudo /Applications/LaunchControl.app/Contents/MacOS/fdautil set agent backup /Users/l/config/scripts/backup
     ln -s ~/config/launch-agents/party.leigh.personal.backup.plist ~/Library/LaunchAgents/party.leigh.personal.backup.plist
     launchctl bootstrap gui/501 ~/Library/LaunchAgents/party.leigh.personal.backup.plist
     launchctl kickstart -k gui/501/party.leigh.personal.backup
@@ -12,6 +13,8 @@
     <string>party.leigh.personal.backup</string>
     <key>ProgramArguments</key>
     <array>
+        <string>/Applications/LaunchControl.app/Contents/MacOS/fdautil</string>
+        <string>exec</string>
         <string>/Users/l/config/scripts/backup</string>
         <string>Ferroseed</string>
     </array>

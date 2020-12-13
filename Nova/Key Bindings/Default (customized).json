@@ -1,0 +1,10 @@
+{
+  "menuItems" : {
+    "OpenQuickly" : {
+      "shortcut" : "cmd-p"
+    },
+    "Print" : {
+
+    }
+  }
+}

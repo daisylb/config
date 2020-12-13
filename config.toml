@@ -4,6 +4,9 @@ fish = "~/.config/fish"
 "git/config" = "~/.gitconfig"
 "xonsh/rc.xsh" = "~/.xonshrc"
 "asdf/global-versions" = "~/.tool-versions"
+"Yarn Global" = "~/.config/yarn/global"
+"Nova" = "~/Library/Application Support/Nova"
+"Hammerspoon" = "~/.hammerspoon"
 
 [homebrew.taps]
 "homebrew/bundle" = true
@@ -19,6 +22,8 @@ fish = "~/.config/fish"
 "getsentry/tools" = true
 "microsoft/git" = true
 "heroku/brew" = true
+"cuelang/tap" = true
+"github/gh" = true
 
 [homebrew.brews]
 "getsentry/tools/sentry-cli" = true
@@ -39,7 +44,6 @@ duti = true
 ffmpeg = true
 gdb = true
 git = true
-gitlab-runner = true
 gnupg = true
 htop = true
 jq = true
@@ -96,7 +100,6 @@ pkg-config = true
 gnutls = true
 gobject-introspection = true
 freetds = true
-gh = true
 libfido2 = true
 libmemcached = true
 libsixel = true
@@ -108,6 +111,7 @@ rabbitmq = "restart_service: true"
 sloccount = true
 yubico-piv-tool = true
 "heroku/brew/heroku" = true
+"cuelang/tap/cue" = true
 
 [homebrew.casks]
 # virtualbox = true
@@ -146,7 +150,6 @@ font-work-sans = true
 fontstand = true
 framer-x = true
 gitup = true
-google-chrome = true
 google-cloud-sdk = true
 graphiql = true
 hammerspoon = true
@@ -213,67 +216,91 @@ kaleidoscope = true
 mattermost = true
 # pycharm = true
 silicon-labs-vcp-driver = true
+chromium = true
+geektool = true
+inkscape = true
+istat-menus = true
+launchcontrol = true
+multi = true
+typora = true
+vivaldi = true
 
 [python]
 global-version = "3.8.0"
 extra-path = ["/usr/local/opt/libpq/bin"]
 library-path = ["/usr/local/opt/openssl/lib"]
 tools = [
-    "awscli",
-    "bandit",
-    "black",
-    "boom",
-    "cookiecutter",
-    "flake8",
-    "httpie",
-    "litecli",
-    "mycli",
-    "nox",
-    "pgcli",
-    "pre-commit",
-    "rshell",
-    "tox",
-    "twine",
+  "awscli",
+  "bandit",
+  "black",
+  "boom",
+  "cookiecutter",
+  "flake8",
+  "httpie",
+  "litecli",
+  "mycli",
+  "nox",
+  "pgcli",
+  "pre-commit",
+  "rshell",
+  "tox",
+  "twine",
 ]
 
 [vscode]
 extensions = [
-    "akamud.vscode-theme-onelight",
-    "apollographql.vscode-apollo",
-    "bungcip.better-toml",
-    "champgm.cloudformation-yaml-validator",
-    "eamodio.gitlens",
-    "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode",
-    "formulahendry.auto-rename-tag",
-    "fwcd.kotlin",
-    "kumar-harsh.graphql-for-vscode",
-    "lextudio.restructuredtext",
-    "lunaryorn.fish-ide",
-    "ms-azuretools.vscode-docker",
-    "ms-python.python",
-    "ms-vscode-remote.remote-containers",
-    "ms-vscode-remote.remote-ssh-edit",
-    "ms-vscode-remote.remote-ssh-explorer",
-    "ms-vscode-remote.remote-ssh",
-    "ms-vscode-remote.remote-wsl",
-    "ms-vscode-remote.vscode-remote-extensionpack",
-    "onecrayon.theme-quietlight-vsc",
-    "redhat.java",
-    "rust-lang.rust",
-    "skyapps.fish-vscode",
-    "streetsidesoftware.code-spell-checker",
-    "TabNine.tabnine-vscode",
-    "thenikso.github-plus-theme",
-    "tomoki1207.pdf",
-    "VisualStudioExptTeam.vscodeintellicode",
-    "vscjava.vscode-java-debug",
-    "vscjava.vscode-java-dependency",
-    "vscjava.vscode-java-pack",
-    "vscjava.vscode-java-test",
-    "vscjava.vscode-maven",
-    "wix.vscode-import-cost",
-    "iansan5653.format-python-docstrings",
-"adpyke.vscode-sql-formatter", "kddejong.vscode-cfn-lint", "samuelcolvin.jinjahtml", "zhouronghui.propertylist", "hangxingliu.vscode-systemd-support", "tkw01536.git-commit-format", "keyboardDrummer.vscode-cloudformation", "svelte.svelte-vscode", "liviuschera.noctis", "redhat.vscode-yaml", "ms-kubernetes-tools.vscode-kubernetes-tools", "zamerick.vscode-caddyfile-syntax", "ms-python.vscode-pylance", "alefragnani.Bookmarks", "ms-pyright.pyright"]
+  "akamud.vscode-theme-onelight",
+  "apollographql.vscode-apollo",
+  "bungcip.better-toml",
+  "champgm.cloudformation-yaml-validator",
+  "eamodio.gitlens",
+  "EditorConfig.EditorConfig",
+  "esbenp.prettier-vscode",
+  "formulahendry.auto-rename-tag",
+  "fwcd.kotlin",
+  "kumar-harsh.graphql-for-vscode",
+  "lextudio.restructuredtext",
+  "lunaryorn.fish-ide",
+  "ms-azuretools.vscode-docker",
+  "ms-python.python",
+  "ms-vscode-remote.remote-containers",
+  "ms-vscode-remote.remote-ssh-edit",
+  "ms-vscode-remote.remote-ssh-explorer",
+  "ms-vscode-remote.remote-ssh",
+  "ms-vscode-remote.remote-wsl",
+  "ms-vscode-remote.vscode-remote-extensionpack",
+  "onecrayon.theme-quietlight-vsc",
+  "redhat.java",
+  "rust-lang.rust",
+  "skyapps.fish-vscode",
+  "streetsidesoftware.code-spell-checker",
+  "TabNine.tabnine-vscode",
+  "thenikso.github-plus-theme",
+  "tomoki1207.pdf",
+  "VisualStudioExptTeam.vscodeintellicode",
+  "vscjava.vscode-java-debug",
+  "vscjava.vscode-java-dependency",
+  "vscjava.vscode-java-pack",
+  "vscjava.vscode-java-test",
+  "vscjava.vscode-maven",
+  "wix.vscode-import-cost",
+  "iansan5653.format-python-docstrings",
+  "adpyke.vscode-sql-formatter",
+  "kddejong.vscode-cfn-lint",
+  "samuelcolvin.jinjahtml",
+  "zhouronghui.propertylist",
+  "hangxingliu.vscode-systemd-support",
+  "tkw01536.git-commit-format",
+  "keyboardDrummer.vscode-cloudformation",
+  "svelte.svelte-vscode",
+  "liviuschera.noctis",
+  "redhat.vscode-yaml",
+  "ms-kubernetes-tools.vscode-kubernetes-tools",
+  "zamerick.vscode-caddyfile-syntax",
+  "ms-python.vscode-pylance",
+  "alefragnani.Bookmarks",
+  "ms-pyright.pyright",
+  "ms-toolsai.jupyter"
+]
 
 [rust]

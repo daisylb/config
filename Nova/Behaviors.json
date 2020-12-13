@@ -1,0 +1,49 @@
+{
+  "builtin" : {
+    "run-fail" : {
+
+    },
+    "run-start" : {
+
+    },
+    "publish-succeed" : {
+      "notification" : true
+    },
+    "build-succeed" : {
+      "notification" : true
+    },
+    "run-succeed" : {
+
+    },
+    "run-output" : {
+
+    },
+    "build-fail" : {
+      "notification" : true
+    },
+    "publish-fail" : {
+      "notification" : true
+    },
+    "publish-start" : {
+
+    },
+    "run-issues" : {
+      "sidebar" : {
+        "action" : "show",
+        "identifier" : "issues"
+      }
+    },
+    "build-start" : {
+
+    },
+    "build-issues" : {
+      "sidebar" : {
+        "action" : "show",
+        "identifier" : "issues"
+      }
+    }
+  },
+  "custom" : [
+
+  ]
+}
