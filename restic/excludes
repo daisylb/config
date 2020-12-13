@@ -15,6 +15,7 @@
 /Users/*/Library/Application Support/CrossOver
 /Users/*/Library/Application Support/Dash/DocSets
 /Users/*/Library/Application Support/Dash/Data/*.dsidx
+/Users/*/Library/Application Support/Firefox/Profiles/
 /Users/*/Library/Application Support/Mailspring
 /Users/*/Library/Application Support/Knowledge
 /Users/*/Library/Application Support/icdd/deviceInfoCache.plist
@@ -39,6 +40,7 @@
 /Users/*/Library/Application Support/com.apple.ProtectedCloudStorage
 /Users/*/Library/Application Support/Google/Chrome
 /Users/*/Library/Application Support/Steam
+/Users/*/Library/Preferences/com.apple.*
 /Users/*/Library/Android/sdk
 /Users/*/Library/asdf
 /Users/*/Parallels

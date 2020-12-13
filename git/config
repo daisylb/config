@@ -30,7 +30,7 @@
 	ref = "!git rev-parse HEAD | GREP_COLORS='ms=34;1' grep $(git rev-parse --short=0 HEAD)"
 	v = describe --dirty --tags
 	trim = !git branch --merged master | cut -c 3- | grep -v \"^master$\" | xargs git branch -d
-	ignore = !echo >> .gitignore
+	ignore = "!{ for I in \"$@\"; do echo $I >> .gitignore; done } #"
 	ignore-local = "!mkdir -p $(git rev-parse --git-dir)/info && { for I in \"$@\"; do echo $I >> .git/info/exclude; done } #"
     stashall = stash save --include-untracked
     fix-author = commit --amend --reset-author --no-verify --no-edit
@@ -70,14 +70,13 @@
 [interactive]
 	diffFilter = delta
 [credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [credential "https://github.com"]
 	helper = manager-core
 [credential "https://dev.azure.com"]
 	helper = manager-core
 	useHttpPath = true
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
