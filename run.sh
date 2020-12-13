@@ -15,6 +15,9 @@ if ! command -v asdf; then
     brew install asdf
 fi
 # todo test for ~/Library/asdf/plugins/python
+if ! test -d $ASDF_DATA_DIR/plugins/python; then
+    asdf plugin add python
+fi
 PY_VERSION=$(cat .python-version)
 if ! test -d $ASDF_DATA_DIR/installs/python/$PY_VERSION; then
     asdf install python $PY_VERSION
