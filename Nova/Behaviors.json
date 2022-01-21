@@ -15,6 +15,16 @@
     "run-succeed" : {
 
     },
+    "run-pause" : {
+      "sidebar" : {
+        "action" : "show",
+        "identifier" : "debug"
+      },
+      "debugPane" : {
+        "action" : "show",
+        "identifier" : "debug-console"
+      }
+    },
     "run-output" : {
 
     },

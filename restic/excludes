@@ -1,139 +1,145 @@
-/Users/*/Applications
-/Users/*/Library/Caches
-/Users/*/Library/Logs
-/Users/*/Library/Containers/*/Data/Library/Caches
-/Users/*/Library/Containers/*/Data/Library/CloudKit
-/Users/*/Library/Group Containers/*/Library/Application Support/duck/Cache
-/Users/*/Library/Containers/com.docker.docker
-/Users/*/Library/Application Support/TabNine/models
-/Users/*/Library/Application Support/**/Cache
-/Users/*/Library/Application Support/Caches
-/Users/*/Library/Application Support/Code/CachedData
-/Users/*/Library/Application Support/Code/CachedExtensionVCIXs
-/Users/*/Library/Application Support/Code/CachedExtensionVSIXs
-/Users/*/Library/Application Support/Code/CachedExtensions
-/Users/*/Library/Application Support/CrossOver
-/Users/*/Library/Application Support/Dash/DocSets
-/Users/*/Library/Application Support/Dash/Data/*.dsidx
-/Users/*/Library/Application Support/Firefox/Profiles/
-/Users/*/Library/Application Support/Mailspring
-/Users/*/Library/Application Support/Knowledge
-/Users/*/Library/Application Support/icdd/deviceInfoCache.plist
-/Users/*/Library/Application Support/zoom.us/
-/Users/*/Library/Application Support/Slack
-/Users/*/Library/Application Support/Spotify
-/Users/*/Library/Application Support/discord
-/Users/*/Library/Application Support/Setapp
-/Users/*/Library/Containers/com.agilebits.onepassword7/
-/Users/*/Library/Containers/com.apple.Maps/
-/Users/*/Library/Containers/com.apple.iCal/
-/Users/*/Library/Containers/com.apple.CalendarAgent/
-/Users/*/Library/Containers/com.apple.corerecents.recentsd/
-/Users/*/Library/Containers/com.docker.helper/
-/Users/*/Library/Containers/*/Data/Library/Saved Application State
-/Users/*/Library/Containers/*/Data/Library/Caches
-/Users/*/Library/Containers/com.facebook.archon/
-/Users/*/Library/LanguageModeling/
-/Users/*/Library/Saved Application State
-/Users/*/Library/Containers/*.com.agilebits.onepassword7-helper/
-/Users/*/Library/Application Support/iStat Menus/databases/
-/Users/*/Library/Application Support/com.apple.ProtectedCloudStorage
-/Users/*/Library/Application Support/Google/Chrome
-/Users/*/Library/Application Support/Steam
-/Users/*/Library/Preferences/com.apple.*
-/Users/*/Library/Android/sdk
-/Users/*/Library/asdf
-/Users/*/Parallels
-/Users/*/VirtualBox VMs
-/Users/*/Downloads
-/Users/*/.android
-/Users/*/.cache
-/Users/*/.cargo
-/Users/*/.local/pipx
-/Users/*/.local/share/xonsh/xonsh_script_cache
-/Users/*/.local/share/NuGet
-/Users/*/.local/share/fish/generated_completions
-/Users/*/.local/share/virtualenvs
-/Users/*/.n
-/Users/*/.npm
-/Users/*/.poetry
-/Users/*/.pyenv
-/Users/*/.rustup
-/Users/*/.asdf
-/Users/*/PyCon AU/PyconDownloadVideos
-/Users/*/Library/asdf
-/Users/*/.vscode/extensions
-/Users/*/.Trash
-/Users/*/.pnpm-store
-/Users/*/.pylint.d
-/Users/*/.hotel/daemon.log
-/Users/*/.videostream
-/Users/*/.gradle/caches
-/Users/*/.local/share/fish/generated_completions
-/Users/*/Pictures/Photos Library.photoslibrary
-/Users/*/.vagrant.d
-/Users/*/Projects/pi-gen/deploy
-.tox
-.nox
-.gradle
 __pycache__
-.pytest_cache
-node_modules
-android/app/build
+.gradle
+.hypothesis
 .mypy_cache
-/Users/*/CMV/fleet/fleet/global-static/build
-/Users/*/CMV/*/media
-/Users/*/CMV/*/*/media
-/Users/*/CMV/*/collected-static
-co.gitup.mac/cache.db
-docs/_build
+.nox
+.pytest_cache
+.tox
+*.iso
 *.pyc
 *.pyo
-.hypothesis
 *.rlib
 *.rmeta
-Pods
-
-/Users/l/Library/Containers/com.agilebits.onepasswordnativemessaginghost/
-/Users/*/Library/Application Support/com.apple.touristd/
+/Users/*/.android
+/Users/*/.asdf
+/Users/*/.cache
+/Users/*/.cargo
+/Users/*/.gradle/caches
+/Users/*/.hotel/daemon.log
+/Users/*/.local/pipx
+/Users/*/.local/share/fish/generated_completions
+/Users/*/.local/share/fish/generated_completions
+/Users/*/.local/share/NuGet
+/Users/*/.local/share/virtualenvs
+/Users/*/.local/share/xonsh/xonsh_script_cache
+/Users/*/.n
+/Users/*/.npm
+/Users/*/.pnpm-store
+/Users/*/.poetry
+/Users/*/.pyenv
+/Users/*/.pylint.d
+/Users/*/.rustup
+/Users/*/.Trash
+/Users/*/.vagrant.d
+/Users/*/.videostream
+/Users/*/.vscode/extensions
+/Users/*/Applications
+/Users/*/CMV/*/*/media
+/Users/*/CMV/*/collected-static
+/Users/*/CMV/*/media
+/Users/*/CMV/fleet/fleet/global-static/build
+/Users/*/Config/vscode/globalStorage/
+/Users/*/Config/vscode/workspaceStorage/
+/Users/*/Downloads
+/Users/*/Dropbox
+/Users/*/Library/Accounts
+/Users/*/Library/Android/sdk
+/Users/*/Library/Application Support/**/Cache
 /Users/*/Library/Application Support/AddressBook
-/Users/*/Library/Application Support/virtualenv
+/Users/*/Library/Application Support/Caches
 /Users/*/Library/Application Support/CallHistoryDB
 /Users/*/Library/Application Support/CallHistoryTransactions
-/Users/*/Library/Application Support/MobileSync
+/Users/*/Library/Application Support/CloudDocs
+/Users/*/Library/Application Support/Code/CachedData
+/Users/*/Library/Application Support/Code/CachedExtensions
+/Users/*/Library/Application Support/Code/CachedExtensionVCIXs
+/Users/*/Library/Application Support/Code/CachedExtensionVSIXs
+/Users/*/Library/Application Support/com.apple.avfoundation
+/Users/*/Library/Application Support/com.apple.ProtectedCloudStorage
+/Users/*/Library/Application Support/com.apple.sharedfilelist
 /Users/*/Library/Application Support/com.apple.TCC
+/Users/*/Library/Application Support/com.apple.touristd/
+/Users/*/Library/Application Support/CrossOver
+/Users/*/Library/Application Support/Dash/Data/*.dsidx
+/Users/*/Library/Application Support/Dash/DocSets
+/Users/*/Library/Application Support/discord
+/Users/*/Library/Application Support/FileProvider
+/Users/*/Library/Application Support/Firefox/Profiles/
+/Users/*/Library/Application Support/Google/Chrome
+/Users/*/Library/Application Support/icdd/deviceInfoCache.plist
+/Users/*/Library/Application Support/iStat Menus/databases/
+/Users/*/Library/Application Support/Knowledge
+/Users/*/Library/Application Support/Mailspring
+/Users/*/Library/Application Support/MobileSync
+/Users/*/Library/Application Support/Setapp
+/Users/*/Library/Application Support/Slack
+/Users/*/Library/Application Support/Spotify
+/Users/*/Library/Application Support/Steam
+/Users/*/Library/Application Support/TabNine/models
+/Users/*/Library/Application Support/virtualenv
+/Users/*/Library/Application Support/zoom.us/
+/Users/*/Library/asdf
+/Users/*/Library/asdf
+/Users/*/Library/Assistant
+/Users/*/Library/Autosave Information
+/Users/*/Library/Caches
 /Users/*/Library/Calendars
-/Users/*/Library/Containers/com.apple.Safari
-/Users/*/Library/Containers/com.apple.mail
-/Users/*/Library/Containers/com.apple.Home
-/Users/*/Library/Containers/com.apple.SafariTechnologyPreview
-/Users/*/Library/Containers/com.apple.VoiceMemos
+/Users/*/Library/CloudStorage
+/Users/*/Library/Containers/*.com.agilebits.onepassword7-helper/
+/Users/*/Library/Containers/*/Data/Library/Caches
+/Users/*/Library/Containers/*/Data/Library/Caches
+/Users/*/Library/Containers/*/Data/Library/CloudKit
+/Users/*/Library/Containers/*/Data/Library/Saved Application State
+/Users/*/Library/Containers/com.agilebits.onepassword7/
 /Users/*/Library/Containers/com.apple.archiveutility
+/Users/*/Library/Containers/com.apple.CalendarAgent/
+/Users/*/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider
+/Users/*/Library/Containers/com.apple.corerecents.recentsd/
+/Users/*/Library/Containers/com.apple.Home
+/Users/*/Library/Containers/com.apple.iCal/
 /Users/*/Library/Containers/com.apple.iChat
+/Users/*/Library/Containers/com.apple.mail
+/Users/*/Library/Containers/com.apple.Maps/
 /Users/*/Library/Containers/com.apple.news
+/Users/*/Library/Containers/com.apple.Notes/
+/Users/*/Library/Containers/com.apple.Safari
+/Users/*/Library/Containers/com.apple.SafariTechnologyPreview
 /Users/*/Library/Containers/com.apple.stocks
+/Users/*/Library/Containers/com.apple.VoiceMemos
+/Users/*/Library/Containers/com.docker.docker
+/Users/*/Library/Containers/com.docker.helper/
+/Users/*/Library/Containers/com.facebook.archon/
 /Users/*/Library/Cookies
+/Users/*/Library/Developer
+/Users/*/Library/Group Containers/group.com.apple.notes
+/Users/*/Library/Group Containers/*/Library/Application Support/duck/Cache
 /Users/*/Library/HomeKit
 /Users/*/Library/IdentityServices
+/Users/*/Library/LanguageModeling/
+/Users/*/Library/Logs
 /Users/*/Library/Mail
 /Users/*/Library/Messages
-/Users/*/Library/Metadata/CoreSpotlight
 /Users/*/Library/Metadata/com.apple.IntelligentSuggestions
+/Users/*/Library/Metadata/CoreSpotlight
 /Users/*/Library/PersonalizationPortrait
+/Users/*/Library/Preferences/com.apple.*
 /Users/*/Library/Preferences/com.apple.homed.notbackedup.plist
 /Users/*/Library/Preferences/com.apple.homed.plist
 /Users/*/Library/Preferences/com.apple.mail-shared.plist
 /Users/*/Library/Safari
 /Users/*/Library/SafariTechnologyPreview
-/Users/*/Library/Suggestions
-/Users/*/Library/Application Support/FileProvider
-/Users/*/Library/Application Support/com.apple.sharedfilelist
-/Users/*/Library/Autosave Information
-/Users/*/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider
+/Users/*/Library/Saved Application State
 /Users/*/Library/Sharing
-/Users/*/Library/Accounts
-
-/Users/*/Config/vscode/workspaceStorage/
-/Users/*/Config/vscode/globalStorage/
-*.iso
+/Users/*/Library/Suggestions
 /Users/*/Octopus Energy/kraken-db-dumps/
+/Users/*/Parallels
+/Users/*/Pictures/Photos Library.photoslibrary
+/Users/*/Projects/pi-gen/deploy
+/Users/*/PyCon AU/PyconDownloadVideos
+/Users/*/VirtualBox VMs
+/Users/l/Library/Containers/com.agilebits.onepasswordnativemessaginghost/
+android/app/build
+co.gitup.mac/cache.db
+docs/_build
+node_modules
+Pods

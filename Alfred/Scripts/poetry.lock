@@ -1,0 +1,18 @@
+[[package]]
+name = "emoji-data"
+version = "0.1.6.1"
+description = "A library represents emoji sequences and characters in Unicode® Technical Standard #51 Data Files"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "570f518cf8aae57b9f6302aa9a693e39044ecdbc6e1e070942e44aee177e5e17"
+
+[metadata.files]
+emoji-data = [
+    {file = "emoji-data-0.1.6.1.tar.gz", hash = "sha256:3acf767b6cfd1a2bfb0eeb4f1ecba4084006ae6ec76dd49543d0904200186ae7"},
+    {file = "emoji_data-0.1.6.1-py3-none-any.whl", hash = "sha256:722c0851ad817b6908d41372449a8098fc04bac12c97f19fbcd42444cb79075e"},
+]

@@ -2,14 +2,19 @@ from collections import Counter
 from os.path import expanduser
 import tempfile
 
-$EDITOR = 'code --wait --new-window'
+#$EDITOR = 'code --wait --new-window'
+$EDITOR = 'subl --wait --new-window'
+$PAGER = 'sp'
 
-xontrib load direnv abbrevs
+xontrib load direnv # abbrevs
 
 $PATH.add(p'~/.poetry/bin')
 $PATH.add(p'~/.local/bin')
 $PATH.add(p'~/.cargo/bin')
 $PATH.add(p'/usr/local/bin')
+$PNPM_HOME=p'~/Library/pnpm'
+$PATH.add($PNPM_HOME)
+$PATH.add(p'~/.config/yarn/global/node_modules/.bin/')
 
 $ANDROID_HOME = p'~/Library/Android/sdk'
 $PATH.add($ANDROID_HOME / 'tools')
@@ -21,14 +26,14 @@ $LIBRARY_PATH = '/usr/local/opt/openssl/lib/'
 $AUTO_CD = True
 $AUTO_SUGGEST_IN_COMPLETIONS = True
 $CASE_SENSITIVE_COMPLETIONS = False
-$CDPATH = ('~', '~/Octopus Energy', '~/Projects')
+$CDPATH = ('~', '~/Octopus Energy', '~/Developer')
 # in iTerm, set profile -> Terminal -> Report scroll wheel events to off
 $MOUSE_SUPPORT = True
 $PROMPT_REFRESH_INTERVAL = 1.0
 $SHELL_TYPE = 'prompt_toolkit'
 $XONSH_AUTOPAIR = True
 $XONSH_HISTORY_MATCH_ANYWHERE = True
-$PROMPT = "{BOLD_INTENSE_CYAN}❯{NO_COLOR} "
+$PROMPT = "{BOLD_INTENSE_CYAN}❯{RESET} "
 $PTK_STYLE_OVERRIDES['bottom-toolbar'] = 'noreverse'
 $UPDATE_PROMPT_ON_KEYPRESS = True
 $PROMPT_TOOLKIT_COLOR_DEPTH = 'DEPTH_24_BIT'
@@ -42,8 +47,9 @@ def _join(parts, joiner=' '):
     return joiner.join(x for x in parts if x)
 
 def _git_statuses():
-    from leigh.prompt import get_status
-    return get_status()
+    from leigh.prompt.git import get_git_status
+    return get_git_status($PWD)
+    return ""
     
     
 def _tb_len(stri):
@@ -144,7 +150,7 @@ _ASDF_EXPORT_RE = re.compile(r'export ([A-Z\_]+)="([^"]+)"|unset ([A-Z\_]+)')
 
 
 # asdf
-$ASDF_DIR = p'/usr/local/opt/asdf'
+$ASDF_DIR = p'/usr/local/opt/asdf/libexec'
 $ASDF_DATA_DIR = p'~/Library/asdf'
 $PATH.add($ASDF_DATA_DIR / 'shims', front=True)
 def _wrap_asdf(args):
@@ -166,9 +172,10 @@ def _wrap_asdf(args):
 
 aliases['asdf'] = _wrap_asdf
 
-abbrevs['pr'] = 'poetry run'
-abbrevs['pa'] = 'poetry add'
-abbrevs['appsup'] = '"' + str(p'~/Library/Application Support')
+if 'abbrevs' in globals():
+    abbrevs['pr'] = 'poetry run'
+    abbrevs['pa'] = 'poetry add'
+    abbrevs['appsup'] = '"' + str(p'~/Library/Application Support')
 
 $COLOR_INPUT = True
 $COLOR_RESULTS = True
@@ -176,3 +183,15 @@ $COLOR_RESULTS = True
 $PATH.add(p'~/config/scripts', front=True, replace=True)
 
 aliases['invl'] = "inv -c tasks_local"
+
+def _brew_setprefix(args):
+    if 'LDFLAGS' not in ${...}:
+        $LDFLAGS = ''
+    if 'CPPFLAGS' not in ${...}:
+        $CPPFLAGS = ''
+    for arg in args:
+        prefix = $(brew --prefix @(arg)).strip()
+        $CPPFLAGS += f" -I{prefix}/include"
+        $LDFLAGS += f" -L{prefix}/lib"
+
+aliases['brew-set-prefix'] = _brew_setprefix

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>34702843-8F53-49D0-8345-48FC4CC5803A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5DE8FB5-02B6-4BD7-8ADE-2F7B590C42BF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Emoji</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set theQuery to item 1 of argv
+  set savedClipboard to my fetchStorableClipboard()set the clipboard to theQuerytell application "System Events"	keystroke "v" using command downend tellmy putOnClipboard:savedClipboard
+end run
+
+use AppleScript version "2.4"use scripting additionsuse framework "Foundation"use framework "AppKit"on fetchStorableClipboard()	set aMutableArray to current application's NSMutableArray's array() -- used to store contents	-- get the pasteboard and then its pasteboard items	set thePasteboard to current application's NSPasteboard's generalPasteboard()	-- loop through pasteboard items	repeat with anItem in thePasteboard's pasteboardItems()		-- make a new pasteboard item to store existing item's stuff		set newPBItem to current application's NSPasteboardItem's alloc()'s init()		-- get the types of data stored on the pasteboard item		set theTypes to anItem's types()		-- for each type, get the corresponding data and store it all in the new pasteboard item		repeat with aType in theTypes			set theData to (anItem's dataForType:aType)'s mutableCopy()			if theData is not missing value then				(newPBItem's setData:theData forType:aType)			end if		end repeat		-- add new pasteboard item to array		(aMutableArray's addObject:newPBItem)	end repeat	return aMutableArrayend fetchStorableClipboardon putOnClipboard:theArray	-- get pasteboard	set thePasteboard to current application's NSPasteboard's generalPasteboard()	-- clear it, then write new contents	thePasteboard's clearContents()	thePasteboard's writeObjects:theArrayend putOnClipboard:</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7CBFB8A9-9793-4843-9507-2B0CCBB9350E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>char</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>/Users/leigh/Config/Alfred/Scripts/emoji_list.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>34702843-8F53-49D0-8345-48FC4CC5803A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>use framework "Foundation"on run	my alfred_script("8J+Ygw==")end runon alfred_script(theQuery)	--set savedClipboard to my fetchStorableClipboard()	set decoded to my b64decode(theQuery)	my putStringOnClipboard(decoded)	tell application "System Events"		keystroke "v" using command down	end tell	--my putOnClipboard:savedClipboardend alfred_scripton b64decode(theString)	set theNSString to (current application's NSString's stringWithString:theString)	set theNSData to (current application's NSData's alloc()'s initWithBase64EncodedString:theNSString options:(current application's NSDataBase64DecodingIgnoreUnknownCharacters))	set decodedNSString to (current application's NSString's alloc()'s initWithData:theNSData encoding:(current application's NSUTF8StringEncoding))	return decodedNSStringend b64decodeon putStringOnClipboard(theString)	set aMutableArray to current application's NSMutableArray's array()	set thePasteboard to current application's NSPasteboard's generalPasteboard()	aMutableArray's addObject:theString	thePasteboard's clearContents()	thePasteboard's writeObjects:aMutableArrayend putStringOnClipboard 
+
+on cloneClipboard()
+	set thePasteboard to current application's NSPasteboard's generalPasteboard()
+	set clonedPasteboard to current application's NSPasteboard's alloc()'s init()
+end cloneClipboardon fetchStorableClipboard()	set aMutableArray to current application's NSMutableArray's array() -- used to store contents	-- get the pasteboard and then its pasteboard items	set thePasteboard to current application's NSPasteboard's generalPasteboard()	-- loop through pasteboard items	repeat with anItem in thePasteboard's pasteboardItems()		-- make a new pasteboard item to store existing item's stuff		set newPBItem to current application's NSPasteboardItem's alloc()'s init()		-- get the types of data stored on the pasteboard item		set theTypes to anItem's types()		-- for each type, get the corresponding data and store it all in the new pasteboard item		repeat with aType in theTypes			set theData to (anItem's dataForType:aType)'s mutableCopy()			if theData is not missing value then				(newPBItem's setData:theData forType:aType)			end if		end repeat		-- add new pasteboard item to array		(aMutableArray's addObject:newPBItem)	end repeat	return aMutableArrayend fetchStorableClipboardon putOnClipboard:theArray	-- get pasteboard	set thePasteboard to current application's NSPasteboard's generalPasteboard()	-- clear it, then write new contents	thePasteboard's clearContents()	thePasteboard's writeObjects:theArrayend putOnClipboard:</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F5DE8FB5-02B6-4BD7-8ADE-2F7B590C42BF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>34702843-8F53-49D0-8345-48FC4CC5803A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>205</integer>
+			<key>ypos</key>
+			<integer>135</integer>
+		</dict>
+		<key>7CBFB8A9-9793-4843-9507-2B0CCBB9350E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>F5DE8FB5-02B6-4BD7-8ADE-2F7B590C42BF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>535</integer>
+			<key>ypos</key>
+			<integer>315</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

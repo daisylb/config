@@ -7,6 +7,9 @@ fish = "~/.config/fish"
 "Yarn Global" = "~/.config/yarn/global"
 "Nova" = "~/Library/Application Support/Nova"
 "Hammerspoon" = "~/.hammerspoon"
+"Zsh/rc.sh" = "~/.zshrc"
+"Zsh/env.sh" = "~/.zshenv"
+"xonsh/_sitecustomize.py" = "~/.local/pipx/venvs/xonsh/lib/python3.9/site-packages/sitecustomize.py"
 
 [homebrew.taps]
 "homebrew/bundle" = true
@@ -24,6 +27,7 @@ fish = "~/.config/fish"
 "heroku/brew" = true
 "cuelang/tap" = true
 "github/gh" = true
+"homebrew/cask-versions" = true
 
 [homebrew.brews]
 "getsentry/tools/sentry-cli" = true
@@ -107,11 +111,18 @@ memcached = true
 minicom = true
 namebench = true
 putty = true
-rabbitmq = "restart_service: true"
+rabbitmq = true
 sloccount = true
 yubico-piv-tool = true
 "heroku/brew/heroku" = true
 "cuelang/tap/cue" = true
+jpeg = true
+erlang = true
+giflib = true
+gh = true
+gitlab-runner = true
+krb5 = true
+sphinx-doc = true
 
 [homebrew.casks]
 # virtualbox = true
@@ -182,7 +193,7 @@ setapp = true
 # sixtyforce = true
 sketch = true
 # sketchup = true
-slack = true
+# slack = true # installed through MAS
 # spotify = true
 # steam = true
 tableplus = true
@@ -224,6 +235,8 @@ launchcontrol = true
 multi = true
 typora = true
 vivaldi = true
+nova = true
+zoom = true
 
 [python]
 global-version = "3.8.0"

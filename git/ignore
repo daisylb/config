@@ -53,3 +53,5 @@ node_modules/*
 .tern-project
 .tern-port
 .nova
+pyrightconfig.json
+.sublime-workspaces

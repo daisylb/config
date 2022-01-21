@@ -36,6 +36,7 @@ def backup(target: str):
         'backup',
         expanduser(config[target]['source']),
         '--one-file-system',
+        '--no-cache',
         '--host',
         config['global']['hostname'],
         '--exclude-file',

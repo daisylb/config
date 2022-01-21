@@ -1,9 +1,9 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'ISO v0.7', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
+    "editor.fontFamily": "'ISO', 'ISO v0.8', 'ISO v0.7', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
     "editor.fontLigatures": "'ss02",
     "editor.letterSpacing": 0.3,
-    "editor.fontSize": 17,
+    "editor.fontSize": 14,
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "indent",
     "files.autoSave": "onFocusChange",
@@ -46,6 +46,9 @@
     "files.associations": {
         "Vagrantfile": "ruby",
         "COMMIT_MSG": "git-commit"
+    },
+    "[plaintext]": {
+        "editor.rulers": [37, 39, 76, 80],
     },
     "[python]": {
         "editor.rulers": [
@@ -182,7 +185,8 @@
         "yml"
     ],
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
     },
     "python.linting.flake8Path": "~/.local/pipx/venvs/flake8/bin/flake8",
     "python.linting.banditEnabled": true,
@@ -198,12 +202,14 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,
     "[git-commit]": {
-    "editor.fontFamily": "'ISO v0.7', monospace",
+        "editor.wordBasedSuggestions": false,
         "editor.rulers": [
             50, 72
         ],
         "editor.formatOnSave": true,
-        "editor.formatOnType": true
+        "editor.formatOnType": true,
+        "rewrap.autoWrap.enabled": true,
+        "rewrap.wrappingColumn": 72
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -262,5 +268,107 @@
         "**/node_modules/**"
     ],
     "python.linting.pylintPath": "~/.local/bin/pylint",
-    "python.languageServer": "Microsoft"
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "search.quickOpen.includeSymbols": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "text.html.markdown.journal.task.open.bullet",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.marker",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.text",
+                "settings": {}
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.marker",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.text",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.bullet",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.bullet",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.scope",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.bullet",
+                "settings": {
+                    "foreground": "#CC3300"
+                }
+            }
+        ]
+    },
+    "journal.patterns": {
+        "notes": {
+            "path": "${base}/${d:GGGG}/${d:WW}/${d:E.dddd}",
+            "file": "${input}.${ext}"
+        },
+        "entries": {
+            "path": "${base}/${d:GGGG}/${d:WW}",
+            "file": "${d:E.dddd}.${ext}"
+        }
+    },
+    "python.workspaceSymbols.enabled": true,
+    "python.languageServer": "Microsoft",
+    "search.collapseResults": "auto",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-    sudo /Applications/LaunchControl.app/Contents/MacOS/fdautil set agent backup /Users/l/config/scripts/backup
+    sudo /Applications/LaunchControl.app/Contents/MacOS/fdautil set agent backup /Users/leigh/Config/scripts/backup Ferroseed
     ln -s ~/config/launch-agents/party.leigh.personal.backup.plist ~/Library/LaunchAgents/party.leigh.personal.backup.plist
     launchctl bootstrap gui/501 ~/Library/LaunchAgents/party.leigh.personal.backup.plist
     launchctl kickstart -k gui/501/party.leigh.personal.backup
@@ -15,19 +15,19 @@
     <array>
         <string>/Applications/LaunchControl.app/Contents/MacOS/fdautil</string>
         <string>exec</string>
-        <string>/Users/l/config/scripts/backup</string>
-        <string>Ferroseed</string>
+        <string>/Users/leigh/Config/scripts/backup</string>
+        <string>Diglett</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/Users/l/config/scripts:/Users/l/Library/asdf/shims:/Users/l/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/l/.dotnet/tools:/Applications/Wireshark.app/Contents/MacOS:/Users/l/config/scripts:/Users/l/Library/asdf/shims:/Users/l/.poetry/bin:/Users/l/.local/bin:/Users/l/.cargo/bin:/Users/l/Library/Android/sdk/tools:/Users/l/Library/Android/sdk/platform-tools:/Users/l/.poetry/bin:/Users/l/.local/bin:/Users/l/.cargo/bin:/usr/local/bin:/Users/l/Library/Android/sdk/tools:/Users/l/Library/Android/sdk/platform-tools</string>
+        <string>/Users/leigh/config/scripts:/Users/leigh/Library/asdf/shims:/Users/leigh/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/leigh/.dotnet/tools:/Applications/Wireshark.app/Contents/MacOS:/Users/leigh/config/scripts:/Users/leigh/Library/asdf/shims:/Users/leigh/.poetry/bin:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools:/Users/leigh/.poetry/bin:/Users/leigh/.local/bin:/Users/leigh/.cargo/bin:/usr/local/bin:/Users/leigh/Library/Android/sdk/tools:/Users/leigh/Library/Android/sdk/platform-tools</string>
     </dict>
     <key>StartInterval</key>
     <integer>3600</integer>
     <key>StandardOutPath</key>
-    <string>/Users/l/Library/Logs/backup.log</string>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/l/Library/Logs/backup.log</string>
+    <string>/Users/leigh/Library/Logs/backup.log</string>
 </dict>
 </plist>

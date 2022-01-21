@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>14472C0D-3D1E-4430-BBF0-80DA1A3D389D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sentry</string>
+			<key>text</key>
+			<string>Search OE Sentry for '{query}'</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/octopus-energy/issues/?query={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>1F958587-4562-458E-9FE6-394776CAB9DB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cid</string>
+			<key>text</key>
+			<string>Search Sentry (Nectr Prod) for correlation ID {query}</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/kraken-tech/issues/?project=1758523&amp;query=correlation-id%3A{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>6549A254-D11A-40CA-BC15-8BAB270F65D7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cid</string>
+			<key>text</key>
+			<string>Search Sentry (Nectr Test) for correlation ID {query}</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/kraken-tech/issues/?project=1758512&amp;query=correlation-id%3A{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>BDDB6776-CBD9-47A7-B6AC-995604ACE49C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cid</string>
+			<key>text</key>
+			<string>Search Sentry (Origin Test) for correlation ID {query}</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/kraken-tech/issues/?project=5291391&amp;query=correlation-id%3A{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D5F0AC81-07D6-46F0-B0A4-D59AFC4F708C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cid</string>
+			<key>text</key>
+			<string>Search Sentry (Origin Prod) for correlation ID {query}</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/kraken-tech/issues/?project=5303390&amp;query=correlation-id%3A{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>F8A35E81-014F-40F7-9E93-E3BC674B3F31</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cid</string>
+			<key>text</key>
+			<string>Search Loggly for correlation ID {query}</string>
+			<key>url</key>
+			<string>https://octoenergy.loggly.com/search#terms=json.meta.correlation_id:{query}&amp;from=-3d&amp;until=now&amp;source_group=</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

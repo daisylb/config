@@ -1,0 +1,5 @@
+#!/usr/bin/env xonsh
+git fetch --prune
+dbbranches = [b.strip() for b in !(git branch -r) if b.strip().startswith('origin/dependabot/')]
+for branch in dbbranches:
+    git merge @(branch)

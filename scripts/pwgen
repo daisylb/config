@@ -1,4 +1,4 @@
-#!/usr/bin/env espadrille pybase62 --
+#!/usr/bin/env espadrille pybase62>=0.4.3 --
 
 import base62
 import sys

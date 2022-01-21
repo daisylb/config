@@ -1,8 +1,16 @@
 {
   "dependencies": {
+    "generator-code": "^1.4.14",
+    "get-graphql-schema": "^2.1.2",
     "insect": "^5.6.0",
+    "mqtt-cli": "^0.2.4",
+    "npm-merge-driver": "^2.3.6",
     "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.3.1",
     "prettier-plugin-toml": "^0.3.1",
-    "pyright": "^1.1.86"
+    "pyright": "^1.1.86",
+    "sql-formatter-cli": "^2.3.3",
+    "vsce": "^1.88.0",
+    "yo": "^4.1.0"
   }
 }

@@ -6,6 +6,7 @@
 	autocrlf = input
     attributesfile = ~/config/git/attributes
 	pager = delta
+	untrackedCache = true
 [merge "json"]
     name = custom merge driver for json files
     driver = git-json-merge %A %O %B
@@ -13,7 +14,7 @@
 	name = Automatically merge npm lockfiles
 	driver = ~/.config/yarn/global/node_modules/.bin/npm-merge-driver merge %A %O %B %P
 [push]
-	default = simple
+	default = upstream
 [log]
 	date = iso
 [color]
@@ -37,6 +38,12 @@
 	yolo = ![[ -n $1 ]] && git tag $1 && git push origin $(git rev-parse --abbrev-ref) $1 || echo \"usage: git yolo <tag>\"
 	yeet = "!git commit \"$@\" && git push #"
 	push-new = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+	push-f = push --force-with-lease
+	diff-pr = "!git diff $(git merge-base remotes/origin/HEAD HEAD)"
+	stash-apply = "!git stash apply $(git stash list | fzf | cut -f 1 -d ':')"
+	commit-fixup = "!git commit --fixup $(git log --oneline -n 200 | grep -v \"^[0-9a-f]* fixup!\" - | fzf | cut -f 1 -d ' ')"
+	switch-to = "!git branch | fzf | xargs git switch"
+	dad = !curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/
 [merge]
 	conflictstyle = diff3
 	tool = Kaleidoscope
@@ -46,6 +53,7 @@
 	cmd = charm merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" 2>/dev/null
 [diff]
 	tool = Kaleidoscope
+	renameLimit = 10000
 #[transfer]
 #    fsckobjects = true
 #[fetch]
@@ -56,12 +64,6 @@
 	templatedir = ~/config/git/template
 [commit]
 	template = ~/config/git/message
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
-[mergetool "sourcetree"]
-    cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
 [pull]
 	rebase = false
 [delta]
@@ -91,3 +93,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[stash]
+	showDiff = true
+	showPatch = true

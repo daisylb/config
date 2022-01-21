@@ -1,5 +1,5 @@
 -- HANDLE SCROLLING WITH MOUSE BUTTON PRESSED
-local scrollMouseButton = 3
+local scrollMouseButton = 2
 local deferred = false
 
 overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
@@ -7,11 +7,11 @@ overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDow
     local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
     print(pressedMouseButton)
     if scrollMouseButton == pressedMouseButton 
-        then 
+        then
             deferred = true
             return true
         end
-end)
+end):start()
 
 overrideOtherMouseUp = hs.eventtap.new({ hs.eventtap.event.types.otherMouseUp }, function(e)
     -- print("up")
@@ -29,7 +29,7 @@ overrideOtherMouseUp = hs.eventtap.new({ hs.eventtap.event.types.otherMouseUp },
             return false
         end
         return false
-end)
+end):start()
 
 local oldmousepos = {}
 local scrollmult = 1  -- negative multiplier makes mouse work like traditional scrollwheel
@@ -80,7 +80,7 @@ scrollToSwitchSpaces = hs.eventtap.new({ hs.eventtap.event.types.scrollWheel}, f
     }
 end)
 
-scrollToSwitchSpaces:start()
+--scrollToSwitchSpaces:start()
 
 local zoom = nil
 
@@ -108,10 +108,19 @@ end):start()
 
 -- track window focus
 
+local MINUTE = 60
+local HOUR = 3600
+
 local applicationTimers = {}
 local applicationTimeouts = {
-    ['us.zoom.xos'] = 7200, -- 2h
-    ['com.google.Chrome'] = 43200, -- 12h
+    ['us.zoom.xos'] = 2 * HOUR,
+    ['com.google.Chrome'] = 12 * HOUR,
+    ['com.yubico.yubioath'] = 10 * MINUTE,
+    ['com.apple.keychainaccess'] = 2 * HOUR,
+    ['com.apple.reminders'] = 6 * HOUR,
+    ['com.agilebits.onepassword7'] = HOUR,
+    ['com.apple.Notes'] = 3 * HOUR,
+    ['com.apple.iCal'] = 3 * HOUR,
 }
 
 hs.window.filter.default:subscribe(hs.window.filter.windowUnfocused, function(window, appName)
@@ -141,3 +150,36 @@ hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(wind
     timer:stop()
     applicationTimers[bundleID] = nil
 end)
+
+-- com.apple.Safari
+local defaultBrowser = 'com.apple.Safari' -- 'com.apple.Safari'
+local nonSafariBrowser = 'com.vivaldi.Vivaldi' -- org.mozilla.Firefox com.vivaldi.Vivaldi
+local chromiumBrowser = 'com.vivaldi.Vivaldi'
+
+hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
+    -- Only Zoom join links should open in Zoom, not any zoom.us URL
+    if string.match(fullURL, "^https?://.*%.zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/my/") then
+        hs.urlevent.openURLWithBundle(fullURL, 'us.zoom.xos')
+    -- Things that need to be opened in a Chromium browser:
+    -- Streamyard: some screen sharing features
+    -- AWS: uses legacy U2F APIs not supported in Safari
+    -- Sentry: legacy U2F APIs also
+    elseif host == 'streamyard.com' then
+        hs.urlevent.openURLWithBundle(fullURL, chromiumBrowser)
+    elseif host == 'aws.amazon.com' or string.match(host, '.*%.aws%.amazon%.com') or host == 'sentry.io' then
+        hs.urlevent.openURLWithBundle(fullURL, nonSafariBrowser)
+    else
+        hs.urlevent.openURLWithBundle(fullURL, defaultBrowser) 
+    end
+end
+hs.urlevent.setDefaultHandler('http')
+
+
+hs.urlevent.bind('krakenCoreFile', function(eventName, params, senderPID)
+    print(params['file'])
+    local cmd = '/usr/local/bin/subl "/Users/leigh/Octopus Energy/kraken-core/' .. params['file'] .. '"'
+    print(cmd)
+    status = os.execute(cmd)
+    print(status)
+end
+)

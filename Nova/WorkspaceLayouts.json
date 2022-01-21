@@ -14,14 +14,14 @@
           "thickness" : 1
         }
       ],
-      "leftSidebarThickness" : 279,
+      "leftSidebarThickness" : 280,
       "rightSidebarSections" : [
         {
           "selectedSidebar" : "symbols",
           "sidebars" : [
             "symbols"
           ],
-          "thickness" : 0.53337874659400542
+          "thickness" : 0.51268742791234145
         },
         {
           "selectedSidebar" : "issues",
@@ -29,11 +29,11 @@
             "issues",
             "reports"
           ],
-          "thickness" : 0.46525885558583108
+          "thickness" : 0.48615916955017302
         }
       ],
       "name" : "Double",
-      "rightSidebarThickness" : 186
+      "rightSidebarThickness" : 180
     },
     {
       "leftSidebarSections" : [

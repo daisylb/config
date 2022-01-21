@@ -1,8 +1,21 @@
 #!/bin/zsh
 sqlite3 -cmd "
+drop table if exists data_bak;
+drop table if exists data_bak_b4;
+create table data_bak_b4 as select * from data;
+create temporary table new_preferences (key integer, data_id integer);
+insert into new_preferences
+select key, data_id
+from preferences
+where picture_id = (select picture_id from preferences order by rowid desc limit 1);
+
+drop trigger if exists preferences_deleted;
+delete from preferences;
+CREATE TRIGGER preferences_deleted AFTER DELETE ON preferences BEGIN DELETE FROM data WHERE ROWID=OLD.data_id AND NOT EXISTS (SELECT NULL FROM preferences WHERE data_id=OLD.data_id);END;
+
 insert into preferences
-select 1 as key, data.rowid as data_id, pictures.rowid as picture_id
-from data cross join pictures
-where data.rowid = (select rowid from data order by rowid desc limit 1);
+select new_preferences.key, new_preferences.data_id, pictures.rowid as picture_id
+from new_preferences cross join pictures;
+create table data_bak as select * from data;
 " ~/Library/Application\ Support/Dock/desktoppicture.db </dev/null
 killall Dock

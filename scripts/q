@@ -1,4 +1,4 @@
-#!/Users/l/Library/asdf/installs/python/3.8.5/bin/python
+#!/Users/leigh/Library/asdf/installs/python/3.9.1/bin/python
 
 from os.path import exists
 from os import environ, execlp

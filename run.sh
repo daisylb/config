@@ -1,6 +1,6 @@
 #!/bin/sh
 set -euo pipefail
-export ASDF_DIR=/usr/local/opt/asdf 
+export ASDF_DIR=/usr/local/opt/asdf/libexec
 export ASDF_DATA_DIR=$HOME/Library/asdf
 
 PYTHON_ROOT=$ASDF_DATA_DIR/installs/python/$(cat .python-version)
