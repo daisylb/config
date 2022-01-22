@@ -84,7 +84,8 @@ end)
 
 local zoom = nil
 
-hs.eventtap.new({ hs.eventtap.event.types.keyDown, hs.eventtap.event.types.keyUp }, function(e)
+zoomPtt = hs.eventtap.new({ hs.eventtap.event.types.keyDown, hs.eventtap.event.types.keyUp }, function(e)
+    print(e:getKeyCode())
     if e:getKeyCode() ~= hs.keycodes.map["f13"] then
         return false, {}
     end
@@ -103,7 +104,21 @@ hs.eventtap.new({ hs.eventtap.event.types.keyDown, hs.eventtap.event.types.keyUp
         zoom = nil
     end
     return true, {}
-end):start()
+end)
+
+-- zoomPtt:start()
+
+hs.hotkey.bind("", "f13", function(e)
+    local zoom = hs.application.applicationsForBundleID('us.zoom.xos')[1]
+    -- hs.eventtap.event.newKeyEvent('cmd,shift', 'a', true):post(zoom)
+    -- hs.eventtap.event.newKeyEvent('cmd,shift', 'a', false):post(zoom)
+    hs.eventtap.event.newKeyEvent('', 'space', true):post(zoom)
+end, function(e)
+    local zoom = hs.application.applicationsForBundleID('us.zoom.xos')[1]
+    -- hs.eventtap.event.newKeyEvent('cmd,shift', 'a', true):post(zoom)
+    -- hs.eventtap.event.newKeyEvent('cmd,shift', 'a', false):post(zoom)
+    hs.eventtap.event.newKeyEvent('', 'space', false):post(zoom)
+end)
 
 
 -- track window focus
@@ -181,5 +196,7 @@ hs.urlevent.bind('krakenCoreFile', function(eventName, params, senderPID)
     print(cmd)
     status = os.execute(cmd)
     print(status)
-end
-)
+end)
+
+-- delete button in mail.app archives
+-- TODO
