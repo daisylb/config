@@ -28,6 +28,10 @@ fish = "~/.config/fish"
 "cuelang/tap" = true
 "github/gh" = true
 "homebrew/cask-versions" = true
+"cue-lang/tap" = true
+"hivemq/mqtt-cli" = true
+"romkatv/gitstatus" = true
+"superfly/tap" = true
 
 [homebrew.brews]
 "getsentry/tools/sentry-cli" = true
@@ -81,7 +85,7 @@ tree = true
 watchman = true
 wget = true
 ykman = true
-yubikey-agent = true
+yubikey-agent = "restart_service: true"
 "openssl@1.1" = true
 readline = true
 caddy = true
@@ -111,7 +115,7 @@ memcached = true
 minicom = true
 namebench = true
 putty = true
-rabbitmq = true
+rabbitmq = "restart_service: true"
 sloccount = true
 yubico-piv-tool = true
 "heroku/brew/heroku" = true
@@ -123,6 +127,55 @@ gh = true
 gitlab-runner = true
 krb5 = true
 sphinx-doc = true
+libtool = true
+blueutil = true
+butane = true
+bzip2 = true
+"python@3.10" = true
+ccls = true
+ctags = true
+dnscontrol = true
+guile = true
+libass = true
+srt = true
+node = true
+firebase-cli = true
+folly = true
+fzf = true
+git-absorb = true
+tcl-tk = true
+libheif = true
+imagemagick = true
+ldns = true
+libssh = true
+libusb-compat = true
+libvirt = true
+libwebsockets = true
+ninja = true
+meson = true
+mosquitto = true
+neovim = true
+netlify-cli = true
+nghttp2 = true
+pacparser = true
+picocom = true
+platformio = true
+qemu = true
+podman = true
+qt = true
+poppler = true
+"python@3.8" = true
+rabbitmq-c = true
+rust-analyzer = true
+shadowsocks-libev = "restart_service: true"
+swig = true
+transmission-cli = true
+wtf = true
+zlib = true
+"cue-lang/tap/cue" = true
+"hivemq/mqtt-cli/mqtt-cli" = true
+"romkatv/gitstatus/gitstatus" = true
+"superfly/tap/flyctl" = true
 
 [homebrew.casks]
 # virtualbox = true
@@ -154,9 +207,9 @@ font-inter = true
 font-lato = true
 font-overpass = true
 font-pt-sans = true
-font-source-code-pro = true
-font-source-sans-pro = true
-font-source-serif-pro = true
+#font-source-code-pro = true
+#font-source-sans-pro = true
+#font-source-serif-pro = true
 font-work-sans = true
 fontstand = true
 framer-x = true
@@ -237,6 +290,58 @@ typora = true
 vivaldi = true
 nova = true
 zoom = true
+8bitdo-ultimate-software = true
+adobe-acrobat-reader = true
+airserver = true
+alfred = true
+asana = true
+atext = true
+audacity = true
+autodesk-fusion360 = true
+canon-eos-utility = true
+canon-eos-webcam-utility = true
+crossover = true
+dolphin = true
+dropbox = true
+duet = true
+dymo-label = true
+element = true
+font-catamaran = true
+font-public-sans = true
+font-sf-compact = true
+font-sf-mono = true
+font-sf-pro = true
+font-source-code-pro = true
+font-source-sans-pro = true
+font-source-serif-pro = true
+gather = true
+google-chrome = true
+krisp = true
+launchbar = true
+logitech-camera-settings = true
+loopback = true
+microsoft-auto-update = true
+microsoft-edge = true
+monodraw = true
+mullvadvpn = true
+netdownloadhelpercoapp = true
+openscad = true
+paragon-extfs = true
+raspberry-pi-imager = true
+sidequest = true
+signal = true
+steam = true
+sublime-merge = true
+sublime-text = true
+the-unarchiver = true
+transmission = true
+ubar = true
+vimr = true
+virtualbox = true
+virtualbox-extension-pack = true
+visual-studio-code = true
+vlc = true
+wire = true
 
 [python]
 global-version = "3.8.0"
@@ -258,6 +363,12 @@ tools = [
   "rshell",
   "tox",
   "twine",
+  "youtube-dl",
+  "xonsh",
+  "adafruit-ampy",
+  "pipenv",
+  "esptool",
+  "mypy",
 ]
 
 [vscode]
