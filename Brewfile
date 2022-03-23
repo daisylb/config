@@ -16,8 +16,6 @@ tap "microsoft/git"
 tap "superfly/tap"
 tap "teamookla/speedtest"
 brew "age"
-brew "giflib"
-brew "jpeg"
 brew "automake"
 brew "libtool"
 brew "asdf"
@@ -49,7 +47,6 @@ brew "harfbuzz"
 brew "libass"
 brew "srt"
 brew "ffmpeg"
-brew "node"
 brew "firebase-cli"
 brew "freetds"
 brew "fzf"
@@ -59,8 +56,6 @@ brew "gh"
 brew "git"
 brew "git-absorb"
 brew "git-delta"
-brew "gitlab-runner"
-brew "gnupg"
 brew "htop"
 brew "tcl-tk"
 brew "libheif"
@@ -81,7 +76,6 @@ brew "libsixel"
 brew "libssh"
 brew "libvirt"
 brew "libxmlsec1"
-brew "libzt"
 brew "mas"
 brew "memcached"
 brew "micropython"
@@ -89,10 +83,7 @@ brew "minicom"
 brew "modd"
 brew "mosh"
 brew "mp3gain"
-brew "namebench"
-brew "neovim"
 brew "netlify-cli"
-brew "openjdk@8"
 brew "openssh"
 brew "p7zip"
 brew "pacparser"
@@ -105,7 +96,7 @@ brew "podman"
 brew "pstree"
 brew "putty"
 brew "pv"
-brew "rabbitmq", restart_service: true
+brew "rabbitmq", restart_service: false
 brew "rabbitmq-c"
 brew "restic"
 brew "ripgrep"
@@ -116,12 +107,9 @@ brew "semgrep"
 brew "sloccount"
 brew "socat"
 brew "sox"
-brew "sphinx-doc"
 brew "sqlcipher"
-brew "sshuttle"
 brew "swig"
 brew "tldr"
-brew "transmission-cli"
 brew "tree"
 brew "watchman"
 brew "wget"
@@ -143,7 +131,6 @@ cask "appcleaner"
 cask "arduino"
 cask "audacity"
 cask "audio-hijack"
-cask "balenaetcher"
 cask "canon-eos-webcam-utility"
 cask "chrysalis"
 cask "cyberduck"
@@ -152,7 +139,6 @@ cask "dash"
 cask "discord"
 cask "dolphin"
 cask "dymo-label"
-cask "fanny"
 cask "firefox"
 cask "fliqlo"
 cask "font-catamaran"
@@ -173,7 +159,6 @@ cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 cask "font-work-sans"
 cask "fontstand"
-cask "framer-x"
 cask "ftdi-vcp-driver"
 cask "git-credential-manager-core"
 cask "gitup"
@@ -187,22 +172,14 @@ cask "imageoptim"
 cask "itch"
 cask "iterm2"
 cask "kaleidoscope"
-cask "krisp"
 cask "launchcontrol"
-cask "logitech-camera-settings"
 cask "loopback"
-cask "mountain-duck"
-cask "mullvadvpn"
-cask "multi"
 cask "ngrok"
-cask "notion"
 cask "nova"
 cask "obs"
 cask "openscad"
-cask "osxfuse"
 cask "paragon-extfs"
 cask "paw"
-cask "plex-media-player"
 cask "postman"
 cask "raspberry-pi-imager"
 cask "sekey"
@@ -216,67 +193,34 @@ cask "sublime-text"
 cask "tableplus"
 cask "temurin8"
 cask "the-unarchiver"
-cask "transmission"
-cask "typora"
-cask "ubiquiti-unifi-controller"
-cask "unite"
-cask "vagrant"
-cask "virtualbox"
-cask "virtualbox-extension-pack"
-cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
 cask "wireshark"
 cask "yubico-authenticator"
 cask "yubico-yubikey-manager"
-cask "zerotier-one"
-cask "zoom"
 cask "zoomus"
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "AmorphousDiskMark", id: 1168254295
-mas "BetterTDeck for TweetDeck", id: 1549421502
-mas "Bluetooth Inspector", id: 1509085044
-mas "BluTerm", id: 615234148
 mas "Cloud Battery", id: 1481005137
 mas "ColorSlurp", id: 1287239339
-mas "Craft", id: 1487937127
-mas "Darkroom", id: 953286746
 mas "Discovery", id: 1381004916
 mas "Disk Speed Test", id: 425264550
 mas "GarageBand", id: 682658836
 mas "Hidden Bar", id: 1452453066
-mas "HueParty", id: 630956426
 mas "JustStream", id: 1474804779
-mas "LightBlue", id: 557428110
 mas "MakePass", id: 1450989464
 mas "Mast", id: 1437429129
 mas "Mastonaut", id: 1450757574
 mas "Meeter", id: 1510445899
 mas "Messenger", id: 1480068668
-mas "Microsoft OneNote", id: 784801555
 mas "Minimal Consent", id: 1514164630
-mas "Mirror for Chromecast", id: 1196258230
-mas "Mirror to Chromecast", id: 1578845405
 mas "Numbers", id: 409203825
 mas "OneTab", id: 1540160809
-mas "Outline", id: 1356178125
 mas "Pages", id: 409201541
 mas "Parcel", id: 639968404
-mas "Pastel", id: 413897608
-mas "Quick Caption", id: 1363610340
-mas "Rainy", id: 1312152536
 mas "Reeder", id: 1529448980
-mas "Shapr3D", id: 1091675654
-mas "Simon Says Transcription", id: 1441555493
-mas "Subtitle Edit - Video Editor", id: 1035033422
-mas "Subtitle Factory", id: 595916528
 mas "Tab Space", id: 1473726602
 mas "Tailscale", id: 1475387142
-mas "Tampermonkey", id: 1482490089
-mas "Teleprompter", id: 1533078079
-mas "Toast", id: 1465707487
-mas "Tweetbot", id: 1384080005
 mas "Userscripts", id: 1463298887
-mas "Vectornator", id: 1219074514
 mas "Xcode", id: 497799835
