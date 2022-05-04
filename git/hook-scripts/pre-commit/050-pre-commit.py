@@ -1,4 +1,4 @@
-#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.9.0/bin/python
+#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.9.12/bin/python
 from os import path, execlpe, environ
 from subprocess import run
 
