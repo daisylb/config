@@ -1,0 +1,41 @@
+#!/usr/bin/env perl
+
+# © 2022 Daisy Leigh Brenecki
+# Licensed under the Round Robin License 2.0.0
+# https://roundrobinlicense.com/2.0.0
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+my $commit = "HEAD";
+my $version;
+my $verbose;
+GetOptions ("commit=s" => \$commit,
+            "version=s"   => \$version,
+            "verbose" => \$verbose)
+or die("Error in command line arguments\n");
+
+# First, get all the commits in the main branch
+my @main_branch_commits = qx/git rev-list --first-parent main/;
+
+if ($version) {
+    # Get the commit from a version number.
+    my $commit = $main_branch_commits[@main_branch_commits - int($version)];
+    print "$commit";
+} else {
+    $verbose and print("searching for $commit\n");
+    my $full_sha = qx/git rev-parse $commit/;
+    my $i = 0;
+    $verbose and print("searching for $full_sha");
+    my %offset_map;
+    foreach (@main_branch_commits) {
+        if ($full_sha eq $_) {
+            my $version = @main_branch_commits - $i;
+            print("$version\n");
+            exit();
+        }
+        $offset_map{$_} = $i;
+        $i++;
+    }
+}

@@ -136,6 +136,15 @@ local applicationTimeouts = {
     ['com.agilebits.onepassword7'] = HOUR,
     ['com.apple.Notes'] = 3 * HOUR,
     ['com.apple.iCal'] = 3 * HOUR,
+    ['com.flexibits.fantastical2.mac'] = 3 * HOUR,
+    ['com.postmanlabs.mac'] = 3 * HOUR,
+    ['com.tinyapp.TablePlus'] = 8 * HOUR,
+    ['app.kaleidoscope.v3'] = 8 * HOUR,
+    ['com.apple.iWork.Pages'] = 8 * HOUR,
+    ['com.apple.iWork.Numbers'] = 8 * HOUR,
+    ['com.apple.Preview'] = 3 * HOUR,
+    ['com.apple.shortcuts'] = 3 * HOUR,
+    ['co.gitup.mac'] = 1 * HOUR,
 }
 
 hs.window.filter.default:subscribe(hs.window.filter.windowUnfocused, function(window, appName)
@@ -179,9 +188,9 @@ hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
     -- Streamyard: some screen sharing features
     -- AWS: uses legacy U2F APIs not supported in Safari
     -- Sentry: legacy U2F APIs also
-    elseif host == 'streamyard.com' then
+    elseif host == 'streamyard.com' or host == 'meet.google.com' then
         hs.urlevent.openURLWithBundle(fullURL, chromiumBrowser)
-    elseif host == 'aws.amazon.com' or string.match(host, '.*%.aws%.amazon%.com') or host == 'sentry.io' then
+    elseif host == 'aws.amazon.com' or string.match(host, '.*%.aws%.amazon%.com') then
         hs.urlevent.openURLWithBundle(fullURL, nonSafariBrowser)
     else
         hs.urlevent.openURLWithBundle(fullURL, defaultBrowser) 

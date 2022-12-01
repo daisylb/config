@@ -1,12 +1,12 @@
 #!/bin/sh
 set -euo pipefail
-export ASDF_DIR=/usr/local/opt/asdf/libexec
+export ASDF_DIR=/opt/homebrew/opt/asdf/libexec
 export ASDF_DATA_DIR=$HOME/Library/asdf
 
 PYTHON_ROOT=$ASDF_DATA_DIR/installs/python/$(cat .python-version)
 PYTHON_BIN=$PYTHON_ROOT/bin/python
 POETRY_BIN=$HOME/.poetry/bin/poetry
-export PATH=$PYTHON_ROOT/bin:$ASDF_DATA_DIR/shims:$HOME/.local/bin:$PATH
+export PATH=/opt/homebrew/bin:$PYTHON_ROOT/bin:$ASDF_DATA_DIR/shims:$HOME/.local/bin:$PATH
 
 if ! command -v brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"

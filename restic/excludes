@@ -126,6 +126,7 @@ __pycache__
 /Users/*/Library/Preferences/com.apple.homed.notbackedup.plist
 /Users/*/Library/Preferences/com.apple.homed.plist
 /Users/*/Library/Preferences/com.apple.mail-shared.plist
+/Users/*/Library/pnpm/store
 /Users/*/Library/Safari
 /Users/*/Library/SafariTechnologyPreview
 /Users/*/Library/Saved Application State
@@ -137,9 +138,18 @@ __pycache__
 /Users/*/Projects/pi-gen/deploy
 /Users/*/PyCon AU/PyconDownloadVideos
 /Users/*/VirtualBox VMs
-/Users/l/Library/Containers/com.agilebits.onepasswordnativemessaginghost/
+/Users/*/Library/Containers/com.agilebits.onepasswordnativemessaginghost/
 android/app/build
 co.gitup.mac/cache.db
 docs/_build
 node_modules
 Pods
+
+
+/Users/*/Library/Biome
+/Users/*/Library/CoreFollowUp
+/Users/*/Library/DuetExpertCenter
+/Users/*/Library/Group Containers/group.com.apple.secure-control-center-preferences
+/Users/*/Library/Group Containers/TC3Q7MAJXF.com.adguard.safari.AdGuard/
+/Users/*/Library/Shortcuts
+/Users/*/Library/StatusKit

@@ -1,6 +1,6 @@
 [user]
-	name = Leigh Brenecki
-	email = l@leigh.net.au
+	name = Daisy Leigh Brenecki
+	email = daisy@daisy.wtf
 [core]
 	excludesfile = ~/config/git/ignore
 	autocrlf = input
@@ -30,7 +30,7 @@
 	iclean = clean -id
 	ref = "!git rev-parse HEAD | GREP_COLORS='ms=34;1' grep $(git rev-parse --short=0 HEAD)"
 	v = describe --dirty --tags
-	trim = !git branch --merged master | cut -c 3- | grep -v \"^master$\" | xargs git branch -d
+	trim = !git branch --merged main | cut -c 3- | grep -v \"^main$\" | xargs git branch -d
 	ignore = "!{ for I in \"$@\"; do echo $I >> .gitignore; done } #"
 	ignore-local = "!mkdir -p $(git rev-parse --git-dir)/info && { for I in \"$@\"; do echo $I >> .git/info/exclude; done } #"
     stashall = stash save --include-untracked

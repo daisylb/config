@@ -1,49 +1,52 @@
 #!/usr/bin/env -S ${HOME}/.cargo/bin/espadrille tomlkit appdirs click requests --
-import tomlkit
-import click
-import appdirs
-from pathlib import Path
 import shlex
-import requests
-from os.path import expanduser
-from subprocess import check_call
 from datetime import datetime
+from os.path import expanduser
+from pathlib import Path
+from subprocess import check_call
 
-CONF_DIR = Path(appdirs.user_config_dir('backups', 'Leigh Brenecki'))
+import appdirs
+import click
+import requests
+import tomlkit
+
+CONF_DIR = Path(appdirs.user_config_dir("backups", "Leigh Brenecki"))
+
 
 @click.command()
-@click.argument('target')
+@click.argument("target")
 def backup(target: str):
-    print(f'Backup started at {datetime.now()}')
-    with open(CONF_DIR / 'config.toml') as f:
+    print(f"Backup started at {datetime.now()}")
+    with open(CONF_DIR / "config.toml") as f:
         config = tomlkit.loads(f.read())
 
     try:
-        requests.get(config[target]['ping-url'] + '/start')
+        requests.get(config[target]["ping-url"] + "/start")
     except requests.exceptions.RequestException:
         pass
-    
-    security_key = shlex.quote('restic:' + target)
+
+    security_key = shlex.quote("restic:" + target)
     cmd = (
-        '/usr/local/bin/cpulimit',
-        '-il',
-        '25',
-        '/usr/local/bin/restic',
-        '-r',
-        config[target]['destination'],
-        '--password-command',
-        f'security find-generic-password -ws {security_key}',
-        'backup',
-        expanduser(config[target]['source']),
-        '--one-file-system',
-        '--no-cache',
-        '--host',
-        config['global']['hostname'],
-        '--exclude-file',
-        expanduser(config['global']['exclude-file']),
+        "/opt/homebrew/bin/cpulimit",
+        "-il",
+        "25",
+        "/opt/homebrew/bin/restic",
+        "-r",
+        config[target]["destination"],
+        "--password-command",
+        f"security find-generic-password -ws {security_key}",
+        "backup",
+        expanduser(config[target]["source"]),
+        "--one-file-system",
+        "--no-cache",
+        "--host",
+        config["global"]["hostname"],
+        "--exclude-file",
+        expanduser(config["global"]["exclude-file"]),
     )
     check_call(cmd)
-    requests.get(config[target]['ping-url'])
+    requests.get(config[target]["ping-url"])
+
 
 if __name__ == "__main__":
     backup()

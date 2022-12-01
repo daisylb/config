@@ -10,10 +10,11 @@ fish = "~/.config/fish"
 "Zsh/rc.sh" = "~/.zshrc"
 "Zsh/env.sh" = "~/.zshenv"
 "xonsh/_sitecustomize.py" = "~/.local/pipx/venvs/xonsh/lib/python3.9/site-packages/sitecustomize.py"
+"~/Library/Mobile Documents/com~apple~CloudDocs/Spelling" = "~/Library/Spelling"
 
 [python]
-extra-path = ["/usr/local/opt/libpq/bin"]
-library-path = ["/usr/local/opt/openssl/lib"]
+extra-path = ["/opt/homebrew/opt/libpq/bin"]
+library-path = ["/opt/homebrew/opt/openssl/lib"]
 tools = [
   "awscli",
   "bandit",

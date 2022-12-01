@@ -9,10 +9,12 @@ $PAGER = 'sp'
 
 xontrib load direnv # abbrevs
 
+$HOMEBREW_PREFIX = p'/opt/homebrew'
+
 $PATH.add(p'~/.poetry/bin')
 $PATH.add(p'~/.local/bin')
 $PATH.add(p'~/.cargo/bin')
-$PATH.add(p'/usr/local/bin')
+$PATH.insert(0, $HOMEBREW_PREFIX / 'bin')
 $PNPM_HOME=p'~/Library/pnpm'
 $PATH.add($PNPM_HOME)
 $PATH.add(p'~/.config/yarn/global/node_modules/.bin/')
@@ -21,13 +23,15 @@ $ANDROID_HOME = p'~/Library/Android/sdk'
 $PATH.add($ANDROID_HOME / 'tools')
 $PATH.add($ANDROID_HOME / 'platform-tools')
 
-$LIBRARY_PATH = '/usr/local/opt/openssl/lib/'
+$LIBRARY_PATH = [$HOMEBREW_PREFIX / 'opt/openssl/lib', $HOMEBREW_PREFIX / 'opt/libmemcached/lib', $HOMEBREW_PREFIX / 'lib']
+$LD_LIBRARY_PATH = $LIBRARY_PATH
+$INCLUDE_PATH = [$HOMEBREW_PREFIX / 'opt/openssl/include', $HOMEBREW_PREFIX / 'opt/libmemcached/include', $HOMEBREW_PREFIX / 'include']
 
 
 $AUTO_CD = True
 $AUTO_SUGGEST_IN_COMPLETIONS = True
 $CASE_SENSITIVE_COMPLETIONS = False
-$CDPATH = ('~', '/Volumes/Files/Octopus', '/Volumes/Files/Developer')
+$CDPATH = ('~', '~/Octopus', '~/Developer')
 # in iTerm, set profile -> Terminal -> Report scroll wheel events to off
 $MOUSE_SUPPORT = True
 $PROMPT_REFRESH_INTERVAL = 1.0
@@ -38,7 +42,7 @@ $PROMPT = "{BOLD_INTENSE_CYAN}❯{RESET} "
 $XONSH_STYLE_OVERRIDES['bottom-toolbar'] = 'noreverse'
 $UPDATE_PROMPT_ON_KEYPRESS = True
 $PROMPT_TOOLKIT_COLOR_DEPTH = 'DEPTH_24_BIT'
-$BASH_COMPLETIONS = ('/usr/local/etc/bash_completion',)
+$BASH_COMPLETIONS = ( $HOMEBREW_PREFIX / 'etc/bash_completion',)
 $XONSH_HISTORY_BACKEND = 'sqlite'
 $COMPLETIONS_CONFIRM=True
 
@@ -151,7 +155,7 @@ _ASDF_EXPORT_RE = re.compile(r'export ([A-Z\_]+)="([^"]+)"|unset ([A-Z\_]+)')
 
 
 # asdf
-$ASDF_DIR = p'/usr/local/opt/asdf/libexec'
+$ASDF_DIR =  $HOMEBREW_PREFIX / 'opt/asdf/libexec'
 $ASDF_DATA_DIR = p'~/Library/asdf'
 $PATH.add($ASDF_DATA_DIR / 'shims', front=True)
 def _wrap_asdf(args):

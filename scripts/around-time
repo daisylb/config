@@ -1,0 +1,21 @@
+#!/usr/bin/env espadrille python-dateutil click --
+import dateutil.parser
+import dateutil.tz
+import click
+import datetime
+
+@click.command
+@click.argument('time')
+def run(time: str):
+    time_obj = dateutil.parser.parse(time)
+    start = time_obj - datetime.timedelta(minutes=3)
+    end = time_obj + datetime.timedelta(minutes=3)
+    print('Melbourne:', time_obj.astimezone(dateutil.tz.gettz('Australia/Melbourne')))
+    print("Loggly:", start.isoformat(), '-', end.isoformat())
+    print("Datadog:", int(start.timestamp()), '-', int(end.timestamp()))
+    sentry_start = start.astimezone(dateutil.tz.UTC).isoformat()
+    sentry_end = end.astimezone(dateutil.tz.UTC).isoformat()
+    print(f"Sentry (event search): timestamp:>{sentry_start} timestamp:<{sentry_end}")
+    
+if __name__ == "__main__":
+    run()
