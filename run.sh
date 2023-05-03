@@ -5,7 +5,7 @@ export ASDF_DATA_DIR=$HOME/Library/asdf
 
 PYTHON_ROOT=$ASDF_DATA_DIR/installs/python/$(cat .python-version)
 PYTHON_BIN=$PYTHON_ROOT/bin/python
-POETRY_BIN=$HOME/.poetry/bin/poetry
+POETRY_BIN=$HOME/.local/bin/poetry
 export PATH=/opt/homebrew/bin:$PYTHON_ROOT/bin:$ASDF_DATA_DIR/shims:$HOME/.local/bin:$PATH
 
 if ! command -v brew; then
@@ -27,5 +27,5 @@ if ! command -v poetry; then
 fi
 
 cd ./configsync
-$PYTHON_BIN $POETRY_BIN install
-$PYTHON_BIN $POETRY_BIN run configsync $*
+$POETRY_BIN install
+$POETRY_BIN run configsync $*

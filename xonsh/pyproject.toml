@@ -10,8 +10,8 @@ readchar = "^2.0.1"
 rich = "^7.0.0"
 watchdog = "^0.10.3"
 pywatchman = "^1.4.1"
-pygit2 = "^1.4.0"
 trio = "^0.18.0"
+xonsh-direnv = "^1.6.1"
 
 [tool.poetry.dev-dependencies]
 

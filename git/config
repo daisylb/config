@@ -44,6 +44,7 @@
 	commit-fixup = "!git commit --fixup $(git log --oneline -n 200 | grep -v \"^[0-9a-f]* fixup!\" - | fzf | cut -f 1 -d ' ')"
 	switch-to = "!git branch | fzf | xargs git switch"
 	dad = !curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/
+	autosquash = !GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i
 [merge]
 	conflictstyle = diff3
 	tool = Kaleidoscope
@@ -54,6 +55,7 @@
 [diff]
 	tool = Kaleidoscope
 	renameLimit = 10000
+	external = difft
 #[transfer]
 #    fsckobjects = true
 #[fetch]
@@ -95,4 +97,5 @@
 	showPatch = true
 [credential]
 	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager-core
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager

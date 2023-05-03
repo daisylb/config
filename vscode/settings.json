@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'ISO', 'ISO v0.8', 'ISO v0.7', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
+    "editor.fontFamily": "'VCTR Mono', 'ISO', 'ISO v0.8', 'ISO v0.7', 'Fira Code', 'Fira Mono', 'Source Code Pro', Menlo, Monaco, monospace",
     "editor.fontLigatures": "'ss02",
     "editor.letterSpacing": 0.3,
     "editor.fontSize": 14,
@@ -42,13 +42,20 @@
     },
     "python.linting.enabled": true,
     "python.workspaceSymbols.tagFilePath": "${workspaceRoot}/.tags",
-    "editor.rulers": [80],
+    "editor.rulers": [
+        80
+    ],
     "files.associations": {
         "Vagrantfile": "ruby",
         "COMMIT_MSG": "git-commit"
     },
     "[plaintext]": {
-        "editor.rulers": [37, 39, 76, 80],
+        "editor.rulers": [
+            37,
+            39,
+            76,
+            80
+        ],
     },
     "[python]": {
         "editor.rulers": [
@@ -57,7 +64,8 @@
             88
         ],
         "editor.defaultFormatter": "ms-python.python",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
     },
     "[javascript]": {
         "editor.tabSize": 2,
@@ -196,7 +204,7 @@
     ],
     "diffEditor.renderSideBySide": true,
     "workbench.editor.showTabs": false,
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "GitHub Light",
     "java.configuration.checkProjectSettingsExclusions": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -204,7 +212,8 @@
     "[git-commit]": {
         "editor.wordBasedSuggestions": false,
         "editor.rulers": [
-            50, 72
+            50,
+            72
         ],
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -365,10 +374,12 @@
         }
     },
     "python.workspaceSymbols.enabled": true,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "search.collapseResults": "auto",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
-    }
+    },
+    "outline.showVariables": false,
+    "outline.showTypeParameters": false
 }

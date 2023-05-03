@@ -1,4 +1,4 @@
-#!/usr/bin/env -S ${HOME}/Library/asdf/installs/python/3.9.12/bin/python
+#!/usr/bin/env python
 
 from sys import argv, exit, stdout
 from os import isatty
@@ -34,6 +34,9 @@ if changed('yarn.lock'):
 
 if changed('package-lock.json'):
     commands.append(('npm', 'install'))
+
+if changed('requirements.dev.txt'):
+    commands.append(('pip', 'install', '-r', 'requirements.dev.txt'))
 
 if not commands: exit(0)
 

@@ -18,6 +18,7 @@ $PATH.insert(0, $HOMEBREW_PREFIX / 'bin')
 $PNPM_HOME=p'~/Library/pnpm'
 $PATH.add($PNPM_HOME)
 $PATH.add(p'~/.config/yarn/global/node_modules/.bin/')
+$PATH.add(p'~/Library/Application Support/edgedb/bin')
 
 $ANDROID_HOME = p'~/Library/Android/sdk'
 $PATH.add($ANDROID_HOME / 'tools')
@@ -46,7 +47,7 @@ $BASH_COMPLETIONS = ( $HOMEBREW_PREFIX / 'etc/bash_completion',)
 $XONSH_HISTORY_BACKEND = 'sqlite'
 $COMPLETIONS_CONFIRM=True
 
-import leigh.npm
+# import leigh.npm
 
 def _join(parts, joiner=' '):
     return joiner.join(x for x in parts if x)
@@ -90,7 +91,7 @@ def _bottom_toolbar():
     if _py_envs:
         parts.append("{{GREEN}}🐍  {}".format(', '.join(_py_envs)))
     
-    parts.append(_git_statuses())
+    # parts.append(_git_statuses())
 
     if 'ANDROID_SERIAL' in ${...}: 
         parts.append("{{GREEN}}🤖  {}".format($ANDROID_SERIAL))
