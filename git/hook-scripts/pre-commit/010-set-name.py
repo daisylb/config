@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S ${HOME}/Config/scripts/global-python
 from os.path import commonpath
 from pathlib import Path
 from subprocess import check_call, check_output

@@ -156,5 +156,9 @@
             "def $1(self, ${2:*args, **kwargs}):",
             "    return super().$1($2)"
         ]
+    },
+    "Printf debugging": {
+        "prefix": "dbg",
+        "body": ["print(f\"{$0=}\")"]
     }
 }

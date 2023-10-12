@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S ${HOME}/Config/scripts/global-python
 import subprocess
 
 if subprocess.run(('git', 'show-ref', '--verify', '--quiet', 'refs/heads/main'), stdout=subprocess.DEVNULL).returncode == 0:
