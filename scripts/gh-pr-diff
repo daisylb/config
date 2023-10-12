@@ -1,11 +1,24 @@
 #!/usr/bin/env zsh
 set -euo pipefail
 
+# Based on https://daisy.wtf/writing/github-changes-since-last-review
+
 PR_NUMBER=$1
-# TODO: use graphql to avoid roundtrips
-HEAD_SHA=$(gh api "/repos/{owner}/{repo}/pulls/$PR_NUMBER" -q '.head.sha')
-LAST_REVIEW_SHA=$(gh api "/repos/{owner}/{repo}/pulls/$PR_NUMBER/reviews" -q 'map(select(.user.id == 473960) | .commit_id)[-1]')
-if test $(git cat-file -t $LAST_REVIEW_SHA || echo 'none') != commit -o $(git cat-file -t $HEAD_SHA || echo 'none') != commit; then
-    git fetch origin $LAST_REVIEW_SHA $HEAD_SHA
+MY_USER_ID=$(gh api "/user" -q '.id')
+echo "user id $MY_USER_ID"
+PR_HEAD_SHA=$(gh api "/repos/{owner}/{repo}/pulls/$PR_NUMBER" -q '.head.sha')
+echo "head sha $PR_HEAD_SHA"
+PR_LAST_REVIEW_SHA=$(gh api "/repos/{owner}/{repo}/pulls/$PR_NUMBER/reviews" \
+                     -q "map(select(.user.id == $MY_USER_ID) | .commit_id)[-1]")
+echo "last review sha $PR_LAST_REVIEW_SHA"
+
+# Fetch the commits we want to compare if we don't already have them
+if \
+    test $(git cat-file -t $PR_LAST_REVIEW_SHA || echo 'none') \
+    != commit -o $(git cat-file -t $PR_HEAD_SHA || echo 'none') != commit
+then
+    git fetch origin $PR_LAST_REVIEW_SHA $PR_HEAD_SHA
 fi
-git range-diff main $LAST_REVIEW_SHA $HEAD_SHA
+
+# Compare the ranges
+git range-diff main $PR_LAST_REVIEW_SHA $PR_HEAD_SHA
