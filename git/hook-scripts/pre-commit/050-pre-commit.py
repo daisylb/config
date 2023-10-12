@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S ${HOME}/Config/scripts/global-python
 from os import path, execlpe, environ
 from subprocess import run
 
@@ -31,4 +31,3 @@ execlpe(
     "commit",
     env_dict,
 )
-

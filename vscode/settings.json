@@ -94,12 +94,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "python.venvFolders": [
-    "envs",
-    ".pyenv",
-    ".direnv",
-    "Library/Caches/pypoetry/virtualenvs"
-  ],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
   "python.linting.flake8Enabled": false,
@@ -183,9 +177,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-  "python.linting.flake8Path": "~/.local/pipx/venvs/flake8/bin/flake8",
   "python.linting.banditEnabled": true,
-  "python.linting.banditPath": "~/.local/pipx/venvs/bandit/bin/bandit",
   "python.linting.pylintArgs": ["--disable=no-member"],
   "diffEditor.renderSideBySide": true,
   "workbench.editor.showTabs": false,
@@ -252,13 +244,11 @@
     "**/site-packages/**/*.py",
     "**/node_modules/**"
   ],
-  "python.linting.mypyPath": "~/.local/bin/mypy",
   "python.linting.mypyEnabled": true,
   "python.workspaceSymbols.exclusionPatterns": [
     "**/site-packages/**",
     "**/node_modules/**"
   ],
-  "python.linting.pylintPath": "~/.local/bin/pylint",
   "editor.acceptSuggestionOnEnter": "off",
   "search.quickOpen.includeSymbols": true,
   "workbench.editorAssociations": {
