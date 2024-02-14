@@ -8,7 +8,7 @@
         "revision": "5b8824f6649ac3d3a305f47d9196d6fd4506b4df"
       },
       "filippo.io/age": {
-        "revision": "8e3f74c283b2e9b3cd0ec661fa4008504e536d20",
+        "revision": "101cc8676386b0503571a929a88618cae2f0b1cd",
         "options": {
           "clone_target": "https://filippo.io/age"
         }
@@ -934,7 +934,7 @@
         }
       },
       "cairo": {
-        "version": "1.16.0_5",
+        "version": "1.18.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -978,7 +978,7 @@
         }
       },
       "harfbuzz": {
-        "version": "8.1.1",
+        "version": "8.2.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1032,7 +1032,7 @@
         }
       },
       "openjdk": {
-        "version": "20.0.2",
+        "version": "21",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1086,7 +1086,7 @@
         }
       },
       "bundletool": {
-        "version": "1.15.4",
+        "version": "1.15.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1130,7 +1130,7 @@
         }
       },
       "butane": {
-        "version": "0.17.0",
+        "version": "0.19.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1228,7 +1228,7 @@
         }
       },
       "caddy": {
-        "version": "2.6.4",
+        "version": "2.7.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1272,7 +1272,7 @@
         }
       },
       "ccls": {
-        "version": "0.20220729_9",
+        "version": "0.20230717_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1326,7 +1326,7 @@
         }
       },
       "cmake": {
-        "version": "3.25.2",
+        "version": "3.27.7",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1370,7 +1370,7 @@
         }
       },
       "cocoapods": {
-        "version": "1.12.1",
+        "version": "1.13.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1557,7 +1557,7 @@
         }
       },
       "openssl@1.1": {
-        "version": "1.1.1t",
+        "version": "1.1.1w",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1611,7 +1611,7 @@
         }
       },
       "curl": {
-        "version": "8.2.1",
+        "version": "8.4.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1655,7 +1655,7 @@
         }
       },
       "difftastic": {
-        "version": "0.43.1",
+        "version": "0.52.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1699,7 +1699,7 @@
         }
       },
       "direnv": {
-        "version": "2.32.2",
+        "version": "2.32.3",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1753,7 +1753,7 @@
         }
       },
       "dnscontrol": {
-        "version": "3.27.1",
+        "version": "4.5.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1797,7 +1797,7 @@
         }
       },
       "doctl": {
-        "version": "1.92.1",
+        "version": "1.99.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2037,7 +2037,7 @@
         }
       },
       "exiftool": {
-        "version": "12.50",
+        "version": "12.60",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2267,7 +2267,7 @@
         }
       },
       "unbound": {
-        "version": "1.18.0",
+        "version": "1.18.0_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2537,7 +2537,7 @@
         }
       },
       "tesseract": {
-        "version": "5.3.2_1",
+        "version": "5.3.3",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2625,7 +2625,7 @@
         }
       },
       "freetds": {
-        "version": "1.3.20",
+        "version": "1.4.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2669,7 +2669,7 @@
         }
       },
       "fzf": {
-        "version": "0.38.0",
+        "version": "0.42.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2723,7 +2723,7 @@
         }
       },
       "gdk-pixbuf": {
-        "version": "2.42.10",
+        "version": "2.42.10_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2777,7 +2777,7 @@
         }
       },
       "gh": {
-        "version": "2.23.0",
+        "version": "2.36.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2821,7 +2821,7 @@
         }
       },
       "git": {
-        "version": "2.41.0",
+        "version": "2.42.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2875,7 +2875,7 @@
         }
       },
       "git-absorb": {
-        "version": "0.6.9",
+        "version": "0.6.10",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2929,7 +2929,7 @@
         }
       },
       "git-delta": {
-        "version": "0.15.1",
+        "version": "0.16.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3213,7 +3213,7 @@
         }
       },
       "imagemagick": {
-        "version": "7.1.1-15_1",
+        "version": "7.1.1-20",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3257,7 +3257,7 @@
         }
       },
       "jq": {
-        "version": "1.6",
+        "version": "1.7",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3325,7 +3325,7 @@
         }
       },
       "kubernetes-cli": {
-        "version": "1.26.2",
+        "version": "1.28.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3433,7 +3433,7 @@
         }
       },
       "lego": {
-        "version": "4.10.2",
+        "version": "4.14.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3546,7 +3546,7 @@
         }
       },
       "libfido2": {
-        "version": "1.13.0",
+        "version": "1.13.0_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3654,7 +3654,7 @@
         }
       },
       "libmagic": {
-        "version": "5.44",
+        "version": "5.45",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3767,7 +3767,7 @@
         }
       },
       "libpq": {
-        "version": "15.4",
+        "version": "16.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3821,7 +3821,7 @@
         }
       },
       "libressl": {
-        "version": "3.6.2",
+        "version": "3.7.3",
         "bottle": {
           "rebuild": 1,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3988,7 +3988,7 @@
         }
       },
       "libvirt": {
-        "version": "9.7.0",
+        "version": "9.8.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4086,7 +4086,7 @@
         }
       },
       "libxmlsec1": {
-        "version": "1.2.37",
+        "version": "1.3.1_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4140,7 +4140,7 @@
         }
       },
       "llvm": {
-        "version": "16.0.6",
+        "version": "17.0.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4292,7 +4292,7 @@
         }
       },
       "memcached": {
-        "version": "1.6.18",
+        "version": "1.6.21_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4346,7 +4346,7 @@
         }
       },
       "micropython": {
-        "version": "1.20.0",
+        "version": "1.21.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4454,7 +4454,7 @@
         }
       },
       "mosh": {
-        "version": "1.4.0",
+        "version": "1.4.0_8",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4577,51 +4577,51 @@
         }
       },
       "netlify-cli": {
-        "version": "13.0.0",
+        "version": "16.6.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_sonoma": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:2801693632c93acfc59153f1c52d7dacf74960ef25a4bbee6c043b8fa0469473",
-              "sha256": "2801693632c93acfc59153f1c52d7dacf74960ef25a4bbee6c043b8fa0469473"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:b5cb42d7e863570653aef996b648868633ff5a33b6cbd9c9bd96610d8c9e5a8c",
+              "sha256": "b5cb42d7e863570653aef996b648868633ff5a33b6cbd9c9bd96610d8c9e5a8c"
             },
             "arm64_ventura": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:001e41b0d8467955433fac3944e37db5c0bdbd1387fbc2e5713ad2539651cfaf",
-              "sha256": "001e41b0d8467955433fac3944e37db5c0bdbd1387fbc2e5713ad2539651cfaf"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:c53f7157c95f337d7f4169a38d5f62e48ce0dd319aa7064bb9df6acd4d48fb45",
+              "sha256": "c53f7157c95f337d7f4169a38d5f62e48ce0dd319aa7064bb9df6acd4d48fb45"
             },
             "arm64_monterey": {
               "cellar": "/opt/homebrew/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:6526b43cfbfdd4fcf80abd82b4d1b474ae08c50008ea1aff5b6c9e59318455ba",
-              "sha256": "6526b43cfbfdd4fcf80abd82b4d1b474ae08c50008ea1aff5b6c9e59318455ba"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:481bbd23ee0bf675bbfe6ad01f67606843d8faa8cf0af00c5faa13f5ed16460f",
+              "sha256": "481bbd23ee0bf675bbfe6ad01f67606843d8faa8cf0af00c5faa13f5ed16460f"
             },
             "sonoma": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:546b1a0373638c742cd269a25834938691ad1656035e915ac3c9f65cd8cfa039",
-              "sha256": "546b1a0373638c742cd269a25834938691ad1656035e915ac3c9f65cd8cfa039"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:176c58e22bb5ca1872080b980e0c557fcc4cf74b59ae93b5dd04e12fed90bdbe",
+              "sha256": "176c58e22bb5ca1872080b980e0c557fcc4cf74b59ae93b5dd04e12fed90bdbe"
             },
             "ventura": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:b7ccba70344f0bc9e7bc586246d5a265bd449ed83ab9abfdc76752cd8a4bf523",
-              "sha256": "b7ccba70344f0bc9e7bc586246d5a265bd449ed83ab9abfdc76752cd8a4bf523"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:1bd0467dec833d2f0d81ae2c96d4ae06dcb7e8dcb62e3eed23e52caab9d66337",
+              "sha256": "1bd0467dec833d2f0d81ae2c96d4ae06dcb7e8dcb62e3eed23e52caab9d66337"
             },
             "monterey": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:65d3ef1f01e75e381856b4f39e1ff19b57add02549ba66039d0a9f84edb62752",
-              "sha256": "65d3ef1f01e75e381856b4f39e1ff19b57add02549ba66039d0a9f84edb62752"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:d95aaaad5749cd42ea51986489759519489904b6cc85f22d7d5de1a7bde7c3a1",
+              "sha256": "d95aaaad5749cd42ea51986489759519489904b6cc85f22d7d5de1a7bde7c3a1"
             },
             "x86_64_linux": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:02dbab9b028e42029747983c67c3fc3aa0d04914862f6d77f9e9f8c053eb75bd",
-              "sha256": "02dbab9b028e42029747983c67c3fc3aa0d04914862f6d77f9e9f8c053eb75bd"
+              "url": "https://ghcr.io/v2/homebrew/core/netlify-cli/blobs/sha256:08143aa3d39d342f8e244e6767397bf653dc27ca2743ae7ee78b58e0b3ee16ae",
+              "sha256": "08143aa3d39d342f8e244e6767397bf653dc27ca2743ae7ee78b58e0b3ee16ae"
             }
           }
         }
       },
       "nickel": {
-        "version": "1.1.1",
+        "version": "1.2.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4665,7 +4665,7 @@
         }
       },
       "openssh": {
-        "version": "9.4p1",
+        "version": "9.5p1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4817,7 +4817,7 @@
         }
       },
       "pacparser": {
-        "version": "1.4.1",
+        "version": "1.4.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -4871,7 +4871,7 @@
         }
       },
       "pandoc": {
-        "version": "3.1",
+        "version": "3.1.8",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5092,7 +5092,7 @@
         }
       },
       "platformio": {
-        "version": "6.1.11",
+        "version": "6.1.11_1",
         "bottle": {
           "rebuild": 1,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5136,7 +5136,7 @@
         }
       },
       "qemu": {
-        "version": "8.1.0_3",
+        "version": "8.1.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5190,7 +5190,7 @@
         }
       },
       "podman": {
-        "version": "4.6.2",
+        "version": "4.7.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5293,7 +5293,7 @@
         }
       },
       "putty": {
-        "version": "0.78",
+        "version": "0.79",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5347,7 +5347,7 @@
         }
       },
       "pv": {
-        "version": "1.6.20",
+        "version": "1.8.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5401,7 +5401,7 @@
         }
       },
       "restic": {
-        "version": "0.15.1",
+        "version": "0.16.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5568,7 +5568,7 @@
         }
       },
       "rust-analyzer": {
-        "version": "2023-02-27",
+        "version": "2023-10-09",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5612,7 +5612,7 @@
         }
       },
       "rustup-init": {
-        "version": "1.25.2",
+        "version": "1.26.0_1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5666,7 +5666,7 @@
         }
       },
       "semgrep": {
-        "version": "1.43.0",
+        "version": "1.44.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -5887,7 +5887,7 @@
         }
       },
       "sqlcipher": {
-        "version": "4.5.3",
+        "version": "4.5.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6009,7 +6009,7 @@
         }
       },
       "tldr": {
-        "version": "1.5.0",
+        "version": "1.6.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6063,7 +6063,7 @@
         }
       },
       "tree": {
-        "version": "2.1.0",
+        "version": "2.1.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6117,7 +6117,7 @@
         }
       },
       "vercel-cli": {
-        "version": "32.1.0",
+        "version": "32.3.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6215,7 +6215,7 @@
         }
       },
       "wget": {
-        "version": "1.21.3_1",
+        "version": "1.21.4",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6269,7 +6269,7 @@
         }
       },
       "wtf": {
-        "version": "20230227",
+        "version": "20230906",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6438,7 +6438,7 @@
         }
       },
       "zlib": {
-        "version": "1.2.13",
+        "version": "1.3",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -6496,19 +6496,19 @@
         "bottle": false
       },
       "getsentry/tools/sentry-cli": {
-        "version": "2.13.0",
+        "version": "2.21.2",
         "bottle": false
       },
       "heroku/brew/heroku": {
-        "version": "7.68.2",
+        "version": "8.5.0",
         "bottle": false
       },
       "messense/macos-cross-toolchains/aarch64-unknown-linux-gnu": {
-        "version": "11.2.0",
+        "version": "11.2.0_1",
         "bottle": false
       },
       "superfly/tap/flyctl": {
-        "version": "0.1.84",
+        "version": "0.1.107",
         "bottle": false
       },
       "teamookla/speedtest/speedtest": {
@@ -6782,7 +6782,7 @@
         }
       },
       "gog-galaxy": {
-        "version": "2.0.71.2",
+        "version": "2.0.72.87",
         "options": {
           "full_name": "gog-galaxy"
         }
@@ -6992,7 +6992,7 @@
         }
       },
       "vlc": {
-        "version": "3.0.18",
+        "version": "3.0.19",
         "options": {
           "full_name": "vlc"
         }
@@ -7014,16 +7014,22 @@
         "options": {
           "full_name": "yubico-yubikey-manager"
         }
+      },
+      "git-credential-manager": {
+        "version": "2.3.2",
+        "options": {
+          "full_name": "git-credential-manager"
+        }
       }
     },
     "mas": {
       "1Password for Safari": {
         "id": "1569813296",
-        "version": "2.14.1"
+        "version": "2.16.0"
       },
       "AdGuard for Safari": {
         "id": "1440147259",
-        "version": "1.11.14"
+        "version": "1.11.15"
       },
       "Amphetamine": {
         "id": "937984704",
@@ -7031,20 +7037,14 @@
       },
       "BusyCal": {
         "id": "1173663647",
-        "version": "2023.3.2"
+        "version": "2023.4.3"
       },
-      "Consent-O-Matic": {
-        "id": "1606897889",
-        "version": "1.0.12"
-      },
+      "Consent-O-Matic": null,
       "Cubox": {
         "id": "1113361350",
-        "version": "7.5.6"
+        "version": "7.5.9"
       },
-      "Cubox for Safari": {
-        "id": "1550721541",
-        "version": "7.2.13"
-      },
+      "Cubox for Safari": null,
       "Discovery": {
         "id": "1381004916",
         "version": "2.1.0"
@@ -7053,55 +7053,25 @@
         "id": "1588708173",
         "version": "1.7"
       },
-      "Flighty": {
-        "id": "1358823008",
-        "version": "3.0.3"
-      },
+      "Flighty": null,
       "InYourFace": null,
-      "Keynote": {
-        "id": "409183694",
-        "version": "13.1"
-      },
-      "MakePass": {
-        "id": "1450989464",
-        "version": "4.3.1"
-      },
-      "Messenger": {
-        "id": "1480068668",
-        "version": "195.0"
-      },
-      "Numbers": {
-        "id": "409203825",
-        "version": "13.1"
-      },
-      "Open In Webmail": {
-        "id": "1451552749",
-        "version": "1.4"
-      },
-      "Pages": {
-        "id": "409201541",
-        "version": "13.1"
-      },
-      "Parcel": {
-        "id": "639968404",
-        "version": "7.7"
-      },
-      "SimplyJSON": {
-        "id": "1495193038",
-        "version": "1.3"
-      },
+      "Keynote": null,
+      "MakePass": null,
+      "Messenger": null,
+      "Numbers": null,
+      "Open In Webmail": null,
+      "Pages": null,
+      "Parcel": null,
+      "SimplyJSON": null,
       "Tailscale": {
         "id": "1475387142",
         "version": "1.50.1"
       },
-      "TestFlight": {
-        "id": "899247664",
-        "version": "3.3.0"
-      },
+      "TestFlight": null,
       "Userscripts": null,
       "Yubico Authenticator": {
         "id": "1497506650",
-        "version": "6.2.01"
+        "version": "6.3.0"
       }
     }
   },
@@ -7114,6 +7084,14 @@
         "CLT": "14.3.1.0.1.1683849156",
         "Xcode": "14.3.1",
         "macOS": "13.5.1"
+      },
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.1.15",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.0.0.0.1.1694021235",
+        "Xcode": "15.0",
+        "macOS": "14.0"
       }
     }
   }

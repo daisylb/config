@@ -194,10 +194,10 @@ hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
     if string.match(fullURL, "^https?://.*%.zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/my/") then
         hs.urlevent.openURLWithBundle(fullURL, 'us.zoom.xos')
     -- Open links to Slack messages in Slack directly
-    elseif string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)") then
-        tenant, msg = string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)")
-        print(tenant, msg)
-        hs.urlevent.openURLWithBundle(fullURL, "com.tinyspeck.slackmacgap")
+    --elseif string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)") then
+    --    tenant, msg = string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)")
+    --    print(tenant, msg)
+    --    hs.urlevent.openURLWithBundle(fullURL, "com.tinyspeck.slackmacgap")
     -- Streamyard and Google Meet both don't quite work as well in Safari
     elseif host == 'streamyard.com' or host == 'meet.google.com' then
         hs.urlevent.openURLWithBundle(fullURL, chromiumBrowser)

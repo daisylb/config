@@ -40,8 +40,9 @@
 	push-new = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 	push-f = push --force-with-lease
 	diff-pr = "!git diff $(git merge-base remotes/origin/HEAD HEAD)"
+	log-pr = "!git log $(git merge-base remotes/origin/HEAD HEAD)"
 	stash-apply = "!git stash apply $(git stash list | fzf | cut -f 1 -d ':')"
-	commit-fixup = "!git commit --fixup $(git log --oneline -n 200 | grep -v \"^[0-9a-f]* fixup!\" - | fzf | cut -f 1 -d ' ')"
+	fixup = "!git commit --fixup $(git log --oneline -n 200 $(git merge-base remotes/origin/HEAD HEAD)..HEAD | grep -v \"^[0-9a-f]* fixup!\" - | fzf | cut -f 1 -d ' ')"
 	switch-to = "!git branch | fzf | xargs git switch"
 	dad = !curl -H \"Accept: text/plain\" https://icanhazdadjoke.com/
 	autosquash = !GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i
@@ -95,7 +96,8 @@
 [stash]
 	showDiff = true
 	showPatch = true
-[credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
 [rebase]
 	updateRefs = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
