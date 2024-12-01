@@ -1,0 +1,16 @@
+[
+    {
+        "name": "default",
+        "id": "wasabi",
+        "repository": "",
+        "storage": "wasabi://ap-southeast-2@s3.ap-southeast-2.wasabisys.com/daisylb-duplicacy",
+        "encrypted": true,
+        "no_backup": false,
+        "no_restore": false,
+        "no_save_password": false,
+        "nobackup_file": "",
+        "keys": null,
+        "filters": "",
+        "exclude_by_attribute": false
+    }
+]

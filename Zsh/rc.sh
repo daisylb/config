@@ -6,3 +6,5 @@ export PATH="$PATH:/Users/leigh/.local/bin"
 
 export PNPM_HOME="/Users/leigh/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

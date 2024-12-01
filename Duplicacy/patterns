@@ -1,0 +1,116 @@
+# To use: @/Users/daisy/Config/Duplicacy/patterns
+# Directories containing large files that don't need backing up
+-*.photoslibrary/*
+-Library/Application Support/Autodesk/webdeploy/
+-Library/Application Support/Steam/
+-Library/Application Support/AIEnhancer/
+-Library/Application Support/Homebrew/
+-Library/Application Support/discord/
+-Library/Application Support/Code/
+-Library/Application Support/RetroArch/
+-Library/Application Support/CloudDocs/
+-Library/Application Support/*/Cache/
+-.local/share/containers/
+-Library/Caches/
+-Library/Containers/com.tinyspeck.slackmacgap/
+-Library/Mobile Documents/
+-Library/Developer/Xcode/
+-Library/Metadata/
+-Library/asdf/
+-Library/Preferences/
+
+# partially downloaded files, usually
+-*.part
+
+# Downloaded videos generally aren't useful to back up
+-Downloads/*.mp4
+-Downloads/*.flv
+-Downloads/*.mkv
+
+# .dmg files are almost always just downloaded software
+-*.dmg
+-*.iso
+
+# No need to back up app bundles, usually
+-*.app/
+
+# development stuff
+-*/node_modules/
+-*/__pycache__/
+-.cargo/
+-.asdf/
+-.cache/
+-.Trash/
+-.local/pipx/venvs/
+-.local/share/containers/podman/
+-.pnpm-store/
+-.rustup/
+-.swiftpm/
+-.platformio/
+-.vscode/extensions/
+-.duplicacy-web/
+
+# Directories Apple won't let us access anyway
+-Library/Accounts/
+-Library/AppleMediaServices/
+-Library/Application Support/AddressBook/
+-Library/Application Support/CallHistoryDB/
+-Library/Application Support/CallHistoryTransactions/
+-Library/Application Support/CloudDocs/session/db/
+-Library/Application Support/FaceTime/
+-Library/Application Support/FileProvider/
+-Library/Application Support/Knowledge/
+-Library/Application Support/com.apple.TCC/
+-Library/Application Support/com.apple.avfoundation/Frecents/
+-Library/Application Support/com.apple.sharedfilelist/
+-Library/Assistant/SiriVocabulary/
+-Library/Autosave Information/
+-Library/Biome/
+-Library/Caches/CloudKit/
+-Library/Caches/FamilyCircle/
+-Library/Caches/com.apple.HomeKit/
+-Library/Caches/com.apple.Safari/
+-Library/Caches/com.apple.ap.adprivacyd/
+-Library/Caches/com.apple.findmy.fmfcore/
+-Library/Caches/com.apple.findmy.fmipcore/
+-Library/Caches/com.apple.homed/
+-Library/Calendars/
+-Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider/
+-Library/Containers/com.apple.Home/
+-Library/Containers/com.apple.Maps/Data/Maps/
+-Library/Containers/com.apple.MobileSMS/
+-Library/Containers/com.apple.Notes/
+-Library/Containers/com.apple.Safari/
+-Library/Containers/com.apple.archiveutility/
+-Library/Containers/com.apple.corerecents.recentsd/Data/Library/Recents/
+-Library/Containers/com.apple.mail/
+-Library/Containers/com.apple.news/
+-Library/Containers/com.apple.stocks/
+-Library/Cookies/
+-Library/CoreFollowUp/
+-Library/DoNotDisturb/
+-Library/DuetExpertCenter/
+-Library/Group Containers/group.com.apple.notes/
+-Library/Group Containers/group.com.apple.secure-control-center-preferences/
+-Library/HomeKit/
+-Library/IdentityServices/
+-Library/IntelligencePlatform/
+-Library/Mail/
+-Library/Messages/
+-Library/Metadata/CoreSpotlight/
+-Library/Metadata/com.apple.IntelligentSuggestions/
+-Library/PersonalizationPortrait/
+-Library/Safari/
+-Library/Sharing/
+-Library/Shortcuts/
+-Library/StatusKit/
+-Library/Suggestions/
+-Library/Trial/
+-Library/Weather/
+-Library/com.apple.aiml.instrumentation/
+
+
+
+-Downloads/Waifu2x_Video_1.0_Build_1/
+-Downloads/old/
+-*.mp4
