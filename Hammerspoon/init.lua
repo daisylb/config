@@ -1,3 +1,9 @@
+local work = false
+
+if string.match(hs.host.localizedName(), "^OCTO*") then
+    work = true
+end
+
 -- HANDLE SCROLLING WITH MOUSE BUTTON PRESSED
 local scrollMouseButton = 2
 local deferred = false
@@ -175,8 +181,11 @@ hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(wind
     applicationTimers[bundleID] = nil
 end)
 
--- com.apple.Safari
 local defaultBrowser = 'com.apple.Safari' -- 'com.apple.Safari'
+-- okta doesn't work in safari atm, so it's easier to just use vivaldi on the work mac
+--if work then
+--    defaultBrowser = 'com.vivaldi.Vivaldi'
+--end
 local nonSafariBrowser = 'com.vivaldi.Vivaldi' -- org.mozilla.Firefox com.vivaldi.Vivaldi
 local chromiumBrowser = 'com.vivaldi.Vivaldi'
 
@@ -184,10 +193,12 @@ hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
     -- Only Zoom join links should open in Zoom, not any zoom.us URL
     if string.match(fullURL, "^https?://.*%.zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/my/") then
         hs.urlevent.openURLWithBundle(fullURL, 'us.zoom.xos')
-    -- Things that need to be opened in a Chromium browser:
-    -- Streamyard: some screen sharing features
-    -- AWS: uses legacy U2F APIs not supported in Safari
-    -- Sentry: legacy U2F APIs also
+    -- Open links to Slack messages in Slack directly
+    elseif string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)") then
+        tenant, msg = string.match(fullURL, "^https://.*%.slack%.com/archives/(.*)/(.*)")
+        print(tenant, msg)
+        hs.urlevent.openURLWithBundle(fullURL, "com.tinyspeck.slackmacgap")
+    -- Streamyard and Google Meet both don't quite work as well in Safari
     elseif host == 'streamyard.com' or host == 'meet.google.com' then
         hs.urlevent.openURLWithBundle(fullURL, chromiumBrowser)
     elseif host == 'aws.amazon.com' or string.match(host, '.*%.aws%.amazon%.com') then

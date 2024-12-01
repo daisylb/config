@@ -1,17 +1,57 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S ${HOME}/.cargo/bin/espadrille click --
 
+import os
 import pathlib
 import sys
-import os
 from textwrap import dedent
 
-requested_dir_or_file = pathlib.Path(sys.argv[1]) if len(sys.argv) == 2 else pathlib.Path.cwd()
+import click
+
+
+def open_in_vs_code(file: pathlib.Path, /, wait: bool = False, line: str = ''):
+    args = ['code']
+
+    if line:
+        args.append('--goto')
+        args.append(f'{file}:{line}')
+    else:
+        args.append(str(file))
+
+    if wait: args.append('--wait')
+    print(f'{args=}')
+    os.execv("/opt/homebrew/bin/code", args)
+
+KRAKEN_CORE_SRC = pathlib.Path('~/Octopus/kraken-core/src/').expanduser()
+
+@click.command()
+@click.argument('path', type=pathlib.Path, default=pathlib.Path.cwd())
+@click.option('--line', help='Line (or line:col) to jump to', type=str)
+@click.option('--wait/--no-wait', help='Block until the file is closed', type=bool)
+def main(path: pathlib.Path, line: str, wait: bool):
+    if not path.exists() and not path.is_absolute():
+        kc_path = KRAKEN_CORE_SRC / path
+        if kc_path.exists():
+            path = kc_path
+    open_in_vs_code(path, wait=wait, line=line)
+
+if __name__ == "__main__":
+    main()
+    
+
+'''
+requested_dir_or_file = (
+    pathlib.Path(sys.argv[1]) if len(sys.argv) == 2 else pathlib.Path.cwd()
+)
 
 if requested_dir_or_file.is_dir():
-    project_file = requested_dir_or_file.parent / f"{requested_dir_or_file.name}.sublime-project"
+    project_file = (
+        requested_dir_or_file.parent / f"{requested_dir_or_file.name}.sublime-project"
+    )
     if not project_file.exists():
-        with project_file.open('w') as f:
-            f.write(dedent(f"""
+        with project_file.open("w") as f:
+            f.write(
+                dedent(
+                    f"""
                 {{
                     "folders":
                     [
@@ -20,7 +60,10 @@ if requested_dir_or_file.is_dir():
                         }}
                     ]
                 }}
-                """))
+                """
+                )
+            )
     os.execlp("subl", "subl", str(project_file))
 else:
     os.execlp("subl", "subl", str(requested_dir_or_file))
+'''

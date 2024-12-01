@@ -1,0 +1,167 @@
+#!/usr/bin/env -S ${HOME}/.cargo/bin/espadrille click attrs more-itertools --
+import itertools
+import json
+import pprint
+import subprocess
+
+import attrs
+import click
+import more_itertools
+
+
+def get_output(*args, **kwargs) -> str:
+    kwargs.setdefault("check", True)
+    return subprocess.run(*args, stdout=subprocess.PIPE, **kwargs).stdout.decode("utf8")
+
+
+def get_json(*args, **kwargs) -> dict:
+    return json.loads(get_output(*args, **kwargs))
+
+
+@attrs.define
+class BranchInfo:
+    branch_name: str
+    github_info: dict | None
+
+
+def get_info() -> list[BranchInfo]:
+    current_branch = get_output(("git", "branch", "--show-current")).strip()
+    """
+    stack_branches = [
+        x.strip()
+        for x in get_output(
+            (
+                "git",
+                "log",
+                "--topo-order",
+                "--reverse",
+                "--format=%S",
+                f"--branches={current_branch}.stack/*",
+                "^main",
+            )
+        )
+        .strip()
+        .splitlines()
+    ]
+    """
+    stack_branches = [
+        x.strip()
+        for x in get_output(
+            (
+                "git",
+                "branch",
+                "--list",
+                f"{current_branch}.stack/*",
+            )
+        )
+        .strip()
+        .splitlines()
+    ]
+    full_stack = [*stack_branches, current_branch]
+    merge_base = get_output(("git", "merge-base", "--octopus", *full_stack)).strip()
+    full_stack_ordered = list(
+        {
+            x.strip(): None
+            for x in get_output(
+                (
+                    "git",
+                    "log",
+                    "--topo-order",
+                    "--format=%S",
+                    *full_stack,
+                    f"^{merge_base}^",
+                )
+            )
+            .strip()
+            .splitlines()
+        }.keys()
+    )[::-1]
+    result = []
+    for branch in full_stack_ordered:
+        try:
+            github_info = get_json(
+                ("gh", "pr", "view", "--json", "baseRefName,body,number", branch),
+                stderr=subprocess.DEVNULL,
+            )
+        except subprocess.CalledProcessError as e:
+            if e.returncode != 1:
+                raise
+            github_info = None
+        result.append(BranchInfo(branch_name=branch, github_info=github_info))
+    return result
+
+
+BEGIN_MARKER = "<!-- git-stack information begins here -->"
+END_MARKER = "<!-- git-stack information ends here -->"
+
+
+def update_body(existing_body: str, stack: list[BranchInfo], current: BranchInfo):
+    lines = existing_body.splitlines()
+    if BEGIN_MARKER not in lines or END_MARKER not in lines:
+        before = lines
+        after = []
+    else:
+        before = lines[: lines.index(BEGIN_MARKER)]
+        after = lines[lines.index(END_MARKER) + 1 :]
+
+    result = []
+    for item in stack:
+        if item.github_info:
+            if item is current:
+                result.append(f'- #{item.github_info["number"]} **(this PR)**')
+            else:
+                result.append(f'- #{item.github_info["number"]}')
+
+    return "\r\n".join(
+        (
+            *before,
+            BEGIN_MARKER,
+            "",
+            "---",
+            "",
+            "**This PR is part of a stack :pancakes:**",
+            "",
+            *result,
+            "",
+            END_MARKER,
+            *after,
+        )
+    )
+
+
+@click.command()
+def main():
+    stack_info = get_info()
+    for prev, this in more_itertools.windowed(itertools.chain([None], stack_info), 2):
+        if this.github_info:
+            print(f'{this.branch_name}: PR #{this.github_info["number"]}')
+        else:
+            print(f"{this.branch_name}: no PR")
+            if prev:
+                print(
+                    f"command to create PR: gh pr create -H {this.branch_name} -B {prev.branch_name}"
+                )
+            else:
+                print(f"command to create PR: gh pr create -H {this.branch_name}")
+
+        if (
+            this.github_info
+            and prev
+            and this.github_info["baseRefName"] != prev.branch_name
+        ):
+            print(
+                f"command to fix base branch: gh pr edit {this.branch_name} -B {prev.branch_name}"
+            )
+
+        if this.github_info:
+            body = this.github_info["body"]
+            new_body = update_body(body, stack_info, this)
+            if body != new_body:
+                print("Updating body...")
+                subprocess.run(
+                    ("gh", "pr", "edit", this.branch_name, "-b", new_body), check=True
+                )
+
+
+if __name__ == "__main__":
+    main()

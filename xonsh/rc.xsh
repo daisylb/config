@@ -2,9 +2,9 @@ from collections import Counter
 from os.path import expanduser
 import tempfile
 
-#$EDITOR = 'code --wait --new-window'
+$EDITOR = '/opt/homebrew/bin/code --wait --new-window'
 #$EDITOR = 'subl --wait --new-window'
-$EDITOR = 'nova --wait'
+#$EDITOR = 'nova --wait'
 $PAGER = 'sp'
 
 xontrib load direnv # abbrevs
