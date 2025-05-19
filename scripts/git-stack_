@@ -1,7 +1,14 @@
-#!/usr/bin/env -S ${HOME}/.cargo/bin/espadrille click attrs more-itertools --
+#!/usr/bin/env uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "attrs",
+#     "click",
+#     "more-itertools",
+# ]
+# ///
 import itertools
 import json
-import pprint
 import subprocess
 
 import attrs
@@ -131,6 +138,7 @@ def update_body(existing_body: str, stack: list[BranchInfo], current: BranchInfo
 
 @click.command()
 def main():
+    print("running")
     stack_info = get_info()
     for prev, this in more_itertools.windowed(itertools.chain([None], stack_info), 2):
         if this.github_info:

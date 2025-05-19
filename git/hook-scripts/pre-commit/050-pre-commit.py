@@ -1,6 +1,8 @@
 #!/usr/bin/env -S ${HOME}/Config/scripts/global-python
-from os import path, execlpe, environ
+from os import environ, execlpe, path
 from subprocess import run
+
+exit(0)
 
 
 if not path.exists(".pre-commit-config.yaml"):

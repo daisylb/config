@@ -1,2 +1,5 @@
 *.egg-info
 vscode/History/
+vscode/globalStorage
+vscode/globalStorage*
+vscode/workspaceStorage*

@@ -1,5 +1,3 @@
 #!/usr/bin/env zsh
-pushd ~
-PYTHON_PATH=$(asdf which python)
-popd
+PYTHON_PATH=$(/opt/homebrew/bin/mise -C ~ which python)
 exec $PYTHON_PATH $*

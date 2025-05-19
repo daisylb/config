@@ -190,6 +190,7 @@ local nonSafariBrowser = 'com.vivaldi.Vivaldi' -- org.mozilla.Firefox com.vivald
 local chromiumBrowser = 'com.vivaldi.Vivaldi'
 
 hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
+    print(scheme, host, params, fullURL)
     -- Only Zoom join links should open in Zoom, not any zoom.us URL
     if string.match(fullURL, "^https?://.*%.zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/j/") or string.match(fullURL, "^https?://zoom%.us/my/") then
         hs.urlevent.openURLWithBundle(fullURL, 'us.zoom.xos')
@@ -202,6 +203,9 @@ hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
     elseif host == 'streamyard.com' or host == 'meet.google.com' then
         hs.urlevent.openURLWithBundle(fullURL, chromiumBrowser)
     elseif host == 'aws.amazon.com' or string.match(host, '.*%.aws%.amazon%.com') then
+        hs.urlevent.openURLWithBundle(fullURL, nonSafariBrowser)
+    -- Okta is broken in Safari (still...) so anything work related has to open in Chrome
+    elseif host == 'samlsp.private.zscaler.com' or string.match(fullURL, 'https?://github.com/octoenergy/(.*)') then
         hs.urlevent.openURLWithBundle(fullURL, nonSafariBrowser)
     else
         hs.urlevent.openURLWithBundle(fullURL, defaultBrowser) 

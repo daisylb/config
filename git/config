@@ -5,7 +5,7 @@
 	excludesfile = ~/config/git/ignore
 	autocrlf = input
     attributesfile = ~/config/git/attributes
-	pager = delta
+	#pager = delta
 	untrackedCache = true
 [merge "json"]
     name = custom merge driver for json files
@@ -15,6 +15,7 @@
 	driver = ~/.config/yarn/global/node_modules/.bin/npm-merge-driver merge %A %O %B %P
 [push]
 	default = upstream
+	autoSetupRemote = true
 [log]
 	date = iso
 [color]
@@ -56,7 +57,7 @@
 [diff]
 	tool = Kaleidoscope
 	renameLimit = 10000
-	external = difft
+	#external = difft
 #[transfer]
 #    fsckobjects = true
 #[fetch]
@@ -98,6 +99,10 @@
 	showPatch = true
 [rebase]
 	updateRefs = true
+[includeIf "gitdir:~/Octopus/"]
+  path = ~/Config/git/config-octopus
+[includeIf "gitdir:/Volumes/Octopus/"]
+  path = ~/Config/git/config-octopus
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
