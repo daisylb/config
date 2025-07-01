@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S /Users/daisy.brenecki/Config/scripts/global-python
 from pathlib import Path
 
 PROJ = Path(__file__).parent.parent
@@ -30,3 +30,4 @@ do_symlink("Zsh/rc.sh", "~/.zshrc")
 do_symlink("Zsh/env.sh", "~/.zshenv")
 do_symlink("Pip", "~/.config/pip")
 do_symlink("WezTerm/wezterm.lua", "~/.wezterm.lua")
+do_symlink("Mise", "~/.config/mise")
