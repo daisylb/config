@@ -1,0 +1,3 @@
+font-family=VCTR Mono v0.12
+font-size=14
+command=/opt/homebrew/bin/fish -l

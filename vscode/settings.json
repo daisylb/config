@@ -392,7 +392,7 @@
   },
   "emmet.showAbbreviationSuggestions": false,
   "emmet.showExpandedAbbreviation": "never",
-  "workbench.colorTheme": "Remedy - Bright (Tilted)",
+  "workbench.colorTheme": "Night Owl Light",
   "python.analysis.inlayHints.pytestParameters": true,
   "editor.codeActionsOnSave": {"source.fixAll.eslint": "explicit"},
   "eslint.rules.customizations": [
@@ -416,7 +416,6 @@
   "mypy-type-checker.importStrategy": "fromEnvironment",
   "mypy-type-checker.preferDaemon": true,
   "mypy-type-checker.reportingScope": "workspace",
-  "workbench.editor.showTabs": "none",
   "eslint.workingDirectories": [
     { "mode": "auto" }
   ],
@@ -437,4 +436,11 @@
   "semanticdiff.closeOriginalTab": true,
   "workbench.editor.splitInGroupLayout": "vertical",
   "files.insertFinalNewline": true,
+  "docker.extension.enableComposeLanguageServer": false,
+  "python.analysis.nodeExecutable": "auto",
+  "python.analysis.nodeArguments": [
+    "--max-old-space-size=2048"
+  ],
+  "git.blame.statusBarItem.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
 }
