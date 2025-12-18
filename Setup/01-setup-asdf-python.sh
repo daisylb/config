@@ -1,1 +1,0 @@
-mise install python

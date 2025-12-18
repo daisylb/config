@@ -5,7 +5,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Created by `userpath` on 2021-01-02 00:26:59
 export PATH="$PATH:$HOME/.local/bin"
 
-
 #source $HOME/.poetry/env
 source "$HOME/.cargo/env"
 export PATH=~/Config/scripts/:~/.local/bin:/opt/homebrew/bin:$PATH

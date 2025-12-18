@@ -1,4 +1,4 @@
-#!/usr/bin/env -S /Users/daisy.brenecki/Config/scripts/global-python
+#!/usr/bin/env -S uv run --script
 from pathlib import Path
 
 PROJ = Path(__file__).parent.parent
@@ -31,4 +31,4 @@ do_symlink("Zsh/env.sh", "~/.zshenv")
 do_symlink("Pip", "~/.config/pip")
 do_symlink("WezTerm/wezterm.lua", "~/.wezterm.lua")
 do_symlink("Mise", "~/.config/mise")
-do_symlink("Ghostty", "~/Library/Application Support/com.mitchellh.ghostty/")
+do_symlink("Ghostty", "~/Library/Application Support/com.mitchellh.ghostty")
