@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S uv run --script
 from pathlib import Path
 
 PROJ = Path(__file__).parent.parent

@@ -8,13 +8,7 @@ export PATH="$PATH:/Users/leigh/.local/bin"
 export PNPM_HOME="/Users/leigh/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# pnpm
-export PNPM_HOME="/Users/daisy/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+eval "$(mise activate zsh)" 
 
 #source $HOME/.poetry/env
 source "$HOME/.cargo/env"

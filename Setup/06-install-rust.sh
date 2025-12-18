@@ -1,1 +1,0 @@
-rustup install stable

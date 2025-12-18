@@ -277,7 +277,6 @@ mas "AudioSwitcher", id: 561712678
 mas "Brother P-touch Editor", id: 1453365242
 mas "BusyCal", id: 1173663647
 mas "ColorSlurp", id: 1287239339
-mas "com.epg.hassapp", id: 1451449886
 mas "Consent-O-Matic", id: 1606897889
 mas "Cubox", id: 1113361350
 mas "Cubox for Safari", id: 1550721541
