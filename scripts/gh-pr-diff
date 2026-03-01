@@ -21,4 +21,4 @@ then
 fi
 
 # Compare the ranges
-git range-diff main $PR_LAST_REVIEW_SHA $PR_HEAD_SHA
+git range-diff master $PR_LAST_REVIEW_SHA $PR_HEAD_SHA
