@@ -8,6 +8,14 @@ defaults write -g KeyRepeat -int 2
 # the below originally had -currentHost, dunno if that mattters
 defaults write com.apple.Bluetooth RemoteWakeEnabled 0
 
+# Disable rearranging Spaces based on most recently used
+defaults write com.apple.dock mru-spaces -bool false
+
+# Disable two finger swipe back/forward in Chromium-based Web browsers
+# nb: for the Magic Mouse the key to use is AppleEnableMouseSwipeNavigateWithScrolls
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.vivaldi.Vivaldi AppleEnableSwipeNavigateWithScrolls -bool false
+
 # disable Spotlight shortcut
 # from https://superuser.com/questions/1211108/remove-osx-spotlight-keyboard-shortcut-from-command-line
 # /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist \
